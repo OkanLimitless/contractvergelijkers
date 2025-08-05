@@ -82,7 +82,7 @@ export default function Vergelijker() {
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
                              <Link href="/" className="flex items-center">
-                 <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers" className="h-12 w-auto" />
+                 <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-12 w-auto" />
                </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm">📞 Gratis bellen:</span>
@@ -576,7 +576,7 @@ export default function Vergelijker() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers" className="h-10 w-auto mb-4 brightness-0 invert" />
+                <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-10 w-auto mb-4 brightness-0 invert" />
                 <p className="text-gray-300 mb-4">
                   Het grootste onafhankelijke energievergelijkingsplatform van Nederland.
                 </p>
