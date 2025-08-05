@@ -105,85 +105,26 @@ export default function Vergelijker3() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="mb-8">
-              <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full font-bold text-sm mb-6">
-                🎓 ERKENDE ENERGIEADVISEURS
+            <div className="mb-6">
+              <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
+                🎓 ENERGIEADVISEURS
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                 Professioneel Advies Voor Je{' '}
                 <span className="text-blue-600">Energiecontract</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Van Erkende Experts</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Van Ervaren Specialists</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                <strong>Onze gecertificeerde energieadviseurs hebben 15+ jaar ervaring</strong> en zijn specialist in 
-                energiecontracten. Wij bieden onafhankelijk advies op maat en <strong>besparen je gemiddeld €700 per jaar.</strong>
+              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                Onze ervaren energieadviseurs hebben jarenlange expertise in energiecontracten. 
+                Wij bieden onafhankelijk advies op maat en <strong>helpen je de beste opties te vinden.</strong>
               </p>
             </div>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto">
-              <div className="bg-blue-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-blue-600">50.000+</div>
-                <div className="text-xs text-gray-600">Tevreden klanten</div>
-              </div>
-              <div className="bg-green-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-green-600">15+</div>
-                <div className="text-xs text-gray-600">Jaar ervaring</div>
-              </div>
-              <div className="bg-yellow-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-yellow-600">4.9/5</div>
-                <div className="text-xs text-gray-600">Klantbeoordeling</div>
-              </div>
-              <div className="bg-purple-50 p-4 rounded-lg text-center">
-                <div className="text-2xl font-bold text-purple-600">€700</div>
-                <div className="text-xs text-gray-600">Gem. besparing</div>
-              </div>
-            </div>
-
-            {/* Expertise Indicators */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-8 max-w-3xl mx-auto">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">🏆 Waarom Kiezen Voor Onze Experts?</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
-                <div className="flex items-center">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  Gecertificeerde energieadviseurs
-                </div>
-                <div className="flex items-center">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  15+ jaar marktkennis
-                </div>
-                <div className="flex items-center">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  Toegang tot alle leveranciers
-                </div>
-                <div className="flex items-center">
-                  <span className="text-blue-500 mr-2">✓</span>
-                  100% onafhankelijk advies
-                </div>
-              </div>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex justify-center space-x-8 mb-12 text-sm text-gray-600">
-              <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                Gecertificeerd
-              </div>
-              <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                15+ Jaar Ervaring
-              </div>
-              <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                50.000+ Klanten
-              </div>
-            </div>
-
-            {/* CTA Buttons - Professional Style */}
-            <div className="space-y-4 mb-12">
+            {/* CTA Buttons - Higher placement */}
+            <div className="space-y-4 mb-8">
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
@@ -191,7 +132,7 @@ export default function Vergelijker3() {
               >
                 🎓 SPREEK EEN ENERGIESPECIALIST
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Gratis advies van gecertificeerde experts</div>
+                <div className="text-sm font-normal">Gratis professioneel advies</div>
               </a>
               <button 
                 onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
@@ -201,13 +142,27 @@ export default function Vergelijker3() {
               </button>
             </div>
 
-            <div className="bg-gray-50 p-4 rounded-lg border">
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>Vandaag geholpen door onze experts:</strong>
-              </p>
-              <div className="text-xs text-gray-500">
-                <p>"Zeer professioneel advies. €680 bespaard door expert Marco." - Familie Jansen, Den Haag</p>
+            {/* Trust Indicators */}
+            <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Ervaren Specialisten
               </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Onafhankelijk Advies
+              </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Persoonlijke Service
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-sm text-blue-800">
+                🎓 <strong>Expertise die werkt:</strong> Onze specialisten hebben jarenlange ervaring 
+                en kennen alle ins en outs van energiecontracten. Persoonlijk advies op maat.
+              </p>
             </div>
           </div>
         </section>

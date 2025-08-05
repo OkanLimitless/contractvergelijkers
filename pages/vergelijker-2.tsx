@@ -105,50 +105,45 @@ export default function Vergelijker2() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="mb-8">
-              <span className="inline-block bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-6">
-                💰 VERGELIJK & BESPAAR TOT €700
+            <div className="mb-6">
+              <span className="inline-block bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
+                💰 ENERGIEVERGELIJKING
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Betaal Je Te Veel Voor{' '}
-                <span className="text-green-500">Energie?</span>
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Wil Je Weten Of Je{' '}
+                <span className="text-green-500">Energie</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Bespaar Direct €700!</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Goedkoper Kan?</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                <strong>95% van de Nederlanders betaalt teveel voor energie!</strong> Onze energiespecialisten 
-                vergelijken alle leveranciers en vinden de goedkoopste voor jou. <strong>Gemiddelde besparing: €700 per jaar.</strong>
+              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                Onze energiespecialisten vergelijken alle leveranciers en helpen je 
+                de beste deal te vinden. <strong>Veel klanten ontdekken interessante besparingsmogelijkheden.</strong>
               </p>
             </div>
 
-            {/* Savings Calculator Mock */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl p-6 mb-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">🧮 Snelle Besparingscalculator</h3>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="text-2xl font-bold text-red-500">€1.847</div>
-                    <div className="text-xs text-gray-600">Gemiddelde kosten</div>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="text-2xl font-bold text-gray-500">→</div>
-                    <div className="text-xs text-gray-600">Naar goedkoopste</div>
-                  </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="text-2xl font-bold text-green-500">€1.147</div>
-                    <div className="text-xs text-gray-600">Nieuwe kosten</div>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-yellow-100 rounded-lg">
-                  <div className="text-xl font-bold text-green-600">Jouw besparing: €700 per jaar!</div>
-                </div>
-              </div>
+            {/* CTA Buttons - Higher placement */}
+            <div className="space-y-4 mb-8">
+              <a 
+                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
+              >
+                💰 BEL VOOR VERGELIJKING
+                <div className="text-2xl font-black mt-1">{phoneNumber}</div>
+                <div className="text-sm font-normal">Gratis vergelijking alle leveranciers</div>
+              </a>
+              <button 
+                onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
+                className="block w-full bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-700 transition-colors shadow-lg"
+              >
+                📊 Of Start Online Vergelijking (2 Min)
+              </button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex justify-center space-x-8 mb-12 text-sm text-gray-600">
+            <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
                 Alle Leveranciers
@@ -159,38 +154,15 @@ export default function Vergelijker2() {
               </div>
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
-                €700 Besparing
+                Gratis Service
               </div>
             </div>
 
-            {/* CTA Buttons - Money Focus */}
-            <div className="space-y-4 mb-12">
-              <a 
-                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
-              >
-                💰 BEL NU VOOR JE BESPARING
-                <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Gratis vergelijking - €700 gemiddelde besparing</div>
-              </a>
-              <button 
-                onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block w-full bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg"
-              >
-                📊 Of Bereken Direct Je Besparing (2 Min)
-              </button>
-            </div>
-
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>Vandaag al geholpen:</strong>
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-sm text-green-800">
+                💡 <strong>Vergelijkingsfeit:</strong> De meeste mensen hebben jaren hetzelfde contract 
+                en zijn vaak verrast door de mogelijkheden bij andere leveranciers.
               </p>
-              <div className="flex justify-center space-x-6 text-xs text-gray-500">
-                <span>• Anna uit Utrecht: €640 bespaard</span>
-                <span>• Marco uit Amsterdam: €780 bespaard</span>
-                <span>• Linda uit Rotterdam: €590 bespaard</span>
-              </div>
             </div>
           </div>
         </section>
@@ -379,15 +351,14 @@ export default function Vergelijker2() {
                       </div>
                     </div>
 
-                    <div className="bg-yellow-50 p-6 rounded-lg text-center border-2 border-yellow-200">
-                      <h4 className="text-lg font-bold text-yellow-800 mb-2">🎯 Je Persoonlijke Besparing</h4>
-                      <div className="text-3xl font-black text-green-600 mb-2">€700 per jaar</div>
-                      <p className="text-yellow-700 mb-4">
-                        Dit is €58 per maand minder dan je nu betaalt! Onze specialisten bellen je nu 
-                        om de overstap te regelen.
+                    <div className="bg-green-50 p-6 rounded-lg text-center border border-green-200">
+                      <h4 className="text-lg font-bold text-green-800 mb-2">🎯 Analyse Voltooid</h4>
+                      <p className="text-green-700 mb-4">
+                        Onze specialist kan nu een persoonlijke vergelijking maken op basis van jouw gegevens. 
+                        Veel klanten zijn verrast door de mogelijkheden.
                       </p>
-                      <p className="text-xs text-yellow-600">
-                        *Besparing gebaseerd op je gegevens en gemiddelde tarieven
+                      <p className="text-xs text-green-600">
+                        *Bel voor je persoonlijke besparingsmogelijkheden
                       </p>
                     </div>
 

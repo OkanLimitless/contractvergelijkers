@@ -105,79 +105,65 @@ export default function Vergelijker1() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-white py-16">
+        <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="mb-8">
-              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-6 animate-pulse">
-                🚨 URGENT: KLANTENSERVICE ENERGIE
+            <div className="mb-6">
+              <span className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
+                📞 ENERGIEKLANTENSERVICE
               </span>
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Problemen Met Je{' '}
-                <span className="text-red-500">Energiecontract?</span>
+              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Hulp Nodig Met Je{' '}
+                <span className="text-blue-500">Energiecontract?</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Bel Direct Voor Hulp!</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Wij Helpen Direct</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                <strong>Onze energiespecialisten zijn 24/7 bereikbaar</strong> voor directe hulp met je energiecontract. 
-                Hoge rekening? Wil je opzeggen? Overstappen? <strong>Wij besparen je tot €700 per jaar!</strong>
+              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
+                Onze energiespecialisten helpen je graag met vragen over je contract, tarieven, 
+                of het vinden van betere opties. <strong>Veel klanten ontdekken dat ze flink kunnen besparen.</strong>
               </p>
             </div>
 
-            {/* Urgency Indicators */}
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 text-left max-w-2xl mx-auto">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <span className="text-2xl">⚠️</span>
-                </div>
-                <div className="ml-3">
-                  <h3 className="text-lg font-medium text-yellow-800">Te Hoge Energierekening?</h3>
-                  <div className="mt-2 text-sm text-yellow-700">
-                    <p>• Bel nu direct - gemiddeld €700 besparing per jaar<br/>
-                    • Gratis controle van je huidige contract<br/>
-                    • Overstappen binnen 5 minuten geregeld</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex justify-center space-x-8 mb-12 text-sm text-gray-600">
-              <div className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                24/7 Bereikbaar
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                Direct Opgelost
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-2">✓</span>
-                €700 Besparing
-              </div>
-            </div>
-
-            {/* CTA Buttons - Emergency Style */}
-            <div className="space-y-4 mb-12">
+            {/* CTA Buttons - Higher placement */}
+            <div className="space-y-4 mb-8">
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="block w-full bg-red-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-red-600 transition-colors shadow-2xl text-center animate-pulse"
+                className="block w-full bg-blue-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-blue-600 transition-colors shadow-2xl text-center"
               >
-                🚨 BEL NU DIRECT VOOR HULP
+                📞 BEL VOOR ENERGIEADVIES
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Bespaar tot €700 per jaar</div>
+                <div className="text-sm font-normal">Gratis advies en vergelijking</div>
               </a>
               <button 
                 onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block w-full bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg"
+                className="block w-full bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-700 transition-colors shadow-lg"
               >
-                📋 Of Check Direct Je Besparing (2 Min)
+                📋 Of Vul Kort Formulier In (2 Min)
               </button>
             </div>
 
-            <p className="text-sm text-gray-500">
-              ⭐ 24/7 Energieklantenservice | Gratis advies | Direct oplossing | Gemiddeld €700 besparing
-            </p>
+            {/* Trust Indicators */}
+            <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Gratis Advies
+              </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Onafhankelijk
+              </div>
+              <div className="flex items-center">
+                <span className="text-blue-500 mr-2">✓</span>
+                Ervaren Specialisten
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-sm text-blue-800">
+                💡 <strong>Wist je dat:</strong> Veel mensen betalen onnodig veel voor energie. 
+                Onze specialisten helpen je de beste opties te vinden voor jouw situatie.
+              </p>
+            </div>
           </div>
         </section>
 
