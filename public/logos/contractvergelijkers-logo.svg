@@ -1,26 +1,27 @@
-<svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
   <!-- Background for icon -->
   <rect x="10" y="15" width="50" height="50" rx="25" fill="#10B981"/>
   
-  <!-- Energy comparison icon -->
+  <!-- Energy comparison icon - fixed positioning -->
   <g transform="translate(35, 40)">
-    <!-- Lightning bolt -->
-    <path d="M-8 -10 L-2 -10 L-5 0 L2 0 L-10 10 L-4 5 L-10 5 Z" fill="#FFFFFF"/>
-    <!-- Comparison arrows -->
-    <path d="M-15 -5 L-18 -2 L-15 1" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M15 -5 L18 -2 L15 1" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Lightning bolt - cleaner design -->
+    <path d="M-6 -12 L0 -12 L-3 -2 L3 -2 L-9 12 L-3 2 L-9 2 Z" fill="#FFFFFF"/>
+    <!-- Left comparison arrow -->
+    <path d="M-16 -3 L-19 0 L-16 3" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Right comparison arrow -->
+    <path d="M16 -3 L19 0 L16 3" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   </g>
   
   <!-- Company name with better typography -->
-  <text x="75" y="35" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="800" fill="#1F2937">
+  <text x="75" y="32" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="800" fill="#1F2937">
     Contract
   </text>
-  <text x="75" y="58" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="800" fill="#10B981">
+  <text x="75" y="52" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="800" fill="#10B981">
     vergelijkers
   </text>
   
-  <!-- Tagline -->
-  <text x="75" y="72" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#6B7280" letter-spacing="0.5px">
+  <!-- Tagline - fixed to show complete text -->
+  <text x="75" y="68" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#6B7280" letter-spacing="0.3px">
     ENERGIE VERGELIJKEN • ONAFHANKELIJK
   </text>
 </svg>
