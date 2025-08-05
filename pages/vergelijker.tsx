@@ -161,7 +161,7 @@ export default function Vergelijker() {
                            placeholder="1234 AB"
                            value={formData.postcode}
                            onChange={(e) => handleInputChange('postcode', e.target.value)}
-                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                          />
                       </div>
                       <div>
@@ -173,7 +173,7 @@ export default function Vergelijker() {
                            placeholder="123"
                            value={formData.huisnummer}
                            onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                          />
                       </div>
                     </div>
@@ -185,7 +185,7 @@ export default function Vergelijker() {
                                              <select
                          value={formData.woonsituatie}
                          onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
-                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                        >
                         <option value="">Kies je woonsituatie</option>
                         <option value="eengezinswoning">Eengezinswoning</option>
@@ -217,7 +217,7 @@ export default function Vergelijker() {
                                              <select
                          value={formData.currentLeverancier}
                          onChange={(e) => handleInputChange('currentLeverancier', e.target.value)}
-                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                        >
                         <option value="">Kies je huidige leverancier</option>
                         <option value="essent">Essent</option>
@@ -238,7 +238,7 @@ export default function Vergelijker() {
                                                  <select
                            value={formData.verbruikStroom}
                            onChange={(e) => handleInputChange('verbruikStroom', e.target.value)}
-                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                          >
                           <option value="">Selecteer verbruik</option>
                           <option value="1000">Minder dan 1.500 kWh</option>
@@ -256,7 +256,7 @@ export default function Vergelijker() {
                                                  <select
                            value={formData.verbruikGas}
                            onChange={(e) => handleInputChange('verbruikGas', e.target.value)}
-                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all text-gray-900"
                          >
                           <option value="">Selecteer verbruik</option>
                           <option value="500">Minder dan 800 m³</option>
