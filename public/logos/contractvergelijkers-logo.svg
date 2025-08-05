@@ -1,27 +1,38 @@
-<svg width="320" height="80" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background for icon -->
-  <rect x="10" y="15" width="50" height="50" rx="25" fill="#10B981"/>
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Magnifying glass handle -->
+  <ellipse cx="50" cy="50" rx="20" ry="20" fill="none" stroke="#2C5AA0" stroke-width="6" transform="rotate(-45 50 50)"/>
+  <rect x="62" y="62" width="4" height="16" fill="#2C5AA0" transform="rotate(-45 64 70)"/>
   
-  <!-- Energy comparison icon - fixed positioning -->
-  <g transform="translate(35, 40)">
-    <!-- Lightning bolt - cleaner design -->
-    <path d="M-6 -12 L0 -12 L-3 -2 L3 -2 L-9 12 L-3 2 L-9 2 Z" fill="#FFFFFF"/>
-    <!-- Left comparison arrow -->
-    <path d="M-16 -3 L-19 0 L-16 3" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <!-- Right comparison arrow -->
-    <path d="M16 -3 L19 0 L16 3" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  </g>
+  <!-- Magnifying glass lens with gradient -->
+  <defs>
+    <linearGradient id="lensGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7DD3FC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
   
-  <!-- Company name with better typography -->
-  <text x="75" y="32" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="800" fill="#1F2937">
-    Contract
+  <!-- Magnifying glass lens -->
+  <circle cx="50" cy="50" r="20" fill="url(#lensGradient)" filter="url(#shadow)"/>
+  
+  <!-- Checkmark inside lens -->
+  <path d="M42 50 L47 55 L58 44" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Handle -->
+  <rect x="62" y="62" width="6" height="18" fill="#2C5AA0" rx="3" transform="rotate(-45 65 71)"/>
+  
+  <!-- Company name -->
+  <text x="90" y="35" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="800" fill="#2C5AA0" letter-spacing="-0.5px">
+    CONTRACT
   </text>
-  <text x="75" y="52" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="800" fill="#10B981">
-    vergelijkers
+  <text x="90" y="60" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="800" fill="#2C5AA0" letter-spacing="-0.5px">
+    VERGELIJKERS
   </text>
   
-  <!-- Tagline - fixed to show complete text -->
-  <text x="75" y="68" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="600" fill="#6B7280" letter-spacing="0.3px">
-    ENERGIE VERGELIJKEN • ONAFHANKELIJK
+  <!-- Optional tagline -->
+  <text x="90" y="78" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#64748B" letter-spacing="0.5px">
+    VERGELIJK & BESPAAR
   </text>
 </svg>
