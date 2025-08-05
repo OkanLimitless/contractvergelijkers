@@ -348,7 +348,7 @@ export default function Vergelijker() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
               {/* Review 1 */}
               <div className="bg-white rounded-xl p-6 shadow-md border">
                 <div className="flex items-center mb-4">
@@ -360,7 +360,7 @@ export default function Vergelijker() {
                   </span>
                 </div>
                 <blockquote className="text-gray-700 italic mb-4">
-                  "Ik wilde mijn Essent contract opzeggen, maar via deze service kreeg ik een veel beter aanbod. Bespaar nu €480 per jaar!"
+                  "Binnen 10 minuten had ik een perfect overzicht van alle aanbieders. De telefonische service was uitstekend!"
                 </blockquote>
                 <div className="text-gray-600">
                   <div className="font-semibold">Sandra V.</div>
@@ -379,7 +379,7 @@ export default function Vergelijker() {
                   </span>
                 </div>
                 <blockquote className="text-gray-700 italic mb-4">
-                  "Zocht Eneco klantenservice, maar deze adviseurs hielpen me veel beter. Overstap binnen 1 week geregeld!"
+                  "Eindelijk een eerlijke vergelijking zonder verborgen kosten. Bespaar nu €600 per jaar!"
                 </blockquote>
                 <div className="text-gray-600">
                   <div className="font-semibold">Mark B.</div>
@@ -398,7 +398,7 @@ export default function Vergelijker() {
                   </span>
                 </div>
                 <blockquote className="text-gray-700 italic mb-4">
-                  "Veel beter dan de Vattenfall klantenservice! Ze vonden direct een goedkoper contract voor me."
+                  "De adviseur heeft alles voor mij geregeld. Geen gedoe, gewoon besparen!"
                 </blockquote>
                 <div className="text-gray-600">
                   <div className="font-semibold">Linda K.</div>
@@ -410,6 +410,25 @@ export default function Vergelijker() {
               <div className="bg-white rounded-xl p-6 shadow-md border">
                 <div className="flex items-center mb-4">
                   <div className="flex text-yellow-400">
+                    ⭐⭐⭐⭐
+                  </div>
+                  <span className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    €350 bespaard
+                  </span>
+                </div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "Snelle service en transparante informatie. Precies wat ik zocht!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Peter M.</div>
+                  <div className="text-sm">Den Haag</div>
+                </div>
+              </div>
+
+              {/* Review 5 */}
+              <div className="bg-white rounded-xl p-6 shadow-md border">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
                     ⭐⭐⭐⭐⭐
                   </div>
                   <span className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
@@ -417,11 +436,30 @@ export default function Vergelijker() {
                   </span>
                 </div>
                 <blockquote className="text-gray-700 italic mb-4">
-                  "Dacht dat ik Budget Energie moest bellen, maar deze service was veel handiger. Direct het beste tarief!"
+                  "Geweldige ervaring! De overstap was binnen een week geregeld."
                 </blockquote>
                 <div className="text-gray-600">
-                  <div className="font-semibold">Peter M.</div>
-                  <div className="text-sm">Den Haag</div>
+                  <div className="font-semibold">Emma J.</div>
+                  <div className="text-sm">Eindhoven</div>
+                </div>
+              </div>
+
+              {/* Review 6 */}
+              <div className="bg-white rounded-xl p-6 shadow-md border">
+                <div className="flex items-center mb-4">
+                  <div className="flex text-yellow-400">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                  <span className="ml-auto bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    €580 bespaard
+                  </span>
+                </div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "Professioneel advies en echt de beste deal gevonden. Aanrader!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Tom R.</div>
+                  <div className="text-sm">Groningen</div>
                 </div>
               </div>
             </div>
