@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Home() {
-  const [phoneNumber] = useState('+31 85 087 2183')
+  const [phoneNumber] = useState('085 087 2183')
 
   const energyProviders = [
     { 
@@ -90,9 +90,9 @@ export default function Home() {
       <main className="min-h-screen bg-gradient-to-br from-blue-600 via-green-600 to-blue-800">
         {/* Navigation */}
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
-          <div className="flex items-center">
-            <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers Logo" className="h-10 w-auto" />
-          </div>
+                      <div className="flex items-center">
+              <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers Logo" className="h-14 w-auto" />
+            </div>
                       <div className="hidden md:flex space-x-6 items-center">
               <Link href="/vergelijker" className="text-white hover:text-green-200 transition-colors">
                 Energie Vergelijker
@@ -106,7 +106,7 @@ export default function Home() {
             <a href="#over-ons" className="text-white hover:text-green-200 transition-colors">
               Over Ons
             </a>
-            <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
+                         <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
               📞 {phoneNumber}
             </a>
           </div>
@@ -273,7 +273,7 @@ export default function Home() {
                 <p className="text-blue-200 text-sm mb-4">{provider.usp}</p>
                 <div className="space-y-2">
                   <a 
-                    href={`tel:${phoneNumber}`}
+                    href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                     className="block bg-green-400 text-black px-4 py-2 rounded-lg text-center font-semibold hover:bg-green-300 transition-colors"
                   >
                     📞 Vergelijk {provider.name}
@@ -357,7 +357,7 @@ export default function Home() {
 
             <div className="text-center">
               <a 
-                href={`tel:${phoneNumber}`}
+                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 className="inline-block bg-green-400 text-black px-8 py-4 rounded-lg font-bold text-xl hover:bg-green-300 transition-colors shadow-lg"
               >
                 🌱 Vergelijk Groene Energie Tarieven
@@ -428,7 +428,7 @@ export default function Home() {
               Gratis advies, geen verborgen kosten, binnen 5 minuten geregeld.
             </p>
             <a 
-              href={`tel:${phoneNumber}`}
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               className="inline-block bg-white text-green-600 px-10 py-5 rounded-xl font-bold text-2xl hover:bg-gray-100 transition-colors shadow-xl"
             >
               📞 Bel Nu: {phoneNumber}
@@ -618,7 +618,7 @@ export default function Home() {
         {/* Sticky Call Button */}
         <div className="fixed bottom-6 right-6 z-50">
           <a 
-            href={`tel:${phoneNumber}`}
+            href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-full shadow-2xl flex items-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse"
           >
             <span className="text-2xl">📞</span>

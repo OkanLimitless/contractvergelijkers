@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Vergelijker() {
-  const [phoneNumber] = useState('+31 85 087 2183')
+  const [phoneNumber] = useState('085 087 2183')
   const [formStep, setFormStep] = useState(1)
   const [formData, setFormData] = useState({
     postcode: '',
@@ -41,12 +41,12 @@ export default function Vergelijker() {
         <header className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
-              <Link href="/" className="flex items-center">
-                <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers" className="h-8 w-auto" />
-              </Link>
+                             <Link href="/" className="flex items-center">
+                 <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers" className="h-12 w-auto" />
+               </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm">📞 Gratis bellen:</span>
-                <a href={`tel:${phoneNumber}`} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                                 <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -91,10 +91,10 @@ export default function Vergelijker() {
 
                          {/* CTA Buttons - Mobile Optimized */}
              <div className="space-y-4 mb-12">
-               <a 
-                 href={`tel:${phoneNumber}`}
-                 className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
-               >
+                               <a 
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                  className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
+                >
                  📞 Bel Nu Voor Energieadvies
                  <div className="text-2xl font-black mt-1">{phoneNumber}</div>
                </a>
@@ -156,25 +156,25 @@ export default function Vergelijker() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Postcode*
                         </label>
-                        <input
-                          type="text"
-                          placeholder="1234 AB"
-                          value={formData.postcode}
-                          onChange={(e) => handleInputChange('postcode', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        />
+                                                 <input
+                           type="text"
+                           placeholder="1234 AB"
+                           value={formData.postcode}
+                           onChange={(e) => handleInputChange('postcode', e.target.value)}
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Huisnummer*
                         </label>
-                        <input
-                          type="text"
-                          placeholder="123"
-                          value={formData.huisnummer}
-                          onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        />
+                                                 <input
+                           type="text"
+                           placeholder="123"
+                           value={formData.huisnummer}
+                           onChange={(e) => handleInputChange('huisnummer', e.target.value)}
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         />
                       </div>
                     </div>
 
@@ -182,11 +182,11 @@ export default function Vergelijker() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Woonsituatie*
                       </label>
-                      <select
-                        value={formData.woonsituatie}
-                        onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      >
+                                             <select
+                         value={formData.woonsituatie}
+                         onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
+                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                       >
                         <option value="">Kies je woonsituatie</option>
                         <option value="eengezinswoning">Eengezinswoning</option>
                         <option value="appartement">Appartement</option>
@@ -214,11 +214,11 @@ export default function Vergelijker() {
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Huidige energieleverancier*
                       </label>
-                      <select
-                        value={formData.currentLeverancier}
-                        onChange={(e) => handleInputChange('currentLeverancier', e.target.value)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      >
+                                             <select
+                         value={formData.currentLeverancier}
+                         onChange={(e) => handleInputChange('currentLeverancier', e.target.value)}
+                         className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                       >
                         <option value="">Kies je huidige leverancier</option>
                         <option value="essent">Essent</option>
                         <option value="eneco">Eneco</option>
@@ -235,11 +235,11 @@ export default function Vergelijker() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Stroomverbruik per jaar
                         </label>
-                        <select
-                          value={formData.verbruikStroom}
-                          onChange={(e) => handleInputChange('verbruikStroom', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        >
+                                                 <select
+                           value={formData.verbruikStroom}
+                           onChange={(e) => handleInputChange('verbruikStroom', e.target.value)}
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         >
                           <option value="">Selecteer verbruik</option>
                           <option value="1000">Minder dan 1.500 kWh</option>
                           <option value="2000">1.500 - 2.500 kWh</option>
@@ -253,11 +253,11 @@ export default function Vergelijker() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Gasverbruik per jaar
                         </label>
-                        <select
-                          value={formData.verbruikGas}
-                          onChange={(e) => handleInputChange('verbruikGas', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        >
+                                                 <select
+                           value={formData.verbruikGas}
+                           onChange={(e) => handleInputChange('verbruikGas', e.target.value)}
+                           className="w-full px-4 py-3 border-2 border-gray-200 bg-gray-50 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition-all"
+                         >
                           <option value="">Selecteer verbruik</option>
                           <option value="500">Minder dan 800 m³</option>
                           <option value="1000">800 - 1.200 m³</option>
@@ -308,10 +308,10 @@ export default function Vergelijker() {
                         🕐 Adviseurs beschikbaar nu! Bel direct:
                       </p>
                       
-                      <a 
-                        href={`tel:${phoneNumber}`}
-                        className="block bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
-                      >
+                                             <a 
+                         href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                         className="block bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                       >
                         📞 Energieadvies: {phoneNumber}
                         <div className="text-sm font-normal mt-1">Gratis gesprek • Direct verbonden</div>
                       </a>
@@ -526,7 +526,7 @@ export default function Vergelijker() {
         {/* Sticky Call Button - Mobile Optimized */}
         <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto">
           <a 
-            href={`tel:${phoneNumber}`}
+            href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
             className="block md:inline-flex bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse text-center"
           >
             <span className="text-2xl">📞</span>
