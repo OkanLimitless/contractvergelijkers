@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Home() {
@@ -92,10 +93,10 @@ export default function Home() {
           <div className="flex items-center">
             <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers Logo" className="h-10 w-auto" />
           </div>
-          <div className="hidden md:flex space-x-6 items-center">
-            <a href="#vergelijken" className="text-white hover:text-green-200 transition-colors">
-              Energie Vergelijken
-            </a>
+                      <div className="hidden md:flex space-x-6 items-center">
+              <Link href="/vergelijker" className="text-white hover:text-green-200 transition-colors">
+                Energie Vergelijker
+              </Link>
             <a href="#leveranciers" className="text-white hover:text-green-200 transition-colors">
               Energieleveranciers
             </a>
@@ -150,11 +151,11 @@ export default function Home() {
               <h3 className="text-white font-bold mb-2">Energieleveranciers</h3>
               <p className="text-blue-100 text-sm">Vergelijk alle leveranciers</p>
             </a>
-            <a href="#vergelijken" className="bg-green-500/20 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-green-500/30 transition-colors border border-green-400">
+            <Link href="/vergelijker" className="bg-green-500/20 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-green-500/30 transition-colors border border-green-400">
               <div className="text-3xl mb-3">💰</div>
               <h3 className="text-white font-bold mb-2">Energie Vergelijken</h3>
               <p className="text-blue-100 text-sm">Bespaar tot €500</p>
-            </a>
+            </Link>
             <a href="#goedkoopste" className="bg-yellow-500/20 backdrop-blur-lg rounded-xl p-6 text-center hover:bg-yellow-500/30 transition-colors border border-yellow-400">
               <div className="text-3xl mb-3">🎯</div>
               <h3 className="text-white font-bold mb-2">Goedkoopste Energie</h3>
