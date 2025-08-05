@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://contractvergelijkers.nl/sitemap.xml
+
+# Allow crawling of CSS and JS files
+Allow: /styles.css
+Allow: /script.js
+
+# Allow all HTML pages
+Allow: /index.html
+Allow: /essent-klantenservice.html
+Allow: /eneco-klantenservice.html
+Allow: /vattenfall-klantenservice.html
+Allow: /budget-energie-klantenservice.html
+
+# Disallow any admin or private directories (if they exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Crawl-delay (optional, for large sites)
+# Crawl-delay: 1
