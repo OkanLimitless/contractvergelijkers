@@ -2,6 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 
+// Declare gtag function for TypeScript
+declare global {
+  function gtag(...args: any[]): void
+  function gtag_report_conversion(url?: string): boolean
+}
+
 export default function Vergelijker() {
   const [phoneNumber] = useState('085 087 2183')
   const [formStep, setFormStep] = useState(1)
@@ -19,7 +25,15 @@ export default function Vergelijker() {
   }
 
   const nextStep = () => {
-    if (formStep < 3) setFormStep(formStep + 1)
+    if (formStep < 3) {
+      setFormStep(formStep + 1)
+      // Track form completion when reaching final step
+      if (formStep === 2) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC'
+        })
+      }
+    }
   }
 
   const prevStep = () => {
@@ -34,6 +48,32 @@ export default function Vergelijker() {
         <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* Google Ads tracking */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-697295426"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-697295426');
+              
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC',
+                    'event_callback': callback
+                });
+                return false;
+              }
+            `,
+          }}
+        />
       </Head>
 
       <main className="min-h-screen bg-gray-50">
@@ -46,7 +86,7 @@ export default function Vergelijker() {
                </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm">📞 Gratis bellen:</span>
-                                 <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                                 <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -93,6 +133,7 @@ export default function Vergelijker() {
              <div className="space-y-4 mb-12">
                                <a 
                   href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                  onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
                   className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
                 >
                  📞 Bel Nu Voor Energieadvies
@@ -310,6 +351,7 @@ export default function Vergelijker() {
                       
                                              <a 
                          href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
                          className="block bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
                        >
                         📞 Energieadvies: {phoneNumber}
@@ -565,6 +607,7 @@ export default function Vergelijker() {
         <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto">
           <a 
             href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+            onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
             className="block md:inline-flex bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse text-center"
           >
             <span className="text-2xl">📞</span>
