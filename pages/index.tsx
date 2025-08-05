@@ -91,7 +91,7 @@ export default function Home() {
         {/* Navigation */}
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
                       <div className="flex items-center">
-              <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-14 w-auto" />
+              <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-16 md:h-18 w-auto" />
             </div>
                       <div className="hidden md:flex space-x-6 items-center">
               <Link href="/vergelijker" className="text-white hover:text-green-200 transition-colors">
@@ -579,7 +579,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="grid md:grid-cols-3 gap-8 mb-8">
                              <div>
-                 <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-12 w-auto mb-4" />
+                                   <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-14 md:h-16 w-auto mb-4" />
                  <p className="text-blue-200 mb-4">
                    Het grootste onafhankelijke energievergelijkingsplatform van Nederland.
                  </p>
