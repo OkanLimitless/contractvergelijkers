@@ -398,6 +398,20 @@ export default function Vergelijker() {
             </div>
           </div>
         </footer>
+
+        {/* Sticky Call Button */}
+        <div className="fixed bottom-6 right-6 z-50">
+          <a 
+            href={`tel:${phoneNumber}`}
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-full shadow-2xl flex items-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse"
+          >
+            <span className="text-2xl">📞</span>
+            <div className="hidden md:block">
+              <div className="text-sm">Bel Direct</div>
+              <div className="text-lg font-bold">{phoneNumber}</div>
+            </div>
+          </a>
+        </div>
       </main>
     </>
   )
