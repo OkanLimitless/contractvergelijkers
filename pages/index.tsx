@@ -89,8 +89,8 @@ export default function Home() {
       <main className="min-h-screen bg-gradient-to-br from-blue-600 via-green-600 to-blue-800">
         {/* Navigation */}
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
-          <div className="text-white text-2xl font-bold">
-            Contractvergelijkers
+          <div className="flex items-center">
+            <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers Logo" className="h-10 w-auto" />
           </div>
           <div className="hidden md:flex space-x-6 items-center">
             <a href="#vergelijken" className="text-white hover:text-green-200 transition-colors">
@@ -136,7 +136,7 @@ export default function Home() {
               📞 Bel Direct: {phoneNumber}
             </a>
             <p className="text-blue-200 mt-3 font-semibold">
-              🕒 Ma-Vr: 08:00-20:00 | Weekend: 10:00-18:00
+              🕒 Ma-Vr: 09:00-20:30
             </p>
             <p className="text-green-300 mt-2 font-bold">
               ✅ Gratis advies • ✅ Onafhankelijk • ✅ Binnen 5 minuten geregeld
@@ -277,9 +277,12 @@ export default function Home() {
                   >
                     📞 Vergelijk {provider.name}
                   </a>
-                  <button className="block w-full bg-white/10 text-white px-4 py-2 rounded-lg text-center text-sm hover:bg-white/20 transition-colors">
-                    Meer informatie
-                  </button>
+                                     <a 
+                     href={`/providers/${provider.name.toLowerCase().replace(/\s+/g, '-')}`}
+                     className="block w-full bg-white/10 text-white px-4 py-2 rounded-lg text-center text-sm hover:bg-white/20 transition-colors"
+                   >
+                     Meer informatie
+                   </a>
                 </div>
               </div>
             ))}
@@ -430,7 +433,7 @@ export default function Home() {
               📞 Bel Nu: {phoneNumber}
             </a>
             <p className="text-white/80 mt-4 font-semibold">
-              Ma-Vr: 08:00-20:00 | Weekend: 10:00-18:00
+              Ma-Vr: 09:00-20:30
             </p>
           </div>
         </section>
@@ -439,15 +442,15 @@ export default function Home() {
         <footer className="border-t border-white/20 mt-20">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div>
-                <h3 className="text-white font-bold text-lg mb-4">Contractvergelijkers</h3>
-                <p className="text-blue-200 mb-4">
-                  Het grootste onafhankelijke energievergelijkingsplatform van Nederland.
-                </p>
-                <p className="text-green-400 font-bold">
-                  📞 {phoneNumber}
-                </p>
-              </div>
+                             <div>
+                 <img src="/logos/contractvergelijkers-logo.svg" alt="Contractvergelijkers Logo" className="h-12 w-auto mb-4" />
+                 <p className="text-blue-200 mb-4">
+                   Het grootste onafhankelijke energievergelijkingsplatform van Nederland.
+                 </p>
+                 <p className="text-green-400 font-bold">
+                   📞 {phoneNumber}
+                 </p>
+               </div>
               <div>
                 <h4 className="text-white font-bold mb-4">Onze Service</h4>
                 <ul className="text-blue-200 space-y-2">
@@ -460,8 +463,7 @@ export default function Home() {
               <div>
                 <h4 className="text-white font-bold mb-4">Openingstijden</h4>
                 <div className="text-blue-200 space-y-1">
-                  <p>Maandag - Vrijdag: 08:00 - 20:00</p>
-                  <p>Weekend: 10:00 - 18:00</p>
+                  <p>Maandag - Vrijdag: 09:00 - 20:30</p>
                   <p className="text-green-400 font-semibold mt-3">
                     Gratis bellen vanuit heel Nederland
                   </p>
