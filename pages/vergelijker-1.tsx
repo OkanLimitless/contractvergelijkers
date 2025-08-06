@@ -113,52 +113,71 @@ export default function Vergelijker1() {
         <section className="bg-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
+              <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
+                🔒 Exclusieve Marktinformatie Beschikbaar
+              </div>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                💰 <span className="text-black">Bespaar Tot</span>{' '}
-                <span className="text-green-500">€600 Per Jaar</span>
+                <span className="text-blue-600">Geheime Energietarieven</span>
                 <br />
-                <span className="text-2xl md:text-3xl text-gray-700">op je Energierekening!</span>
+                <span className="text-2xl md:text-3xl text-gray-700">Die Leveranciers Niet Online Tonen</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Vergelijk <strong>alle energieleveranciers</strong> in Nederland en ontdek binnen 2 
-                minuten hoeveel jij kunt besparen
+              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+                Als <strong>industrie-insider</strong> hebben wij toegang tot tarieven die 
+                <span className="text-blue-600 font-semibold"> 40% lager</span> liggen dan wat je online vindt
               </p>
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 max-w-2xl mx-auto">
+                <p className="text-yellow-800 text-sm">
+                  <strong>⚠️ Waarschuwing:</strong> Deze informatie is vertrouwelijk en alleen telefonisch beschikbaar. 
+                  Leveranciers verbergen hun beste deals voor het grote publiek.
+                </p>
+              </div>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12 text-sm md:text-base">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">🛡️</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">🔒</span>
                 </div>
-                <span className="font-medium text-gray-700">100% Gratis</span>
+                <span className="font-medium text-gray-700">Vertrouwelijke Tarieven</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">⚡</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">👥</span>
                 </div>
-                <span className="font-medium text-gray-700">Binnen 2 Minuten</span>
+                <span className="font-medium text-gray-700">15+ Jaar Marktkennis</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">📈</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">📊</span>
                 </div>
-                <span className="font-medium text-gray-700">Gegarandeerd Besparen</span>
+                <span className="font-medium text-gray-700">Exclusieve Toegang</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">🎯</span>
+                </div>
+                <span className="font-medium text-gray-700">Gegarandeerd Laagste Prijs</span>
               </div>
             </div>
 
             {/* Main CTA */}
             <div className="space-y-4 mb-8">
+              <div className="bg-blue-600 text-white px-6 py-4 rounded-xl inline-block mb-4">
+                <div className="text-sm font-semibold">🔥 Beperkte Toegang - Alleen Vandaag</div>
+                <div className="text-lg">Krijg toegang tot de verborgen tarieven database</div>
+              </div>
+              <br />
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-blue-700 transition-colors shadow-lg"
               >
-                📞 Bel ons nu: {phoneNumber}
+                🔒 Ontgrendel Geheime Tarieven: {phoneNumber}
               </a>
               
               <p className="text-sm text-gray-600">
-                contractvergelijkers.nl
+                contractvergelijkers.nl - Markt Insider Toegang
               </p>
             </div>
 
