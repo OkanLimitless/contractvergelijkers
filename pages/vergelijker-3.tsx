@@ -53,9 +53,9 @@ export default function Vergelijker3() {
   return (
     <>
       <Head>
-        <title>Energiecontract Experts | Professioneel Advies | Bespaar €700 | Contractvergelijkers</title>
-        <meta name="description" content="Ervaren energieadviseurs met 15+ jaar expertise. Onafhankelijk advies voor je energiecontract. Gemiddeld €700 besparing. Vertrouwd door 50.000+ klanten." />
-        <meta name="keywords" content="energieadviseur, energiecontract advies, professioneel energieadvies, betrouwbare energievergelijking, energie experts" />
+        <title>Smart Energieoplossingen | Bespaar €700+ | Persoonlijke Energieadviseur | Contractvergelijkers</title>
+        <meta name="description" content="Persoonlijke energieadviseur met slimme besparingsoplossingen. 15+ jaar expertise, direct besparen tot €700+. Vertrouwd door 50.000+ klanten." />
+        <meta name="keywords" content="energieadviseur, smart energie besparing, persoonlijk energieadvies, betrouwbare energievergelijking, energie experts" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
@@ -95,8 +95,8 @@ export default function Vergelijker3() {
                 <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-14 md:h-16 w-auto" />
               </Link>
               <div className="flex items-center space-x-4">
-                <span className="text-gray-600 text-sm">🎓 Energiespecialisten:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                <span className="text-gray-600 text-sm">💡 Smart Energieoplossingen:</span>
+                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-purple-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-purple-700 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -108,18 +108,18 @@ export default function Vergelijker3() {
         <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-6">
-              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
-                🔥 ENERGIESPECIALISTEN - BESPAAR €700
+              <span className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
+                💡 SMART BESPAREN - DIRECT €700+ VOORDEEL
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Op Zoek Naar Je{' '}
-                <span className="text-blue-600">Energieleverancier?</span>
+                Zoek Je de{' '}
+                <span className="text-purple-600">Slimste Energiedeal?</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Professioneel Advies & Besparing!</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Wij Regelen Het Voor Je!</span>
               </h1>
               <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                <strong>In plaats van zelf contact op te nemen</strong> - laat onze ervaren energiespecialisten je helpen! 
-                Jarenlange expertise, onafhankelijk advies en gemiddeld €700 besparing per jaar.
+                <strong>Geen gedoe met zoeken en vergelijken</strong> - onze energiespecialisten doen het werk voor je! 
+                Slimme oplossingen op maat met gemiddeld €700+ besparing per jaar.
               </p>
             </div>
 
@@ -128,17 +128,17 @@ export default function Vergelijker3() {
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="block w-full bg-blue-600 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-blue-700 transition-colors shadow-2xl text-center"
+                className="block w-full bg-purple-600 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-purple-700 transition-colors shadow-2xl text-center"
               >
-                🎓 Professioneel Advies - Bespaar €700!
+                💡 Smart Besparen - Direct €700+ Voordeel!
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal mt-2">✓ Ervaren Specialisten ✓ Gratis Advies ✓ Vertrouwd door 50.000+ klanten</div>
+                <div className="text-sm font-normal mt-2">✓ Persoonlijke Hulp ✓ Slimme Oplossingen ✓ Vertrouwd door 50.000+ klanten</div>
               </a>
               
               {/* Expert info instead of second button */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                <p className="text-sm text-blue-700 font-medium">
-                  🎓 Meer weten over onze expertise? Bekijk de informatie hieronder
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 text-center">
+                <p className="text-sm text-purple-700 font-medium">
+                  💡 Nieuwsgierig naar onze slimme aanpak? Bekijk de informatie hieronder
                 </p>
               </div>
             </div>
@@ -146,31 +146,31 @@ export default function Vergelijker3() {
             {/* Trust Indicators */}
             <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                15+ Jaar Ervaring
+                <span className="text-purple-500 mr-2">✓</span>
+                15+ Jaar Expertise
               </div>
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
+                <span className="text-purple-500 mr-2">✓</span>
                 100% Gratis
               </div>
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                Persoonlijk Advies
+                <span className="text-purple-500 mr-2">✓</span>
+                Persoonlijke Aanpak
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-              <p className="text-sm text-blue-800">
-                🎓 <strong>Expertise die werkt:</strong> Onze energiespecialisten hebben 15+ jaar ervaring 
-                en hebben al 50.000+ klanten geholpen met gemiddeld €700 besparing per jaar.
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 max-w-2xl mx-auto">
+              <p className="text-sm text-purple-800">
+                💡 <strong>Slimme resultaten:</strong> Onze energiespecialisten gebruiken 15+ jaar marktkennis 
+                om 50.000+ klanten te helpen met slimme oplossingen en gemiddeld €700+ besparing per jaar.
               </p>
             </div>
             
             {/* Mobile urgency banner */}
-            <div className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg shadow-lg md:hidden">
+            <div className="mt-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-lg shadow-lg md:hidden">
               <div className="text-center">
-                <p className="text-sm font-bold">🎓 Professioneel energieadvies!</p>
-                <p className="text-xs mt-1">15+ jaar expertise. Bel nu voor persoonlijk advies!</p>
+                <p className="text-sm font-bold">💡 Smart energieoplossingen!</p>
+                <p className="text-xs mt-1">Persoonlijke aanpak. Bel nu voor jouw oplossing!</p>
               </div>
             </div>
           </div>
@@ -182,14 +182,14 @@ export default function Vergelijker3() {
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  🎓 Professionele Energieanalyse
+                  💡 Smart Energieanalyse
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Onze gecertificeerde energieadviseurs analyseren je situatie voor het beste advies
+                  Onze energiespecialisten maken een slimme analyse van jouw situatie voor de beste oplossing
                 </p>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 inline-block">
-                  <span className="text-sm text-blue-800 font-semibold">
-                    🏆 15+ jaar expertise - €700 gemiddelde besparing
+                <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 inline-block">
+                  <span className="text-sm text-purple-800 font-semibold">
+                    🏆 15+ jaar expertise - €700+ gemiddelde besparing
                   </span>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function Vergelijker3() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                    className="bg-purple-600 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(formStep / 3) * 100}%` }}
                   ></div>
                 </div>
@@ -223,7 +223,7 @@ export default function Vergelijker3() {
                         <input
                           type="text"
                           placeholder="1234AB"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                           value={formData.postcode}
                           onChange={(e) => handleInputChange('postcode', e.target.value)}
                         />
@@ -235,7 +235,7 @@ export default function Vergelijker3() {
                         <input
                           type="text"
                           placeholder="12"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                           value={formData.huisnummer}
                           onChange={(e) => handleInputChange('huisnummer', e.target.value)}
                         />
@@ -247,7 +247,7 @@ export default function Vergelijker3() {
                         Type woning*
                       </label>
                       <select 
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                         value={formData.woonsituatie}
                         onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
                       >
@@ -261,9 +261,9 @@ export default function Vergelijker3() {
                     <button 
                       onClick={nextStep}
                       disabled={!formData.postcode || !formData.huisnummer || !formData.woonsituatie}
-                      className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                      className="w-full bg-purple-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-purple-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                     >
-                      Start Professionele Analyse ➤
+                      Start Smart Analyse ➤
                     </button>
                   </div>
                 )}
@@ -278,7 +278,7 @@ export default function Vergelijker3() {
                         Bij welke leverancier heeft u momenteel een contract?*
                       </label>
                       <select 
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                         value={formData.currentLeverancier}
                         onChange={(e) => handleInputChange('currentLeverancier', e.target.value)}
                       >
@@ -293,10 +293,10 @@ export default function Vergelijker3() {
                       </select>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                      <p className="text-sm text-blue-800">
-                        🎓 <strong>Expert tip:</strong> Onze specialisten kennen alle leverancierstarieven en contractvoorwaarden. 
-                        Wij vinden altijd een betere deal voor u.
+                    <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                      <p className="text-sm text-purple-800">
+                        💡 <strong>Smart tip:</strong> Onze specialisten kennen alle leverancierstarieven en vinden 
+                        automatisch de slimste deal voor jouw situatie.
                       </p>
                     </div>
 
@@ -310,7 +310,7 @@ export default function Vergelijker3() {
                       <button 
                         onClick={nextStep}
                         disabled={!formData.currentLeverancier}
-                        className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                        className="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-purple-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
                       >
                         Volgende ➤
                       </button>
@@ -329,7 +329,7 @@ export default function Vergelijker3() {
                           Jaarlijks stroomverbruik
                         </label>
                         <select 
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                           value={formData.verbruikStroom}
                           onChange={(e) => handleInputChange('verbruikStroom', e.target.value)}
                         >
@@ -346,7 +346,7 @@ export default function Vergelijker3() {
                           Jaarlijks gasverbruik
                         </label>
                         <select 
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent text-lg"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent text-lg"
                           value={formData.verbruikGas}
                           onChange={(e) => handleInputChange('verbruikGas', e.target.value)}
                         >
@@ -361,17 +361,17 @@ export default function Vergelijker3() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-lg text-center border border-blue-200">
-                      <h4 className="text-lg font-bold text-blue-800 mb-2">🎯 Uw Analyse is Gereed</h4>
-                      <p className="text-blue-700 mb-4">
-                        Onze gecertificeerde energiespecialist heeft nu alle informatie om u persoonlijk te adviseren 
-                        over de beste energiecontracten voor uw situatie.
+                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg text-center border border-purple-200">
+                      <h4 className="text-lg font-bold text-purple-800 mb-2">🎯 Jouw Smart Analyse is Klaar</h4>
+                      <p className="text-purple-700 mb-4">
+                        Onze energiespecialist heeft nu alle informatie om jou de slimste energieoplossing 
+                        op maat te bieden voor maximale besparing.
                       </p>
                       <div className="bg-green-100 p-3 rounded-lg mb-4">
-                        <div className="text-lg font-bold text-green-700">Verwachte professionele besparing: €700/jaar</div>
+                        <div className="text-lg font-bold text-green-700">Smart besparing verwachting: €700+/jaar</div>
                       </div>
-                      <p className="text-xs text-blue-600">
-                        *Gebaseerd op 15+ jaar expertise en marktanalyse
+                      <p className="text-xs text-purple-600">
+                        *Gebaseerd op 15+ jaar expertise en slimme marktanalyse
                       </p>
                     </div>
 
@@ -385,9 +385,9 @@ export default function Vergelijker3() {
                       <a 
                         href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                        className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-blue-700 transition-colors text-center"
+                        className="flex-1 bg-purple-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-purple-700 transition-colors text-center"
                       >
-                        🎓 EXPERT ADVIES: {phoneNumber}
+                        💡 SMART OPLOSSING: {phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -401,17 +401,17 @@ export default function Vergelijker3() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Waarom Vertrouwen 50.000+ Klanten Op Onze Experts?</h2>
-              <p className="text-xl text-gray-600">Ervaring, expertise en resultaten die voor zich spreken</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Waarom Kiezen 50.000+ Klanten Voor Onze Slimme Aanpak?</h2>
+              <p className="text-xl text-gray-600">Expertise, slimme oplossingen en resultaten die voor zich spreken</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <div className="text-4xl mb-4">🎓</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Gecertificeerde Specialisten</h3>
+              <div className="text-center p-6 bg-purple-50 rounded-xl border border-purple-200">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Slimme Oplossingen</h3>
                 <p className="text-gray-600">
-                  Al onze energieadviseurs zijn officieel gecertificeerd en volgen continue bijscholing 
-                  om op de hoogte te blijven van alle marktveranderingen.
+                  Onze energiespecialisten gebruiken slimme tools en 15+ jaar ervaring om automatisch 
+                  de beste deal voor jouw specifieke situatie te vinden.
                 </p>
               </div>
 
@@ -419,17 +419,17 @@ export default function Vergelijker3() {
                 <div className="text-4xl mb-4">📊</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">15+ Jaar Marktkennis</h3>
                 <p className="text-gray-600">
-                  Onze experts kennen de energiemarkt door en door. Wij hebben toegang tot alle 
-                  leveranciers en kennen alle ins en outs van contracten.
+                  Onze experts kennen alle trucs van de energiemarkt. Wij hebben toegang tot alle 
+                  leveranciers en weten precies waar de beste deals te vinden zijn.
                 </p>
               </div>
 
               <div className="text-center p-6 bg-yellow-50 rounded-xl border border-yellow-200">
                 <div className="text-4xl mb-4">🏆</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Bewezen Resultaten</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Bewezen Besparingen</h3>
                 <p className="text-gray-600">
-                  Gemiddeld €700 besparing per klant en een tevredenheidsscore van 4.9/5. 
-                  50.000+ tevreden klanten kunnen niet liegen.
+                  Gemiddeld €700+ besparing per klant en een tevredenheidsscore van 4.9/5. 
+                  50.000+ tevreden klanten spreken voor zich.
                 </p>
               </div>
             </div>
@@ -439,11 +439,11 @@ export default function Vergelijker3() {
                 <h4 className="text-lg font-bold text-gray-900 mb-4">Wat Zeggen Onze Klanten?</h4>
                 <div className="space-y-4 text-sm text-gray-600">
                   <p className="italic">
-                    "Zeer professioneel en deskundig advies. Marco heeft ons binnen 10 minuten €680 per jaar 
-                    bespaard. Echte expertise!" - Familie Van Der Berg, Amsterdam
+                    "Wow, wat een slimme aanpak! Marco heeft ons binnen 10 minuten €680 per jaar 
+                    bespaard. Echt makkelijk en snel!" - Familie Van Der Berg, Amsterdam
                   </p>
                   <p className="italic">
-                    "Eindelijk iemand die echt verstand heeft van energiecontracten. Complete service van A tot Z." 
+                    "Eindelijk iemand die het werk voor je doet. Geen gedoe, gewoon de beste deal!" 
                     - Jan Pietersen, Utrecht
                   </p>
                 </div>
@@ -459,7 +459,7 @@ export default function Vergelijker3() {
               <div>
                 <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
                 <p className="text-gray-300 mb-4">
-                  Nederland's meest vertrouwde energieadviesbureau. 15+ jaar expertise, 50.000+ tevreden klanten.
+                  Nederland's slimste energieoplossingen. 15+ jaar expertise, 50.000+ tevreden klanten.
                 </p>
                 <div className="flex space-x-4">
                   <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -468,22 +468,22 @@ export default function Vergelijker3() {
               </div>
 
               <div>
-                <h4 className="text-lg font-bold mb-4">Onze Expertise</h4>
+                <h4 className="text-lg font-bold mb-4">Onze Slimme Aanpak</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li>✓ Gecertificeerde energieadviseurs</li>
+                  <li>✓ Persoonlijke energiespecialisten</li>
                   <li>✓ 15+ jaar marktervaring</li>
                   <li>✓ Toegang tot alle leveranciers</li>
-                  <li>✓ 100% onafhankelijk advies</li>
-                  <li>✓ Complete service van A tot Z</li>
+                  <li>✓ 100% onafhankelijke oplossingen</li>
+                  <li>✓ Alles geregeld van A tot Z</li>
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-lg font-bold mb-4">Spreek Een Expert</h4>
+                <h4 className="text-lg font-bold mb-4">Direct Smart Besparen</h4>
                 <div className="space-y-4">
                   <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="block">
-                    <div className="bg-blue-600 text-white p-4 rounded-lg text-center hover:bg-blue-700 transition-colors">
-                      <div className="text-sm">Professioneel Advies</div>
+                    <div className="bg-purple-600 text-white p-4 rounded-lg text-center hover:bg-purple-700 transition-colors">
+                      <div className="text-sm">Smart Energieoplossingen</div>
                       <div className="text-xl font-bold">{phoneNumber}</div>
                     </div>
                   </a>
@@ -507,12 +507,12 @@ export default function Vergelijker3() {
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 text-center"
+              className="block md:inline-flex bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 text-center"
             >
-              <span className="text-2xl">🎓</span>
+              <span className="text-2xl">💡</span>
               <div>
-                <div className="text-sm md:hidden">Expert Advies</div>
-                <div className="hidden md:block text-sm">Energiespecialist</div>
+                <div className="text-sm md:hidden">Smart Oplossing</div>
+                <div className="hidden md:block text-sm">Smart Energieoplossing</div>
                 <div className="text-lg font-bold">{phoneNumber}</div>
               </div>
             </a>
