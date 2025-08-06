@@ -113,102 +113,76 @@ export default function Vergelijker3() {
         <section className="bg-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
-              <div className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
-                👑 Premium Energieconcierge Service
-              </div>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                <span className="text-purple-600">Persoonlijke Energie Expert</span>
+                <span className="text-orange-600">Energie Hulpcentrum</span>
                 <br />
-                <span className="text-2xl md:text-3xl text-gray-700">Volledig Voor Jou Geregeld</span>
+                <span className="text-2xl md:text-3xl text-gray-700">Problemen & Vragen</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-                Jouw <strong>toegewezen energiespecialist</strong> regelt alles van A tot Z en 
-                <span className="text-purple-600 font-semibold"> garandeert besparingen</span> vanaf de eerste maand
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Problemen met uw energierekening? Vragen over uw contract? Of wilt u weten 
+                of u te veel betaalt? Wij helpen u direct verder
               </p>
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6 max-w-3xl mx-auto">
-                <div className="text-center mb-4">
-                  <div className="text-purple-700 font-semibold mb-2">✨ Premium Service Inclusief:</div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                  <div className="text-center">
-                    <div className="text-purple-600 font-bold">👤</div>
-                    <div className="text-purple-700">Persoonlijke Expert</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-purple-600 font-bold">📞</div>
-                    <div className="text-purple-700">24/7 Directe Lijn</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-purple-600 font-bold">🏆</div>
-                    <div className="text-purple-700">Geld-terug Garantie</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-purple-600 font-bold">✨</div>
-                    <div className="text-purple-700">VIP Behandeling</div>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-12 text-sm">
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-purple-600">👑</span>
+            {/* Common Problems */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="bg-orange-50 p-6 rounded-lg text-center">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white text-xl">📄</span>
                 </div>
-                <span className="font-medium text-gray-700">Premium Service</span>
+                <h3 className="font-bold text-gray-900 mb-2">Hoge Rekening</h3>
+                <p className="text-sm text-gray-600">Onverwacht hoge energierekening ontvangen?</p>
               </div>
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-purple-600">🎯</span>
+              
+              <div className="bg-orange-50 p-6 rounded-lg text-center">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white text-xl">❓</span>
                 </div>
-                <span className="font-medium text-gray-700">Persoonlijke Expert</span>
+                <h3 className="font-bold text-gray-900 mb-2">Contract Onduidelijk</h3>
+                <p className="text-sm text-gray-600">Vragen over uw energiecontract?</p>
               </div>
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-purple-600">💎</span>
+              
+              <div className="bg-orange-50 p-6 rounded-lg text-center">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white text-xl">💰</span>
                 </div>
-                <span className="font-medium text-gray-700">VIP Behandeling</span>
+                <h3 className="font-bold text-gray-900 mb-2">Te Duur</h3>
+                <p className="text-sm text-gray-600">Vermoedt u dat u te veel betaalt?</p>
               </div>
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-purple-600">🏆</span>
+              
+              <div className="bg-orange-50 p-6 rounded-lg text-center">
+                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white text-xl">🔄</span>
                 </div>
-                <span className="font-medium text-gray-700">Geld-terug Garantie</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-purple-600">📞</span>
-                </div>
-                <span className="font-medium text-gray-700">24/7 Directe Lijn</span>
+                <h3 className="font-bold text-gray-900 mb-2">Wil Overstappen</h3>
+                <p className="text-sm text-gray-600">Hulp nodig bij overstappen?</p>
               </div>
             </div>
 
             {/* Main CTA */}
-            <div className="space-y-4 mb-8">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-4 rounded-xl inline-block mb-4">
-                <div className="text-sm font-semibold">👑 Exclusieve Premium Service</div>
-                <div className="text-lg">Persoonlijke energiespecialist toegewezen</div>
-              </div>
-              <br />
+            <div className="bg-orange-600 text-white p-8 rounded-xl mb-8">
+              <h2 className="text-2xl font-bold mb-4">Direct Hulp Nodig?</h2>
+              <p className="text-orange-100 mb-6">
+                Bel ons hulpcentrum voor directe ondersteuning. Onze energiespecialisten 
+                helpen u met al uw vragen en problemen.
+              </p>
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg"
+                className="inline-block bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
               >
-                👑 Claim Premium Service: {phoneNumber}
+                Bel Hulpcentrum: {phoneNumber}
               </a>
               
-              <p className="text-sm text-gray-600">
-                contractvergelijkers.nl - Premium Energieconcierge
+              <p className="text-sm text-orange-200 mt-4">
+                Direct beschikbaar voor al uw energievragen
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">✅ Start je Energievergelijking</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Hulp Aanvragen</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Vul onderstaand formulier in en ontdek binnen 2 minuten welke leverancier het 
-                beste bij jou past!
+                Vertel ons over uw situatie zodat wij u de beste hulp kunnen bieden
               </p>
               
               {/* Smart Analysis Form */}
@@ -252,15 +226,15 @@ export default function Vergelijker3() {
                 </div>
                 
                 {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
-                  <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
-                    <p className="text-sm text-purple-700 font-medium text-center">
-                      🤖 AI klaar voor analyse! Bel voor smart oplossing
+                  <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+                    <p className="text-sm text-orange-700 font-medium text-center">
+                      ✓ Informatie ontvangen! Bel voor directe hulp
                     </p>
                   </div>
                 ) : (
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <p className="text-xs text-gray-600 text-center">
-                      Input voor AI-gestuurde energieoptimalisatie
+                      Deel uw situatie voor gerichte ondersteuning
                     </p>
                   </div>
                 )}
@@ -268,13 +242,13 @@ export default function Vergelijker3() {
                 <a
                   href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-bold hover:from-purple-700 hover:to-pink-700 transition-all text-center"
+                  className="block w-full bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-700 transition-colors text-center"
                 >
-                  🤖 Start Smart Analyse: {phoneNumber}
+                  Bel Hulpcentrum: {phoneNumber}
                 </a>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  AI-gestuurde energieoptimalisatie beschikbaar
+                  Directe ondersteuning voor al uw energievragen
                 </p>
               </div>
             </div>
