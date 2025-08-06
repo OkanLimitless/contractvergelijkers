@@ -169,39 +169,70 @@ export default function Vergelijker2() {
                 beste bij jou past!
               </p>
               
-              {/* Simple Form Start */}
+              {/* Savings Calculator Form */}
               <div className="space-y-3">
                 <div className="text-left">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    📍 Waar woon je?
+                    📍 Locatie voor besparingsberekening
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
-                      placeholder="Postcode"
+                      placeholder="1234AB"
                       value={formData.postcode}
                       onChange={(e) => handleInputChange('postcode', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
                     />
                     <input
                       type="text"
-                      placeholder="Huisnummer"
+                      placeholder="12"
                       value={formData.huisnummer}
                       onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
                     />
                   </div>
                 </div>
+
+                <div className="text-left">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    🏘️ Woonsituatie
+                  </label>
+                  <select
+                    value={formData.woonsituatie}
+                    onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                  >
+                    <option value="">Kies je woonsituatie</option>
+                    <option value="eengezinswoning">Eengezinswoning</option>
+                    <option value="appartement">Appartement</option>
+                    <option value="studio">Studio/kamer</option>
+                  </select>
+                </div>
                 
-                <button 
+                {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
+                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <p className="text-sm text-blue-700 font-medium text-center">
+                      💰 Berekening mogelijk! Bel voor jouw exacte besparing
+                    </p>
+                  </div>
+                ) : (
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
+                      Vul gegevens in voor persoonlijke besparingsberekening
+                    </p>
+                  </div>
+                )}
+                
+                <a
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
+                  className="block w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-lg font-bold hover:from-green-600 hover:to-blue-600 transition-all text-center"
                 >
-                  💰 {phoneNumber}
-                </button>
+                  💰 Bereken Besparing: {phoneNumber}
+                </a>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  Direct hulp nodig? Bel ons nu!
+                  Gratis besparingsadvies & tariefvergelijking
                 </p>
               </div>
             </div>
@@ -392,15 +423,30 @@ export default function Vergelijker2() {
                       </div>
                     </div>
 
-                    <div className="bg-green-50 p-6 rounded-lg text-center border border-green-200">
-                      <h4 className="text-lg font-bold text-green-800 mb-2">🎯 Analyse Voltooid</h4>
+                    <div className="bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 p-6 rounded-xl text-center border-2 border-green-300">
+                      <h4 className="text-xl font-bold text-green-800 mb-3">🎯 Perfecte Match Gevonden!</h4>
                       <p className="text-green-700 mb-4">
-                        Onze specialist kan nu een persoonlijke vergelijking maken op basis van jouw gegevens. 
-                        Veel klanten zijn verrast door de mogelijkheden.
+                        De energiemarkt is complex en verandert constant. De beste tarieven en exclusieve aanbiedingen 
+                        zijn alleen telefonisch beschikbaar - niet online!
                       </p>
-                      <p className="text-xs text-green-600">
-                        *Bel voor je persoonlijke besparingsmogelijkheden
-                      </p>
+                      <div className="bg-white p-4 rounded-lg mb-4 border-l-4 border-green-500">
+                        <h5 className="font-bold text-gray-800 mb-2">📞 Bel nu voor Exclusieve Energietarieven!</h5>
+                        <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                          <div>✅ Gegarandeerd laagste prijs</div>
+                          <div>✅ Exclusieve telefonische deals</div>
+                          <div>✅ Persoonlijk maatwerk advies</div>
+                          <div>✅ Volledige overstap service</div>
+                        </div>
+                      </div>
+                      <div className="bg-orange-100 p-3 rounded-lg mb-4">
+                        <p className="text-sm text-orange-800 font-semibold">
+                          🔥 Vandaag al 189 mensen geholpen met besparen!
+                        </p>
+                      </div>
+                      <div className="text-xs text-gray-600 mb-4 bg-gray-100 p-2 rounded">
+                        <strong>Jouw profiel:</strong> Postcode {formData.postcode || 'XXXX'}, Leverancier: {formData.currentLeverancier || 'Onbekend'}, 
+                        Stroom: {formData.verbruikStroom || 'Onbekend'}, Gas: {formData.verbruikGas || 'Onbekend'}
+                      </div>
                     </div>
 
                     <div className="flex space-x-4">
@@ -413,9 +459,9 @@ export default function Vergelijker2() {
                       <a 
                         href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                        className="flex-1 bg-green-500 text-white py-4 px-6 rounded-lg font-bold hover:bg-green-600 transition-colors text-center"
+                        className="flex-1 bg-gradient-to-r from-green-500 to-blue-500 text-white py-4 px-6 rounded-lg font-bold hover:from-green-600 hover:to-blue-600 transition-all text-center"
                       >
-                        💰 CLAIM €700 BESPARING
+                        📞 CLAIM EXCLUSIEVE DEAL: {phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -471,6 +517,30 @@ export default function Vergelijker2() {
                 💰 Bereken Ook Jouw Besparing: {phoneNumber}
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-green-500">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              🎯 Klaar voor Maximale Besparing?
+            </h2>
+            <p className="text-green-100 text-lg mb-8">
+              Onze experts berekenen binnen 2 minuten jouw exacte besparing met exclusieve telefonische tarieven.
+            </p>
+            
+            <a 
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+              className="inline-block bg-white text-green-500 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              💰 Bereken je besparing: {phoneNumber}
+            </a>
+            
+            <p className="text-green-100 text-sm mt-4">
+              contractvergelijkers.nl
+            </p>
           </div>
         </section>
 

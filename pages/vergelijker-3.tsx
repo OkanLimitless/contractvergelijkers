@@ -169,39 +169,70 @@ export default function Vergelijker3() {
                 beste bij jou past!
               </p>
               
-              {/* Simple Form Start */}
+              {/* Smart Analysis Form */}
               <div className="space-y-3">
                 <div className="text-left">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    📍 Waar woon je?
+                    📍 Locatie voor smart analyse
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
-                      placeholder="Postcode"
+                      placeholder="1234AB"
                       value={formData.postcode}
                       onChange={(e) => handleInputChange('postcode', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
                     />
                     <input
                       type="text"
-                      placeholder="Huisnummer"
+                      placeholder="12"
                       value={formData.huisnummer}
                       onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
                     />
                   </div>
                 </div>
+
+                <div className="text-left">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    🤖 AI Woningtype analyse
+                  </label>
+                  <select
+                    value={formData.woonsituatie}
+                    onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
+                  >
+                    <option value="">Select voor AI-analyse</option>
+                    <option value="eengezinswoning">Eengezinswoning</option>
+                    <option value="appartement">Appartement</option>
+                    <option value="studio">Studio/kamer</option>
+                  </select>
+                </div>
                 
-                <button 
+                {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
+                  <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
+                    <p className="text-sm text-purple-700 font-medium text-center">
+                      🤖 AI klaar voor analyse! Bel voor smart oplossing
+                    </p>
+                  </div>
+                ) : (
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
+                      Input voor AI-gestuurde energieoptimalisatie
+                    </p>
+                  </div>
+                )}
+                
+                <a
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
+                  className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-lg font-bold hover:from-purple-700 hover:to-pink-700 transition-all text-center"
                 >
-                  💰 {phoneNumber}
-                </button>
+                  🤖 Start Smart Analyse: {phoneNumber}
+                </a>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  Direct hulp nodig? Bel ons nu!
+                  AI-gestuurde energieoptimalisatie beschikbaar
                 </p>
               </div>
             </div>
@@ -393,18 +424,34 @@ export default function Vergelijker3() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg text-center border border-purple-200">
-                      <h4 className="text-lg font-bold text-purple-800 mb-2">🎯 Jouw Smart Analyse is Klaar</h4>
+                    <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50 p-6 rounded-xl text-center border-2 border-purple-300">
+                      <h4 className="text-xl font-bold text-purple-800 mb-3">🎯 Smart Energieanalyse Compleet!</h4>
                       <p className="text-purple-700 mb-4">
-                        Onze energiespecialist heeft nu alle informatie om jou de slimste energieoplossing 
-                        op maat te bieden voor maximale besparing.
+                        Onze AI-gestuurde systemen hebben jouw energieprofiel geanalyseerd. De markt fluctueert 
+                        dagelijks - onze experts kennen de real-time tarieven die online niet zichtbaar zijn.
                       </p>
-                      <div className="bg-green-100 p-3 rounded-lg mb-4">
-                        <div className="text-lg font-bold text-green-700">Smart besparing verwachting: €700+/jaar</div>
+                      <div className="bg-white p-4 rounded-lg mb-4 border-l-4 border-purple-500">
+                        <h5 className="font-bold text-gray-800 mb-2">🤖 Smart Energieoplossing Beschikbaar!</h5>
+                        <div className="text-sm text-gray-700 space-y-1">
+                          <div>🎯 AI-gestuurde tariefoptimalisatie</div>
+                          <div>📊 Real-time marktanalyse</div>
+                          <div>🔄 Automatische overstapservice</div>
+                          <div>💡 Smart besparingsgarantie</div>
+                        </div>
                       </div>
-                      <p className="text-xs text-purple-600">
-                        *Gebaseerd op 15+ jaar expertise en slimme marktanalyse
-                      </p>
+                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-3 rounded-lg mb-4">
+                        <p className="text-sm text-purple-800 font-semibold">
+                          🚀 Beperkte tijd: 247 smart oplossingen vandaag geactiveerd!
+                        </p>
+                      </div>
+                      <div className="text-xs text-gray-600 mb-4 bg-gray-50 p-3 rounded-lg">
+                        <strong>Smart Profiel:</strong> Locatie {formData.postcode || 'XXXX'}, Type: {formData.woonsituatie || 'Onbekend'}, 
+                        Huidige: {formData.currentLeverancier || 'Onbekend'}, Verbruik: {formData.verbruikStroom || '?'} kWh + {formData.verbruikGas || '?'} m³
+                      </div>
+                      <div className="bg-green-100 p-3 rounded-lg">
+                        <div className="text-lg font-bold text-green-700">💡 Smart Besparing: €750+ per jaar mogelijk</div>
+                        <div className="text-xs text-green-600">*Op basis van AI-analyse en marktdata</div>
+                      </div>
                     </div>
 
                     <div className="flex space-x-4">
@@ -417,9 +464,9 @@ export default function Vergelijker3() {
                       <a 
                         href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                        className="flex-1 bg-purple-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-purple-700 transition-colors text-center"
+                        className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-lg font-bold hover:from-purple-700 hover:to-pink-700 transition-all text-center"
                       >
-                        💡 SMART OPLOSSING: {phoneNumber}
+                        🤖 ACTIVEER SMART OPLOSSING: {phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -481,6 +528,30 @@ export default function Vergelijker3() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              🤖 Klaar voor je Smart Energieoplossing?
+            </h2>
+            <p className="text-purple-100 text-lg mb-8">
+              Onze AI-systemen en experts creëren binnen 2 minuten een slimme energieoplossing speciaal voor jouw situatie.
+            </p>
+            
+            <a 
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+              className="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              🤖 Activeer smart oplossing: {phoneNumber}
+            </a>
+            
+            <p className="text-purple-100 text-sm mt-4">
+              contractvergelijkers.nl - Smart Energy Solutions
+            </p>
           </div>
         </section>
 

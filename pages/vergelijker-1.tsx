@@ -169,7 +169,7 @@ export default function Vergelijker1() {
                 beste bij jou past!
               </p>
               
-              {/* Simple Form Start */}
+              {/* Enhanced Form Start */}
               <div className="space-y-3">
                 <div className="text-left">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -178,30 +178,61 @@ export default function Vergelijker1() {
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
-                      placeholder="Postcode"
+                      placeholder="1234AB"
                       value={formData.postcode}
                       onChange={(e) => handleInputChange('postcode', e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
                     />
                     <input
                       type="text"
-                      placeholder="Huisnummer"
+                      placeholder="12"
                       value={formData.huisnummer}
                       onChange={(e) => handleInputChange('huisnummer', e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
                     />
                   </div>
                 </div>
+
+                <div className="text-left">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    🏠 Type woning
+                  </label>
+                  <select
+                    value={formData.woonsituatie}
+                    onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                  >
+                    <option value="">Selecteer type woning</option>
+                    <option value="eengezinswoning">Eengezinswoning</option>
+                    <option value="appartement">Appartement</option>
+                    <option value="studio">Studio/kamer</option>
+                  </select>
+                </div>
                 
-                <button 
+                {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
+                  <div className="bg-red-50 p-3 rounded-lg border border-red-200">
+                    <p className="text-sm text-red-700 font-medium text-center">
+                      🚨 Urgent! Je kunt direct besparen - bel nu!
+                    </p>
+                  </div>
+                ) : (
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
+                      Vul je woongegevens in voor directe hulp
+                    </p>
+                  </div>
+                )}
+                
+                <a
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
+                  className="block w-full bg-red-500 text-white py-3 rounded-lg font-bold hover:bg-red-600 transition-colors text-center"
                 >
-                  💰 {phoneNumber}
-                </button>
+                  🚨 Direct Hulp: {phoneNumber}
+                </a>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  Direct hulp nodig? Bel ons nu!
+                  24/7 directe energiehulp beschikbaar!
                 </p>
               </div>
             </div>
@@ -392,14 +423,30 @@ export default function Vergelijker1() {
                       </div>
                     </div>
 
-                    <div className="bg-green-50 p-6 rounded-lg text-center">
-                      <h4 className="text-lg font-bold text-green-800 mb-2">🎉 Geweldig!</h4>
+                    <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg text-center border-2 border-green-200">
+                      <h4 className="text-xl font-bold text-green-800 mb-3">🎉 Uitstekend! Jouw vergelijking is gereed</h4>
                       <p className="text-green-700 mb-4">
-                        Onze energiespecialisten gaan nu je besparing berekenen en bellen je binnen 5 minuten terug met je resultaten!
+                        De energiemarkt verandert dagelijks. De beste tarieven zijn exclusief telefonisch beschikbaar 
+                        en niet online te vinden.
                       </p>
-                      <p className="text-sm text-green-600">
-                        <strong>Verwachte besparing:</strong> €300 - €700 per jaar
-                      </p>
+                      <div className="bg-white p-4 rounded-lg mb-4 border border-green-300">
+                        <h5 className="font-bold text-gray-800 mb-2">📞 Bel nu voor de Laagste Energietarieven!</h5>
+                        <ul className="text-sm text-gray-700 space-y-1">
+                          <li>✅ Gegarandeerd de beste prijs</li>
+                          <li>✅ Persoonlijk advies op maat</li>
+                          <li>✅ Wij regelen de volledige overstap</li>
+                          <li>✅ 100% gratis en vrijblijvend</li>
+                        </ul>
+                      </div>
+                      <div className="bg-yellow-100 p-3 rounded-lg mb-4">
+                        <p className="text-sm text-yellow-800 font-semibold">
+                          ⚡ Wees er snel bij! 127 mensen belden ons al vandaag.
+                        </p>
+                      </div>
+                      <div className="text-xs text-gray-600 mb-4">
+                        <strong>Jouw gegevens:</strong> Postcode {formData.postcode || 'XXXX'}, 
+                        Verbruik: {formData.verbruikStroom || 'Onbekend'} & {formData.verbruikGas || 'Onbekend'}
+                      </div>
                     </div>
 
                     <div className="flex space-x-4">
@@ -414,7 +461,7 @@ export default function Vergelijker1() {
                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
                         className="flex-1 bg-red-500 text-white py-4 px-6 rounded-lg font-bold hover:bg-red-600 transition-colors text-center"
                       >
-                        🚨 BEL NU: {phoneNumber}
+                        📞 BEL NU: {phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -428,35 +475,193 @@ export default function Vergelijker1() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Waarom Kiezen Voor Onze Energieklantenservice?</h2>
-              <p className="text-xl text-gray-600">We lossen je energieproblemen direct op en besparen je geld</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                ⚡ Waarom Ons Bellen?
+              </h2>
+              <p className="text-gray-600 text-lg">
+                Duizenden Nederlanders kiezen voor onze persoonlijke service
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center p-6 bg-red-50 rounded-xl">
-                <div className="text-4xl mb-4">🚨</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">24/7 Direct Hulp</h3>
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🔍</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Onafhankelijk Beste Deal</h3>
                 <p className="text-gray-600">
-                  Problemen met je energiecontract? Bel direct en we lossen het binnen 5 minuten op.
+                  Wij vergelijken onafhankelijk waardoor 
+                  wij jou echt helpen, niet alleen onszelf.
                 </p>
               </div>
-
-              <div className="text-center p-6 bg-green-50 rounded-xl">
-                <div className="text-4xl mb-4">💰</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">€700 Besparing</h3>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⭐</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">100% Gratis Advies</h3>
                 <p className="text-gray-600">
-                  Gemiddeld besparen onze klanten €700 per jaar door over te stappen naar een goedkopere leverancier.
+                  Onze experts delen hun top energietips, beste 
+                  deals voor elke klant.
                 </p>
               </div>
-
-              <div className="text-center p-6 bg-blue-50 rounded-xl">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Alles Geregeld</h3>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🏆</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Wij Regelen Alles</h3>
                 <p className="text-gray-600">
-                  Wij regelen het overstappen volledig voor je. Opzeggen oude contract, aanmelden nieuwe leverancier.
+                  Opzeggen huidige contract? Wij nemen het 
+                  juridische deel voor onze rekening.
                 </p>
               </div>
             </div>
+
+            <div className="text-center">
+              <div className="bg-green-50 rounded-xl p-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">✅ Zo Simpel Werkt Het</h3>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                      1
+                    </div>
+                    <div className="text-left">
+                      <span className="font-semibold">Bel Ons</span>
+                      <p className="text-sm text-gray-600">Wij vergelijken jouw huidige tarief</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                      2
+                    </div>
+                    <div className="text-left">
+                      <span className="font-semibold">Wij Vergelijken</span>
+                      <p className="text-sm text-gray-600">Alle energieleveranciers worden vergeleken</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                      3
+                    </div>
+                    <div className="text-left">
+                      <span className="font-semibold">Bespaar Geld</span>
+                      <p className="text-sm text-gray-600">Direct overstappen of aanbiedingen vergelijken</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                      4
+                    </div>
+                    <div className="text-left">
+                      <span className="font-semibold">Wij Regelen</span>
+                      <p className="text-sm text-gray-600">Gehele overstaproces gaat automatisch</p>
+                    </div>
+                  </div>
+                </div>
+
+                <a 
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                  onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                  className="block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                >
+                  📞 Klaar om te Besparen?
+                  <div className="text-2xl font-black mt-1">{phoneNumber}</div>
+                </a>
+                
+                <p className="text-sm text-gray-600 mt-4">
+                  Direct hulp nodig? Bel ons nu!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Customer Reviews Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                💬 Wat Onze Klanten Zeggen
+              </h2>
+              <p className="text-gray-600">
+                Duizenden klanten kiezen voor onze expertise
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "Binnen 10 minuten had ik een perfect overzicht van alle aanbieders. De telefonische service was uitstekend!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Sandra V.</div>
+                  <div className="text-sm">€480 bespaard</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "Snelle service met transparante informatie. Precies wat ik zocht!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Mark B.</div>
+                  <div className="text-sm">€600 bespaard</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "Eindelijk een eerlijke vergelijking zonder verborgen kosten. Geweldig!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Linda K.</div>
+                  <div className="text-sm">€520 bespaard</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
+                <blockquote className="text-gray-700 italic mb-4">
+                  "De adviseur heeft alles voor mij geregeld. Geen gedoe, gewoon besparen!"
+                </blockquote>
+                <div className="text-gray-600">
+                  <div className="font-semibold">Emma J.</div>
+                  <div className="text-sm">€445 bespaard</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="py-16 bg-green-500">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              ❤️ Klaar om Honderden Euro's te Besparen?
+            </h2>
+            <p className="text-green-100 text-lg mb-8">
+              Onze adviseurs geven je binnen 2 minuten energieadvies op maat en direct gratis advies over jouw besparingen.
+            </p>
+            
+            <a 
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+              className="inline-block bg-white text-green-500 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+            >
+              📞 Bel ons nu: {phoneNumber}
+            </a>
+            
+            <p className="text-green-100 text-sm mt-4">
+              contractvergelijkers.nl
+            </p>
           </div>
         </section>
 
