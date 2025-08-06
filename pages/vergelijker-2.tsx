@@ -113,81 +113,67 @@ export default function Vergelijker2() {
         <section className="bg-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
-              <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">
-                📊 Gebaseerd op 50.000+ Succesvolle Besparingen
-              </div>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                <span className="text-green-600">Nederland's Meest Accurate</span>
+                <span className="text-blue-600">Persoonlijk Energieadvies</span>
                 <br />
-                <span className="text-2xl md:text-3xl text-gray-700">Energiebesparings Calculator</span>
+                <span className="text-2xl md:text-3xl text-gray-700">van ervaren specialisten</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
-                Onze <strong>wetenschappelijke methode</strong> voorspelt je exacte besparing met 
-                <span className="text-green-600 font-semibold"> 97% nauwkeurigheid</span>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Onze energieadviseurs hebben 15+ jaar ervaring en helpen je bij het vinden 
+                van de beste energieleverancier voor jouw specifieke situatie
               </p>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-2xl mx-auto">
-                <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-3xl mx-auto">
+                <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-green-600">€847</div>
-                    <div className="text-xs text-green-700">Gemiddelde besparing</div>
+                    <div className="text-2xl font-bold text-blue-600">15+</div>
+                    <div className="text-sm text-blue-700">Jaar ervaring</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-green-600">97%</div>
-                    <div className="text-xs text-green-700">Nauwkeurigheid</div>
+                    <div className="text-2xl font-bold text-blue-600">100%</div>
+                    <div className="text-sm text-blue-700">Onafhankelijk</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-green-600">2 min</div>
-                    <div className="text-xs text-green-700">Analyse tijd</div>
+                    <div className="text-2xl font-bold text-blue-600">Gratis</div>
+                    <div className="text-sm text-blue-700">Advies</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-12 text-sm md:text-base">
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">🏆</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">👨‍💼</span>
                 </div>
-                <span className="font-medium text-gray-700">Erkend door ACM</span>
+                <span className="font-medium text-gray-700">Ervaren Adviseurs</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">📊</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">🎯</span>
                 </div>
-                <span className="font-medium text-gray-700">50.000+ Analyses</span>
+                <span className="font-medium text-gray-700">Persoonlijk Advies</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">🎯</span>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-blue-600">✓</span>
                 </div>
-                <span className="font-medium text-gray-700">97% Nauwkeurig</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">💰</span>
-                </div>
-                <span className="font-medium text-gray-700">Besparingsgarantie</span>
+                <span className="font-medium text-gray-700">Altijd Gratis</span>
               </div>
             </div>
 
             {/* Main CTA */}
             <div className="space-y-4 mb-8">
-              <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-4 rounded-xl inline-block mb-4">
-                <div className="text-sm font-semibold">🔬 Wetenschappelijke Analyse Beschikbaar</div>
-                <div className="text-lg">Krijg je exacte besparing binnen 2 minuten</div>
-              </div>
-              <br />
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-gradient-to-r from-green-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:from-green-600 hover:to-blue-600 transition-all shadow-lg"
+                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-blue-700 transition-colors shadow-lg"
               >
-                📊 Start Exacte Berekening: {phoneNumber}
+                Spreek een adviseur: {phoneNumber}
               </a>
               
               <p className="text-sm text-gray-600">
-                contractvergelijkers.nl - Wetenschappelijke Energieanalyse
+                contractvergelijkers.nl
               </p>
             </div>
 
