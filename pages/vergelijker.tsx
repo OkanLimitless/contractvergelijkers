@@ -109,18 +109,18 @@ export default function Vergelijker() {
         <section className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
-              <span className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-6">
-                💰 ENERGIE VERGELIJKER 2025
+              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-6 animate-pulse">
+                🔥 DIRECT BESPAREN OP ENERGIE
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Hulp Nodig Met Je{' '}
-                <span className="text-green-500">Energiecontract?</span>
+                Zocht Je Je{' '}
+                <span className="text-green-500">Energieleverancier?</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Bel Direct Voor Advies!</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Bespaar Tot €700 Per Jaar!</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                Onze energieadviseurs helpen je direct met vragen over je contract, tarieven, 
-                overstappen of opzeggen. Gratis advies binnen 2 minuten.
+                <strong>In plaats van bellen naar je huidige leverancier</strong> - laat ons je helpen besparen! 
+                Onze specialisten vergelijken gratis alle tarieven en vinden de beste deal voor jou.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ export default function Vergelijker() {
             <div className="flex justify-center space-x-8 mb-12 text-sm text-gray-600">
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
-                100% Gratis
+                100% Gratis & Eenvoudig
               </div>
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
@@ -136,31 +136,41 @@ export default function Vergelijker() {
               </div>
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
-                Onafhankelijk Advies
+                50.000+ Tevreden Klanten
               </div>
             </div>
 
-                         {/* CTA Buttons - Mobile Optimized */}
-             <div className="space-y-4 mb-12">
-                               <a 
-                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                  onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
-                >
-                 📞 Bel Nu Voor Energieadvies
-                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-               </a>
-               <button 
-                 onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                 className="block w-full bg-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-colors shadow-lg"
-               >
-                 📋 Of Vul Formulier In (2 Min)
-               </button>
-             </div>
+            {/* CTA Buttons - Mobile Optimized */}
+            <div className="space-y-4 mb-12">
+              <a 
+                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
+              >
+                💰 Bespaar Tot €700 Per Jaar - Bel Nu!
+                <div className="text-2xl font-black mt-1">{phoneNumber}</div>
+                <div className="text-sm font-normal mt-2">✓ 100% Gratis ✓ Binnen 2 Min ✓ Vertrouwd door 50.000+ klanten</div>
+              </a>
+              
+              {/* Optional secondary text instead of button */}
+              <div className="text-center py-2">
+                <p className="text-sm text-gray-600">
+                  Of scroll naar beneden voor meer informatie
+                </p>
+              </div>
+            </div>
 
             <p className="text-sm text-gray-500">
-              ⭐ Direct beoordeling met alle energieleveranciers | Geen verborgen kosten | Ma-Vr 09:00-20:30
+              ⭐ Direct vergelijking met alle energieleveranciers | Geen verborgen kosten | Ma-Vr 09:00-20:30 | <strong>Gemiddeld €700 besparing</strong>
             </p>
+            
+            {/* Mobile urgency banner */}
+            <div className="mt-8 bg-gradient-to-r from-red-500 to-orange-500 text-white p-4 rounded-lg shadow-lg md:hidden">
+              <div className="text-center">
+                <p className="text-sm font-bold">🔥 Exclusief voor mobiele bezoekers</p>
+                <p className="text-xs mt-1">Bel nu en krijg direct je besparingsrapport!</p>
+              </div>
+            </div>
           </div>
         </section>
 

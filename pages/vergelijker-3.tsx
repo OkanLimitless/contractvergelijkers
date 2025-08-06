@@ -108,18 +108,18 @@ export default function Vergelijker3() {
         <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-6">
-              <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
-                🎓 ENERGIEADVISEURS
+              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
+                🔥 ENERGIESPECIALISTEN - BESPAAR €700
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Professioneel Advies Voor Je{' '}
-                <span className="text-blue-600">Energiecontract</span>
+                Op Zoek Naar Je{' '}
+                <span className="text-blue-600">Energieleverancier?</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Van Ervaren Specialists</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Professioneel Advies & Besparing!</span>
               </h1>
               <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                Onze ervaren energieadviseurs hebben jarenlange expertise in energiecontracten. 
-                Wij bieden onafhankelijk advies op maat en <strong>helpen je de beste opties te vinden.</strong>
+                <strong>In plaats van zelf contact op te nemen</strong> - laat onze ervaren energiespecialisten je helpen! 
+                Jarenlange expertise, onafhankelijk advies en gemiddeld €700 besparing per jaar.
               </p>
             </div>
 
@@ -130,39 +130,48 @@ export default function Vergelijker3() {
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
                 className="block w-full bg-blue-600 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-blue-700 transition-colors shadow-2xl text-center"
               >
-                🎓 SPREEK EEN ENERGIESPECIALIST
+                🎓 Professioneel Advies - Bespaar €700!
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Gratis professioneel advies</div>
+                <div className="text-sm font-normal mt-2">✓ Ervaren Specialisten ✓ Gratis Advies ✓ Vertrouwd door 50.000+ klanten</div>
               </a>
-              <button 
-                onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block w-full bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-700 transition-colors shadow-lg"
-              >
-                📋 Of Start Professionele Analyse (2 Min)
-              </button>
+              
+              {/* Expert info instead of second button */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                <p className="text-sm text-blue-700 font-medium">
+                  🎓 Meer weten over onze expertise? Bekijk de informatie hieronder
+                </p>
+              </div>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
               <div className="flex items-center">
                 <span className="text-blue-500 mr-2">✓</span>
-                Ervaren Specialisten
+                15+ Jaar Ervaring
               </div>
               <div className="flex items-center">
                 <span className="text-blue-500 mr-2">✓</span>
-                Onafhankelijk Advies
+                100% Gratis
               </div>
               <div className="flex items-center">
                 <span className="text-blue-500 mr-2">✓</span>
-                Persoonlijke Service
+                Persoonlijk Advies
               </div>
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
               <p className="text-sm text-blue-800">
-                🎓 <strong>Expertise die werkt:</strong> Onze specialisten hebben jarenlange ervaring 
-                en kennen alle ins en outs van energiecontracten. Persoonlijk advies op maat.
+                🎓 <strong>Expertise die werkt:</strong> Onze energiespecialisten hebben 15+ jaar ervaring 
+                en hebben al 50.000+ klanten geholpen met gemiddeld €700 besparing per jaar.
               </p>
+            </div>
+            
+            {/* Mobile urgency banner */}
+            <div className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg shadow-lg md:hidden">
+              <div className="text-center">
+                <p className="text-sm font-bold">🎓 Professioneel energieadvies!</p>
+                <p className="text-xs mt-1">15+ jaar expertise. Bel nu voor persoonlijk advies!</p>
+              </div>
             </div>
           </div>
         </section>

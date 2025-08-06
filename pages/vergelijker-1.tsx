@@ -108,18 +108,18 @@ export default function Vergelijker1() {
         <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-6">
-              <span className="inline-block bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
-                📞 ENERGIEKLANTENSERVICE
+              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
+                🔥 ENERGIEKLANTENSERVICE - DIRECT BESPAREN
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Hulp Nodig Met Je{' '}
-                <span className="text-blue-500">Energiecontract?</span>
+                Probeerde Je Je{' '}
+                <span className="text-red-500">Energieleverancier</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Wij Helpen Direct</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Te Bereiken? Bespaar €700!</span>
               </h1>
               <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                Onze energiespecialisten helpen je graag met vragen over je contract, tarieven, 
-                of het vinden van betere opties. <strong>Veel klanten ontdekken dat ze flink kunnen besparen.</strong>
+                <strong>In plaats van wachten in de wacht</strong> - laat ons je direct helpen! 
+                Onze energiespecialisten bieden betere service én besparen je geld op je energierekening.
               </p>
             </div>
 
@@ -128,41 +128,50 @@ export default function Vergelijker1() {
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="block w-full bg-blue-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-blue-600 transition-colors shadow-2xl text-center"
+                className="block w-full bg-red-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-red-600 transition-colors shadow-2xl text-center animate-pulse"
               >
-                📞 BEL VOOR ENERGIEADVIES
+                🔥 Hulp Nodig? Bespaar Tot €700 - Bel Nu!
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Gratis advies en vergelijking</div>
+                <div className="text-sm font-normal mt-2">✓ Gratis Hulp ✓ Direct Advies ✓ Eenvoudig & Vertrouwd</div>
               </a>
-              <button 
-                onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block w-full bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-700 transition-colors shadow-lg"
-              >
-                📋 Of Vul Kort Formulier In (2 Min)
-              </button>
+              
+              {/* Helpful text instead of second button */}
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
+                <p className="text-sm text-blue-700 font-medium">
+                  💬 Liever eerst meer info? Scroll naar beneden
+                </p>
+              </div>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                Gratis Advies
+                <span className="text-red-500 mr-2">✓</span>
+                Directe Hulp
               </div>
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                Onafhankelijk
+                <span className="text-red-500 mr-2">✓</span>
+                100% Gratis
               </div>
               <div className="flex items-center">
-                <span className="text-blue-500 mr-2">✓</span>
-                Ervaren Specialisten
+                <span className="text-red-500 mr-2">✓</span>
+                Betere Service
               </div>
             </div>
 
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
               <p className="text-sm text-blue-800">
-                💡 <strong>Wist je dat:</strong> Veel mensen betalen onnodig veel voor energie. 
-                Onze specialisten helpen je de beste opties te vinden voor jouw situatie.
+                💡 <strong>Wist je dat:</strong> Onze klantenservice is sneller bereikbaar dan de meeste energieleveranciers 
+                én we helpen je direct besparen op je energiekosten.
               </p>
+            </div>
+            
+            {/* Mobile urgency banner */}
+            <div className="mt-6 bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 rounded-lg shadow-lg md:hidden">
+              <div className="text-center">
+                <p className="text-sm font-bold">📞 Sneller dan je eigen leverancier!</p>
+                <p className="text-xs mt-1">Direct advies + besparing. Geen wachttijd!</p>
+              </div>
             </div>
           </div>
         </section>

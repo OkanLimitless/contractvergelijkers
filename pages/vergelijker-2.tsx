@@ -108,18 +108,18 @@ export default function Vergelijker2() {
         <section className="bg-white py-12">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-6">
-              <span className="inline-block bg-green-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4">
-                💰 ENERGIEVERGELIJKING
+              <span className="inline-block bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
+                🔥 STOP! BESPAAR TOT €700 PER JAAR
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Wil Je Weten Of Je{' '}
-                <span className="text-green-500">Energie</span>
+                Zocht Je Contact Met Je{' '}
+                <span className="text-green-500">Energieleverancier?</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Goedkoper Kan?</span>
+                <span className="text-2xl md:text-4xl text-gray-700">Vergelijk Eerst & Bespaar!</span>
               </h1>
               <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                Onze energiespecialisten vergelijken alle leveranciers en helpen je 
-                de beste deal te vinden. <strong>Veel klanten ontdekken interessante besparingsmogelijkheden.</strong>
+                <strong>Voordat je contact opneemt met je huidige leverancier</strong> - ontdek wat je kunt besparen! 
+                Onze specialisten vergelijken alle leveranciers en vinden de beste deal voor jou.
               </p>
             </div>
 
@@ -130,16 +130,17 @@ export default function Vergelijker2() {
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
                 className="block w-full bg-green-500 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-2xl text-center"
               >
-                💰 BEL VOOR VERGELIJKING
+                💰 Bespaar Tot €700 Per Jaar - Vergelijk Nu!
                 <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal">Gratis vergelijking alle leveranciers</div>
+                <div className="text-sm font-normal mt-2">✓ Gratis Vergelijking ✓ Alle Leveranciers ✓ Vertrouwd & Eenvoudig</div>
               </a>
-              <button 
-                onClick={() => document.getElementById('vergelijker')?.scrollIntoView({ behavior: 'smooth' })}
-                className="block w-full bg-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-700 transition-colors shadow-lg"
-              >
-                📊 Of Start Online Vergelijking (2 Min)
-              </button>
+              
+              {/* Info text instead of second button */}
+              <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
+                <p className="text-sm text-green-700 font-medium">
+                  📊 Wil je eerst meer weten? Bekijk de informatie hieronder
+                </p>
+              </div>
             </div>
 
             {/* Trust Indicators */}
@@ -150,19 +151,27 @@ export default function Vergelijker2() {
               </div>
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
-                100% Onafhankelijk
+                100% Gratis
               </div>
               <div className="flex items-center">
                 <span className="text-green-500 mr-2">✓</span>
-                Gratis Service
+                Direct Resultaat
               </div>
             </div>
 
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 max-w-2xl mx-auto">
               <p className="text-sm text-green-800">
-                💡 <strong>Vergelijkingsfeit:</strong> De meeste mensen hebben jaren hetzelfde contract 
-                en zijn vaak verrast door de mogelijkheden bij andere leveranciers.
+                💡 <strong>Vergelijkingsfeit:</strong> 8 van de 10 mensen die ons bellen ontdekken dat ze 
+                kunnen besparen door over te stappen naar een betere energieleverancier.
               </p>
+            </div>
+            
+            {/* Mobile urgency banner */}
+            <div className="mt-6 bg-gradient-to-r from-green-500 to-blue-500 text-white p-4 rounded-lg shadow-lg md:hidden">
+              <div className="text-center">
+                <p className="text-sm font-bold">💰 Vergelijk alle leveranciers in 2 min!</p>
+                <p className="text-xs mt-1">Gemiddeld €700 besparing. Gratis & eenvoudig!</p>
+              </div>
             </div>
           </div>
         </section>
