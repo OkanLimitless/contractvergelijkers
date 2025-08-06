@@ -93,7 +93,7 @@ export default function Vergelijker2() {
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
                   <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
@@ -101,7 +101,7 @@ export default function Vergelijker2() {
               </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm hidden md:block">Direct hulp nodig? Bel ons nu:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -124,30 +124,30 @@ export default function Vergelijker2() {
               </p>
             </div>
 
-            {/* Service Options */}
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-blue-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">📋</span>
+            {/* Service Options - Mobile Optimized */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-8">
+              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-lg md:text-xl">📋</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Contract & Facturen</h3>
-                <p className="text-sm text-gray-600">Vragen over uw contract, factuur of betalingen</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Contract & Facturen</h3>
+                <p className="text-xs md:text-sm text-gray-600">Vragen over uw contract of factuur</p>
               </div>
               
-              <div className="bg-blue-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">💰</span>
+              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-lg md:text-xl">💰</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Tarieven & Prijzen</h3>
-                <p className="text-sm text-gray-600">Informatie over huidige tarieven en mogelijke besparingen</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Tarieven & Prijzen</h3>
+                <p className="text-xs md:text-sm text-gray-600">Informatie over tarieven en besparingen</p>
               </div>
               
-              <div className="bg-blue-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">🔄</span>
+              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-lg md:text-xl">🔄</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Overstappen & Wijzigen</h3>
-                <p className="text-sm text-gray-600">Hulp bij contractwijzigingen of overstappen</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Overstappen & Wijzigen</h3>
+                <p className="text-xs md:text-sm text-gray-600">Hulp bij contractwijzigingen</p>
               </div>
             </div>
 
@@ -520,33 +520,33 @@ export default function Vergelijker2() {
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transition-colors shadow-lg"
+                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-colors shadow-lg"
               >
-                💰 Bereken Ook Jouw Besparing: {phoneNumber}
+                📞 Bel voor Ondersteuning: {phoneNumber}
               </a>
             </div>
           </div>
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 bg-green-500">
+        <section className="py-16 bg-blue-600">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              🎯 Klaar voor Maximale Besparing?
+              📞 Heeft u Hulp Nodig?
             </h2>
-            <p className="text-green-100 text-lg mb-8">
-              Onze experts berekenen binnen 2 minuten jouw exacte besparing met exclusieve telefonische tarieven.
+            <p className="text-blue-100 text-lg mb-8">
+              Onze klantenservice staat klaar om u te helpen met al uw energievragen en problemen.
             </p>
             
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="inline-block bg-white text-green-500 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
             >
-              💰 Bereken je besparing: {phoneNumber}
+              📞 Bel Klantenservice: {phoneNumber}
             </a>
             
-            <p className="text-green-100 text-sm mt-4">
+            <p className="text-blue-100 text-sm mt-4">
               contractvergelijkers.nl
             </p>
           </div>
@@ -579,11 +579,11 @@ export default function Vergelijker2() {
               </div>
 
               <div>
-                <h4 className="text-lg font-bold mb-4">Bel Voor Je Besparing</h4>
+                <h4 className="text-lg font-bold mb-4">Bel Klantenservice</h4>
                 <div className="space-y-4">
                   <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="block">
-                    <div className="bg-green-500 text-white p-4 rounded-lg text-center hover:bg-green-600 transition-colors">
-                      <div className="text-sm">Gratis Bellen</div>
+                    <div className="bg-blue-600 text-white p-4 rounded-lg text-center hover:bg-blue-700 transition-colors">
+                      <div className="text-sm">Direct Contact</div>
                       <div className="text-xl font-bold">{phoneNumber}</div>
                     </div>
                   </a>

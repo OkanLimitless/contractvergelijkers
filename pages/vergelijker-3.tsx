@@ -93,7 +93,7 @@ export default function Vergelijker3() {
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
                   <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
@@ -101,7 +101,7 @@ export default function Vergelijker3() {
               </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm hidden md:block">Direct hulp nodig? Bel ons nu:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-orange-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-700 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -124,38 +124,38 @@ export default function Vergelijker3() {
               </p>
             </div>
 
-            {/* Common Problems */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-orange-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">📄</span>
+            {/* Common Problems - Mobile Optimized */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-8">
+              <div className="bg-orange-50 p-3 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-sm md:text-xl">📄</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Hoge Rekening</h3>
-                <p className="text-sm text-gray-600">Onverwacht hoge energierekening ontvangen?</p>
+                <h3 className="font-bold text-gray-900 text-xs md:text-base mb-1 md:mb-2">Hoge Rekening</h3>
+                <p className="text-xs md:text-sm text-gray-600 hidden md:block">Onverwacht hoge energierekening ontvangen?</p>
               </div>
               
-              <div className="bg-orange-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">❓</span>
+              <div className="bg-orange-50 p-3 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-sm md:text-xl">❓</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Contract Onduidelijk</h3>
-                <p className="text-sm text-gray-600">Vragen over uw energiecontract?</p>
+                <h3 className="font-bold text-gray-900 text-xs md:text-base mb-1 md:mb-2">Contract Onduidelijk</h3>
+                <p className="text-xs md:text-sm text-gray-600 hidden md:block">Vragen over uw energiecontract?</p>
               </div>
               
-              <div className="bg-orange-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">💰</span>
+              <div className="bg-orange-50 p-3 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-sm md:text-xl">💰</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Te Duur</h3>
-                <p className="text-sm text-gray-600">Vermoedt u dat u te veel betaalt?</p>
+                <h3 className="font-bold text-gray-900 text-xs md:text-base mb-1 md:mb-2">Te Duur</h3>
+                <p className="text-xs md:text-sm text-gray-600 hidden md:block">Vermoedt u dat u te veel betaalt?</p>
               </div>
               
-              <div className="bg-orange-50 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-white text-xl">🔄</span>
+              <div className="bg-orange-50 p-3 md:p-6 rounded-lg text-center">
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                  <span className="text-white text-sm md:text-xl">🔄</span>
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">Wil Overstappen</h3>
-                <p className="text-sm text-gray-600">Hulp nodig bij overstappen?</p>
+                <h3 className="font-bold text-gray-900 text-xs md:text-base mb-1 md:mb-2">Wil Overstappen</h3>
+                <p className="text-xs md:text-sm text-gray-600 hidden md:block">Hulp nodig bij overstappen?</p>
               </div>
             </div>
 
