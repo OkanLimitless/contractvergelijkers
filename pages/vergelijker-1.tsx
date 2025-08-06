@@ -151,9 +151,9 @@ export default function Vergelijker1() {
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                className="inline-block bg-teal-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-teal-700 transition-colors shadow-lg"
               >
-                Bel nu voor je besparing: {phoneNumber}
+                📞 Spreek een Adviseur: {phoneNumber}
               </a>
               
               <p className="text-sm text-gray-600">
@@ -185,14 +185,14 @@ export default function Vergelijker1() {
                       placeholder="1234AB"
                       value={formData.postcode}
                       onChange={(e) => handleInputChange('postcode', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 text-sm"
                     />
                     <input
                       type="text"
                       placeholder="12"
                       value={formData.huisnummer}
                       onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 text-sm"
                     />
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function Vergelijker1() {
                   <select
                     value={formData.woonsituatie}
                     onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 text-sm"
                   >
                     <option value="">Selecteer je woningsituatie</option>
                     <option value="eengezinswoning">Eengezinswoning</option>
@@ -214,15 +214,15 @@ export default function Vergelijker1() {
                 </div>
                 
                 {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
-                  <div className="bg-green-50 p-3 rounded-lg border border-green-200">
-                    <p className="text-sm text-green-700 font-medium text-center">
-                      ✓ Gegevens ontvangen! Bel nu voor je persoonlijke besparing
+                  <div className="bg-teal-50 p-3 rounded-lg border border-teal-200">
+                    <p className="text-sm text-teal-700 font-medium text-center">
+                      ✓ Klaar voor persoonlijk advies! Bel nu voor uw consultatie
                     </p>
                   </div>
                 ) : (
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <p className="text-xs text-gray-600 text-center">
-                      Vul je gegevens in voor een persoonlijke besparing
+                      Vul uw gegevens in voor een persoonlijke consultatie
                     </p>
                   </div>
                 )}
@@ -230,9 +230,9 @@ export default function Vergelijker1() {
                 <a
                   href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="block w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors text-center"
+                  className="block w-full bg-teal-600 text-white py-3 rounded-lg font-bold hover:bg-teal-700 transition-colors text-center"
                 >
-                  Bel voor besparing: {phoneNumber}
+                  📞 Spreek Adviseur: {phoneNumber}
                 </a>
                 
                 <p className="text-xs text-gray-500 text-center">
@@ -247,52 +247,52 @@ export default function Vergelijker1() {
         <section className="py-16 bg-gray-50">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Hoeveel kun jij besparen?</h2>
-              <p className="text-xl text-gray-600">Voorbeelden van echte besparingen van onze klanten</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Onze Adviseurs in Actie</h2>
+              <p className="text-xl text-gray-600">Resultaten van persoonlijk adviesgesprekken</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">€420</div>
-                <div className="text-gray-700 font-semibold mb-2">Besparing per jaar</div>
+                <div className="text-3xl font-bold text-teal-600 mb-2">€420</div>
+                <div className="text-gray-700 font-semibold mb-2">Jaarlijkse besparing</div>
                 <div className="text-sm text-gray-600">
                   Studio, 1 persoon<br/>
-                  Van Eneco naar Budget Energie
+                  Persoonlijk adviesgesprek van 8 minuten
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">€680</div>
-                <div className="text-gray-700 font-semibold mb-2">Besparing per jaar</div>
+                <div className="text-3xl font-bold text-teal-600 mb-2">€680</div>
+                <div className="text-gray-700 font-semibold mb-2">Jaarlijkse besparing</div>
                 <div className="text-sm text-gray-600">
                   Appartement, 2 personen<br/>
-                  Van Essent naar GreenChoice
+                  Telefonische consultatie van 12 minuten
                 </div>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md text-center">
-                <div className="text-3xl font-bold text-green-600 mb-2">€925</div>
-                <div className="text-gray-700 font-semibold mb-2">Besparing per jaar</div>
+                <div className="text-3xl font-bold text-teal-600 mb-2">€925</div>
+                <div className="text-gray-700 font-semibold mb-2">Jaarlijkse besparing</div>
                 <div className="text-sm text-gray-600">
                   Eengezinswoning, 4 personen<br/>
-                  Van Vattenfall naar PNEM
+                  Uitgebreid adviesgesprek van 15 minuten
                 </div>
               </div>
             </div>
 
             <div className="text-center">
-              <div className="bg-green-50 rounded-xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Bereken jouw persoonlijke besparing</h3>
+              <div className="bg-teal-50 rounded-xl p-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Start uw persoonlijke consultatie</h3>
                 <p className="text-gray-600 mb-6">
-                  Onze energieadviseurs hebben toegang tot alle leveranciers en kunnen precies berekenen 
-                  hoeveel jij kunt besparen met jouw specifieke situatie.
+                  Onze gecertificeerde energieadviseurs analyseren uw specifieke situatie en geven 
+                  op maat advies voor de beste energiecontracten en mogelijke besparingen.
                 </p>
                 <a 
                   href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="inline-block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                  className="inline-block bg-teal-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-teal-700 transition-colors shadow-lg"
                 >
-                  Bel nu: {phoneNumber}
+                  📞 Start Consultatie: {phoneNumber}
                 </a>
               </div>
             </div>
@@ -579,47 +579,47 @@ export default function Vergelijker1() {
             </div>
 
             <div className="text-center">
-              <div className="bg-green-50 rounded-xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">✅ Zo Simpel Werkt Het</h3>
+              <div className="bg-teal-50 rounded-xl p-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">📞 Uw Persoonlijke Consultatie</h3>
                 
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
                       1
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold text-gray-800">Bel Ons</span>
-                      <p className="text-sm text-gray-600">Wij vergelijken jouw huidige tarief</p>
+                      <span className="font-semibold text-gray-800">Intakegesprek</span>
+                      <p className="text-sm text-gray-600">Uw huidige situatie en wensen bespreken</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
                       2
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold text-gray-800">Wij Vergelijken</span>
-                      <p className="text-sm text-gray-600">Alle energieleveranciers worden vergeleken</p>
+                      <span className="font-semibold text-gray-800">Marktanalyse</span>
+                      <p className="text-sm text-gray-600">Adviseur vergelijkt alle beschikbare opties</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
                       3
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold text-gray-800">Bespaar Geld</span>
-                      <p className="text-sm text-gray-600">Direct overstappen of aanbiedingen vergelijken</p>
+                      <span className="font-semibold text-gray-800">Advies op Maat</span>
+                      <p className="text-sm text-gray-600">Persoonlijke aanbevelingen voor uw situatie</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                    <div className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
                       4
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold text-gray-800">Wij Regelen</span>
-                      <p className="text-sm text-gray-600">Gehele overstaproces gaat automatisch</p>
+                      <span className="font-semibold text-gray-800">Uitvoering</span>
+                      <p className="text-sm text-gray-600">Wij regelen de complete overstap voor u</p>
                     </div>
                   </div>
                 </div>
@@ -627,14 +627,14 @@ export default function Vergelijker1() {
                 <a 
                   href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
+                  className="block bg-teal-600 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-teal-700 transition-colors shadow-lg"
                 >
-                  📞 Klaar om te Besparen?
+                  📞 Start Consultatie
                   <div className="text-2xl font-black mt-1">{phoneNumber}</div>
                 </a>
                 
                 <p className="text-sm text-gray-600 mt-4">
-                  Direct hulp nodig? Bel ons nu!
+                  Gratis & vrijblijvend persoonlijk advies
                 </p>
               </div>
             </div>
@@ -776,18 +776,13 @@ export default function Vergelijker1() {
 
         {/* Sticky Call Button - Only show after scrolling */}
         {showStickyButton && (
-          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto">
+          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto md:max-w-xs">
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block md:inline-flex bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse text-center"
+              className="block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center transition-colors text-sm"
             >
-              <span className="text-2xl">🚨</span>
-              <div>
-                <div className="text-sm md:hidden">Energiehulp Direct</div>
-                <div className="hidden md:block text-sm">Direct Hulp</div>
-                <div className="text-lg font-bold">{phoneNumber}</div>
-              </div>
+              📞 Bel Adviseur: {phoneNumber}
             </a>
           </div>
         )}

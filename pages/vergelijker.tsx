@@ -473,18 +473,13 @@ export default function Vergelijker() {
 
         {/* Sticky Call Button - Mobile Optimized - Only show after scrolling */}
         {showStickyButton && (
-          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto">
+          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto md:max-w-xs">
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block md:inline-flex bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 animate-pulse text-center"
+              className="block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center transition-colors text-sm"
             >
-              <span className="text-2xl">📞</span>
-              <div>
-                <div className="text-sm md:hidden">Bel Nu Voor Energieadvies</div>
-                <div className="hidden md:block text-sm">Bel Direct</div>
-                <div className="text-lg font-bold">{phoneNumber}</div>
-              </div>
+              📞 Bel Direct: {phoneNumber}
             </a>
           </div>
         )}
