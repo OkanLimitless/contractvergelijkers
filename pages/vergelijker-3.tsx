@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function Vergelijker3() {
-  const [phoneNumber] = useState('085 087 2183')
+  const [phoneNumber] = useState('085 888 3570')
   const [formStep, setFormStep] = useState(1)
   const [showStickyButton, setShowStickyButton] = useState(false)
   const [formData, setFormData] = useState({
@@ -53,9 +53,9 @@ export default function Vergelijker3() {
   return (
     <>
       <Head>
-        <title>Smart Energieoplossingen | Bespaar €700+ | Persoonlijke Energieadviseur | Contractvergelijkers</title>
-        <meta name="description" content="Persoonlijke energieadviseur met slimme besparingsoplossingen. 15+ jaar expertise, direct besparen tot €700+. Vertrouwd door 50.000+ klanten." />
-        <meta name="keywords" content="energieadviseur, smart energie besparing, persoonlijk energieadvies, betrouwbare energievergelijking, energie experts" />
+        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Tarief Adviseurs</title>
+        <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
+        <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
@@ -92,11 +92,16 @@ export default function Vergelijker3() {
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
-                <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-14 md:h-16 w-auto" />
+                <div className="flex items-center space-x-2">
+                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-xl font-bold">⚡</span>
+                  </div>
+                  <span className="text-2xl font-bold text-gray-900">Tarief Adviseurs</span>
+                </div>
               </Link>
               <div className="flex items-center space-x-4">
-                <span className="text-gray-600 text-sm">💡 Smart Energieoplossingen:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-purple-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-purple-700 transition-colors">
+                <span className="text-gray-600 text-sm hidden md:block">Direct hulp nodig? Bel ons nu:</span>
+                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -105,72 +110,99 @@ export default function Vergelijker3() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-white py-12">
+        <section className="bg-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="mb-6">
-              <span className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full font-bold text-sm mb-4 animate-pulse">
-                💡 SMART BESPAREN - DIRECT €700+ VOORDEEL
-              </span>
+            <div className="mb-8">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Zoek Je de{' '}
-                <span className="text-purple-600">Slimste Energiedeal?</span>
+                💰 <span className="text-black">Bespaar Tot</span>{' '}
+                <span className="text-green-500">€600 Per Jaar</span>
                 <br />
-                <span className="text-2xl md:text-4xl text-gray-700">Wij Regelen Het Voor Je!</span>
+                <span className="text-2xl md:text-3xl text-gray-700">op je Energierekening!</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-6 max-w-3xl mx-auto">
-                <strong>Geen gedoe met zoeken en vergelijken</strong> - onze energiespecialisten doen het werk voor je! 
-                Slimme oplossingen op maat met gemiddeld €700+ besparing per jaar.
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Vergelijk <strong>alle energieleveranciers</strong> in Nederland en ontdek binnen 2 
+                minuten hoeveel jij kunt besparen
               </p>
             </div>
 
-            {/* CTA Buttons - Higher placement */}
+            {/* Trust Indicators */}
+            <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-500">🛡️</span>
+                </div>
+                <span className="font-medium">100% Gratis</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-500">⚡</span>
+                </div>
+                <span className="font-medium">Binnen 2 Minuten</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-500">📈</span>
+                </div>
+                <span className="font-medium">Gegarandeerd Besparen</span>
+              </div>
+            </div>
+
+            {/* Main CTA */}
             <div className="space-y-4 mb-8">
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                 onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="block w-full bg-purple-600 text-white px-8 py-6 rounded-xl font-bold text-xl hover:bg-purple-700 transition-colors shadow-2xl text-center"
+                className="inline-block bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-xl hover:bg-green-600 transition-colors shadow-lg"
               >
-                💡 Smart Besparen - Direct €700+ Voordeel!
-                <div className="text-2xl font-black mt-1">{phoneNumber}</div>
-                <div className="text-sm font-normal mt-2">✓ Persoonlijke Hulp ✓ Slimme Oplossingen ✓ Vertrouwd door 50.000+ klanten</div>
+                📞 Bel ons nu: {phoneNumber}
               </a>
               
-              {/* Expert info instead of second button */}
-              <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 text-center">
-                <p className="text-sm text-purple-700 font-medium">
-                  💡 Nieuwsgierig naar onze slimme aanpak? Bekijk de informatie hieronder
-                </p>
-              </div>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex justify-center space-x-8 mb-8 text-sm text-gray-600">
-              <div className="flex items-center">
-                <span className="text-purple-500 mr-2">✓</span>
-                15+ Jaar Expertise
-              </div>
-              <div className="flex items-center">
-                <span className="text-purple-500 mr-2">✓</span>
-                100% Gratis
-              </div>
-              <div className="flex items-center">
-                <span className="text-purple-500 mr-2">✓</span>
-                Persoonlijke Aanpak
-              </div>
-            </div>
-
-            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 max-w-2xl mx-auto">
-              <p className="text-sm text-purple-800">
-                💡 <strong>Slimme resultaten:</strong> Onze energiespecialisten gebruiken 15+ jaar marktkennis 
-                om 50.000+ klanten te helpen met slimme oplossingen en gemiddeld €700+ besparing per jaar.
+              <p className="text-sm text-gray-600">
+                tarief-adviseurs.nl
               </p>
             </div>
-            
-            {/* Mobile urgency banner */}
-            <div className="mt-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-lg shadow-lg md:hidden">
-              <div className="text-center">
-                <p className="text-sm font-bold">💡 Smart energieoplossingen!</p>
-                <p className="text-xs mt-1">Persoonlijke aanpak. Bel nu voor jouw oplossing!</p>
+
+            <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">✅ Start je Energievergelijking</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Vul onderstaand formulier in en ontdek binnen 2 minuten welke leverancier het 
+                beste bij jou past!
+              </p>
+              
+              {/* Simple Form Start */}
+              <div className="space-y-3">
+                <div className="text-left">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    📍 Waar woon je?
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <input
+                      type="text"
+                      placeholder="Postcode"
+                      value={formData.postcode}
+                      onChange={(e) => handleInputChange('postcode', e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Huisnummer"
+                      value={formData.huisnummer}
+                      onChange={(e) => handleInputChange('huisnummer', e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                    />
+                  </div>
+                </div>
+                
+                <button 
+                  onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                  className="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
+                >
+                  💰 {phoneNumber}
+                </button>
+                
+                <p className="text-xs text-gray-500 text-center">
+                  Direct hulp nodig? Bel ons nu!
+                </p>
               </div>
             </div>
           </div>
