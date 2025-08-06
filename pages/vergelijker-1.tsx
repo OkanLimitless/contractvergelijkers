@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function Vergelijker1() {
-  const [phoneNumber] = useState('085 888 3570')
+  const [phoneNumber] = useState('085 087 2183')
   const [formStep, setFormStep] = useState(1)
   const [showStickyButton, setShowStickyButton] = useState(false)
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ export default function Vergelijker1() {
   return (
     <>
       <Head>
-        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Tarief Adviseurs</title>
+        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Contractvergelijkers</title>
         <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
         <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,7 +96,7 @@ export default function Vergelijker1() {
                   <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">Tarief Adviseurs</span>
+                  <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
                 </div>
               </Link>
               <div className="flex items-center space-x-4">
@@ -128,22 +128,22 @@ export default function Vergelijker1() {
             {/* Trust Indicators */}
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">🛡️</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">🛡️</span>
                 </div>
-                <span className="font-medium">100% Gratis</span>
+                <span className="font-medium text-gray-700">100% Gratis</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">⚡</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">⚡</span>
                 </div>
-                <span className="font-medium">Binnen 2 Minuten</span>
+                <span className="font-medium text-gray-700">Binnen 2 Minuten</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">📈</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">📈</span>
                 </div>
-                <span className="font-medium">Gegarandeerd Besparen</span>
+                <span className="font-medium text-gray-700">Gegarandeerd Besparen</span>
               </div>
             </div>
 
@@ -158,7 +158,7 @@ export default function Vergelijker1() {
               </a>
               
               <p className="text-sm text-gray-600">
-                tarief-adviseurs.nl
+                contractvergelijkers.nl
               </p>
             </div>
 

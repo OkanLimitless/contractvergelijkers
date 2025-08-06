@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function Vergelijker() {
-  const [phoneNumber] = useState('085 888 3570')
+  const [phoneNumber] = useState('085 087 2183')
   const [formStep, setFormStep] = useState(1)
   const [showStickyButton, setShowStickyButton] = useState(false)
   const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ export default function Vergelijker() {
   return (
     <>
       <Head>
-        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Tarief Adviseurs</title>
+        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Contractvergelijkers</title>
         <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
         <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -97,7 +97,7 @@ export default function Vergelijker() {
                   <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">Tarief Adviseurs</span>
+                  <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
                 </div>
               </Link>
               <div className="flex items-center space-x-4">
@@ -129,22 +129,22 @@ export default function Vergelijker() {
             {/* Trust Indicators */}
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">🛡️</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">🛡️</span>
                 </div>
-                <span className="font-medium">100% Gratis</span>
+                <span className="font-medium text-gray-700">100% Gratis</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">⚡</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">⚡</span>
                 </div>
-                <span className="font-medium">Binnen 2 Minuten</span>
+                <span className="font-medium text-gray-700">Binnen 2 Minuten</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-500">📈</span>
+                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-green-600">📈</span>
                 </div>
-                <span className="font-medium">Gegarandeerd Besparen</span>
+                <span className="font-medium text-gray-700">Gegarandeerd Besparen</span>
               </div>
             </div>
 
@@ -159,7 +159,7 @@ export default function Vergelijker() {
               </a>
               
               <p className="text-sm text-gray-600">
-                tarief-adviseurs.nl
+                contractvergelijkers.nl
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function Vergelijker() {
                 beste bij jou past!
               </p>
               
-              {/* Simple Form Start */}
+              {/* Enhanced Form Start */}
               <div className="space-y-3">
                 <div className="text-left">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -179,30 +179,61 @@ export default function Vergelijker() {
                   <div className="grid grid-cols-2 gap-2">
                     <input
                       type="text"
-                      placeholder="Postcode"
+                      placeholder="1234AB"
                       value={formData.postcode}
                       onChange={(e) => handleInputChange('postcode', e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
                     />
                     <input
                       type="text"
-                      placeholder="Huisnummer"
+                      placeholder="12"
                       value={formData.huisnummer}
                       onChange={(e) => handleInputChange('huisnummer', e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
                     />
                   </div>
                 </div>
+
+                <div className="text-left">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    🏠 Woonsituatie
+                  </label>
+                  <select
+                    value={formData.woonsituatie}
+                    onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm"
+                  >
+                    <option value="">Selecteer woonsituatie</option>
+                    <option value="eengezinswoning">Eengezinswoning</option>
+                    <option value="appartement">Appartement</option>
+                    <option value="studio">Studio/kamer</option>
+                  </select>
+                </div>
                 
-                <button 
+                {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
+                  <div className="bg-green-50 p-3 rounded-lg border border-green-200">
+                    <p className="text-sm text-green-700 font-medium text-center">
+                      ✅ Gegevens ontvangen! Bel nu voor je persoonlijke besparing
+                    </p>
+                  </div>
+                ) : (
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <p className="text-xs text-gray-600 text-center">
+                      Vul je gegevens in voor een persoonlijke besparing
+                    </p>
+                  </div>
+                )}
+                
+                <a
+                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                   onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
+                  className="block w-full bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition-colors text-center"
                 >
-                  💰 {phoneNumber}
-                </button>
+                  📞 Bel Nu: {phoneNumber}
+                </a>
                 
                 <p className="text-xs text-gray-500 text-center">
-                  Direct hulp nodig? Bel ons nu!
+                  Direct hulp nodig? Onze experts helpen je graag!
                 </p>
               </div>
             </div>
@@ -398,7 +429,7 @@ export default function Vergelijker() {
             </a>
             
             <p className="text-green-100 text-sm mt-4">
-              tarief-adviseurs.nl
+              contractvergelijkers.nl
             </p>
           </div>
         </section>
@@ -412,10 +443,10 @@ export default function Vergelijker() {
                   <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-white">Tarief Adviseurs</span>
+                  <span className="text-2xl font-bold text-white">Contractvergelijkers</span>
                 </div>
                 <p className="text-gray-300 mb-4">
-                  De meest betrouwbare energieadviseurs van Nederland.
+                  De meest betrouwbare contractvergelijkers van Nederland.
                 </p>
               </div>
               <div>
@@ -435,7 +466,7 @@ export default function Vergelijker() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Tarief Adviseurs. Alle rechten voorbehouden.</p>
+              <p>&copy; 2025 Contractvergelijkers. Alle rechten voorbehouden.</p>
             </div>
           </div>
         </footer>
