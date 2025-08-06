@@ -297,7 +297,7 @@ export default function Vergelijker() {
                       1
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold">Bel Ons</span>
+                      <span className="font-semibold text-gray-800">Bel Ons</span>
                       <p className="text-sm text-gray-600">Wij vergelijken jouw huidige tarief</p>
                     </div>
                   </div>
@@ -307,7 +307,7 @@ export default function Vergelijker() {
                       2
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold">Wij Vergelijken</span>
+                      <span className="font-semibold text-gray-800">Wij Vergelijken</span>
                       <p className="text-sm text-gray-600">Alle energieleveranciers worden vergeleken</p>
                     </div>
                   </div>
@@ -317,7 +317,7 @@ export default function Vergelijker() {
                       3
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold">Bespaar Geld</span>
+                      <span className="font-semibold text-gray-800">Bespaar Geld</span>
                       <p className="text-sm text-gray-600">Direct overstappen of aanbiedingen vergelijken</p>
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export default function Vergelijker() {
                       4
                     </div>
                     <div className="text-left">
-                      <span className="font-semibold">Wij Regelen</span>
+                      <span className="font-semibold text-gray-800">Wij Regelen</span>
                       <p className="text-sm text-gray-600">Gehele overstaproces gaat automatisch</p>
                     </div>
                   </div>
