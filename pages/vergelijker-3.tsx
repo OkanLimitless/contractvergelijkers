@@ -185,11 +185,11 @@ export default function Vergelijker3() {
                 Vertel ons over uw situatie zodat wij u de beste hulp kunnen bieden
               </p>
               
-              {/* Smart Analysis Form */}
+              {/* Help Request Form */}
               <div className="space-y-3">
                 <div className="text-left">
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    📍 Locatie voor smart analyse
+                    📍 Uw locatie
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <input
@@ -261,14 +261,14 @@ export default function Vergelijker3() {
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  💡 Smart Energieanalyse
+                  🔍 Energie Hulpvraag
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  Onze energiespecialisten maken een slimme analyse van jouw situatie voor de beste oplossing
+                  Vertel ons meer over uw situatie zodat onze specialisten u de beste hulp kunnen bieden
                 </p>
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 inline-block">
-                  <span className="text-sm text-purple-800 font-semibold">
-                    🏆 15+ jaar expertise - €700+ gemiddelde besparing
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 inline-block">
+                  <span className="text-sm text-orange-800 font-semibold">
+                    🎯 Persoonlijke hulp - Direct contact mogelijk
                   </span>
                 </div>
               </div>
@@ -276,7 +276,7 @@ export default function Vergelijker3() {
               {/* Progress Bar */}
               <div className="mb-8">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-gray-700">Analyse stap {formStep} van 3</span>
+                  <span className="text-sm font-medium text-gray-700">Hulpvraag stap {formStep} van 3</span>
                   <span className="text-sm text-gray-500">{Math.round((formStep / 3) * 100)}% voltooid</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
@@ -440,33 +440,28 @@ export default function Vergelijker3() {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50 p-6 rounded-xl text-center border-2 border-purple-300">
-                      <h4 className="text-xl font-bold text-purple-800 mb-3">🎯 Smart Energieanalyse Compleet!</h4>
-                      <p className="text-purple-700 mb-4">
-                        Onze AI-gestuurde systemen hebben jouw energieprofiel geanalyseerd. De markt fluctueert 
-                        dagelijks - onze experts kennen de real-time tarieven die online niet zichtbaar zijn.
+                    <div className="bg-orange-50 p-6 rounded-xl text-center border-2 border-orange-300">
+                      <h4 className="text-xl font-bold text-orange-800 mb-3">✅ Informatie Ontvangen!</h4>
+                      <p className="text-orange-700 mb-4">
+                        Bedankt voor uw gegevens. Onze hulpcentrum specialisten kunnen u nu direct helpen 
+                        met uw energievragen en mogelijke problemen oplossen.
                       </p>
-                      <div className="bg-white p-4 rounded-lg mb-4 border-l-4 border-purple-500">
-                        <h5 className="font-bold text-gray-800 mb-2">🤖 Smart Energieoplossing Beschikbaar!</h5>
+                      <div className="bg-white p-4 rounded-lg mb-4 border-l-4 border-orange-500">
+                        <h5 className="font-bold text-gray-800 mb-2">🎯 Directe Hulp Beschikbaar!</h5>
                         <div className="text-sm text-gray-700 space-y-1">
-                          <div>🎯 AI-gestuurde tariefoptimalisatie</div>
-                          <div>📊 Real-time marktanalyse</div>
-                          <div>🔄 Automatische overstapservice</div>
-                          <div>💡 Smart besparingsgarantie</div>
+                          <div>📞 Persoonlijke ondersteuning</div>
+                          <div>🔍 Probleem identificatie</div>
+                          <div>💡 Oplossingen op maat</div>
+                          <div>✅ Directe actie mogelijk</div>
                         </div>
                       </div>
-                      <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-3 rounded-lg mb-4">
-                        <p className="text-sm text-purple-800 font-semibold">
-                          🚀 Beperkte tijd: 247 smart oplossingen vandaag geactiveerd!
-                        </p>
-                      </div>
                       <div className="text-xs text-gray-600 mb-4 bg-gray-50 p-3 rounded-lg">
-                        <strong>Smart Profiel:</strong> Locatie {formData.postcode || 'XXXX'}, Type: {formData.woonsituatie || 'Onbekend'}, 
+                        <strong>Uw Gegevens:</strong> Locatie {formData.postcode || 'XXXX'}, Type: {formData.woonsituatie || 'Onbekend'}, 
                         Huidige: {formData.currentLeverancier || 'Onbekend'}, Verbruik: {formData.verbruikStroom || '?'} kWh + {formData.verbruikGas || '?'} m³
                       </div>
-                      <div className="bg-green-100 p-3 rounded-lg">
-                        <div className="text-lg font-bold text-green-700">💡 Smart Besparing: €750+ per jaar mogelijk</div>
-                        <div className="text-xs text-green-600">*Op basis van AI-analyse en marktdata</div>
+                      <div className="bg-orange-100 p-3 rounded-lg">
+                        <div className="text-lg font-bold text-orange-700">📞 Directe hulp beschikbaar</div>
+                        <div className="text-xs text-orange-600">*Bel nu voor persoonlijke ondersteuning</div>
                       </div>
                     </div>
 
@@ -480,9 +475,9 @@ export default function Vergelijker3() {
                       <a 
                         href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
                         onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                        className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-lg font-bold hover:from-purple-700 hover:to-pink-700 transition-all text-center"
+                        className="flex-1 bg-orange-600 text-white py-4 px-6 rounded-lg font-bold hover:bg-orange-700 transition-colors text-center"
                       >
-                        🤖 ACTIVEER SMART OPLOSSING: {phoneNumber}
+                        📞 Bel Hulpcentrum: {phoneNumber}
                       </a>
                     </div>
                   </div>
@@ -548,25 +543,25 @@ export default function Vergelijker3() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-purple-600 to-pink-600">
+        <section className="py-16 bg-orange-600">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              🤖 Klaar voor je Smart Energieoplossing?
+              🆘 Hulp Nodig? Wij Staan Klaar!
             </h2>
-            <p className="text-purple-100 text-lg mb-8">
-              Onze AI-systemen en experts creëren binnen 2 minuten een slimme energieoplossing speciaal voor jouw situatie.
+            <p className="text-orange-100 text-lg mb-8">
+              Onze hulpcentrum specialisten staan ready om u direct te helpen met al uw energievragen en problemen.
             </p>
             
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-block bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
             >
-              🤖 Activeer smart oplossing: {phoneNumber}
+              📞 Bel Hulpcentrum: {phoneNumber}
             </a>
             
-            <p className="text-purple-100 text-sm mt-4">
-              contractvergelijkers.nl - Smart Energy Solutions
+            <p className="text-orange-100 text-sm mt-4">
+              contractvergelijkers.nl
             </p>
           </div>
         </section>
@@ -598,11 +593,11 @@ export default function Vergelijker3() {
               </div>
 
               <div>
-                <h4 className="text-lg font-bold mb-4">Direct Smart Besparen</h4>
+                <h4 className="text-lg font-bold mb-4">Hulp Nodig?</h4>
                 <div className="space-y-4">
                   <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="block">
-                    <div className="bg-purple-600 text-white p-4 rounded-lg text-center hover:bg-purple-700 transition-colors">
-                      <div className="text-sm">Smart Energieoplossingen</div>
+                    <div className="bg-orange-600 text-white p-4 rounded-lg text-center hover:bg-orange-700 transition-colors">
+                      <div className="text-sm">Direct Contact</div>
                       <div className="text-xl font-bold">{phoneNumber}</div>
                     </div>
                   </a>
@@ -622,18 +617,13 @@ export default function Vergelijker3() {
 
         {/* Sticky Call Button - Only show after scrolling */}
         {showStickyButton && (
-          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto">
+          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto md:max-w-xs">
             <a 
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block md:inline-flex bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl items-center justify-center space-x-3 transition-all duration-300 hover:scale-105 text-center"
+              className="block bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center transition-colors text-sm"
             >
-              <span className="text-2xl">💡</span>
-              <div>
-                <div className="text-sm md:hidden">Smart Oplossing</div>
-                <div className="hidden md:block text-sm">Smart Energieoplossing</div>
-                <div className="text-lg font-bold">{phoneNumber}</div>
-              </div>
+              📞 Bel Ons Op: {phoneNumber}
             </a>
           </div>
         )}

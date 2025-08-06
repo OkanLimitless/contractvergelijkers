@@ -53,7 +53,7 @@ export default function Vergelijker1() {
   return (
     <>
       <Head>
-        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Contractvergelijkers</title>
+        <title>Persoonlijke Energieadviseur - Gratis Consultatie | Contractvergelijkers</title>
         <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
         <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -93,7 +93,7 @@ export default function Vergelijker1() {
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
                   <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
@@ -101,7 +101,7 @@ export default function Vergelijker1() {
               </Link>
               <div className="flex items-center space-x-4">
                 <span className="text-gray-600 text-sm hidden md:block">Direct hulp nodig? Bel ons nu:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-600 transition-colors">
+                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="bg-teal-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-teal-700 transition-colors">
                   {phoneNumber}
                 </a>
               </div>
@@ -114,35 +114,35 @@ export default function Vergelijker1() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Bespaar tot <span className="text-green-600">€600 per jaar</span>
+                Persoonlijke <span className="text-teal-600">Energieadviseur</span>
                 <br />
-                <span className="text-2xl md:text-3xl text-gray-700">op je energierekening</span>
+                <span className="text-2xl md:text-3xl text-gray-700">Gratis telefoonadvies op maat</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Vergelijk alle energieleveranciers en ontdek binnen 2 minuten 
-                welke aanbieder het beste bij jouw situatie past
+                Praat direct met een van onze ervaren energieadviseurs voor persoonlijk advies 
+                over uw energiecontract en mogelijke besparingen
               </p>
             </div>
 
-            {/* Trust Indicators */}
+            {/* Advisor Credentials */}
             <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12 mb-12 text-sm md:text-base">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">✓</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-teal-600">🎓</span>
                 </div>
-                <span className="font-medium text-gray-700">100% Gratis</span>
+                <span className="font-medium text-gray-700">Gecertificeerde Adviseurs</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">⚡</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-teal-600">📞</span>
                 </div>
-                <span className="font-medium text-gray-700">Binnen 2 Minuten</span>
+                <span className="font-medium text-gray-700">Direct Persoonlijk Contact</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-green-600">💰</span>
+                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center mr-3">
+                  <span className="text-teal-600">💡</span>
                 </div>
-                <span className="font-medium text-gray-700">Altijd Besparing</span>
+                <span className="font-medium text-gray-700">Advies op Maat</span>
               </div>
             </div>
 
