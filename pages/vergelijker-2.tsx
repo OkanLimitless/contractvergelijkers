@@ -54,7 +54,7 @@ export default function Vergelijker2() {
     <>
       <Head>
         <title>Bespaar en Vind Klantenservice | Contractvergelijkers Advieslijn</title>
-        <meta name="description" content="Klantenservice Contractvergelijkers: onafhankelijk advies, tarieven vergelijken en doorverwijzing naar officiële klantenservice van uw energieleverancier. Bel direct." />
+        <meta name="description" content="Klantenservice Contractvergelijkers: onafhankelijk advies en tarieven vergelijken. Wij helpen met vragen en overstappen. Bel direct." />
         <meta name="keywords" content="klantenservice energie, energieleverancier telefoonnummer, energie vergelijken, onafhankelijk advies, overstappen energie" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -129,8 +129,8 @@ export default function Vergelijker2() {
                 <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <span className="text-white text-lg md:text-xl">📋</span>
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Doorverwijzing naar Leverancier</h3>
-                <p className="text-xs md:text-sm text-gray-600">Officiële contactgegevens en juiste loketten</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Klantenservice & Advies</h3>
+                <p className="text-xs md:text-sm text-gray-600">Antwoord op vragen en heldere uitleg over opties</p>
               </div>
               
               <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
@@ -154,7 +154,7 @@ export default function Vergelijker2() {
             <div className="bg-blue-600 text-white p-8 rounded-xl mb-8">
               <h2 className="text-2xl font-bold mb-4">Direct contact met Contractvergelijkers Klantenservice</h2>
               <p className="text-blue-100 mb-6">
-                Bel voor onafhankelijk energie-advies, vergelijking van tarieven en snelle doorverwijzing naar de juiste klantenservice van uw leverancier. Wij zijn geen onderdeel van energieleveranciers.
+                Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
               </p>
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
@@ -172,7 +172,7 @@ export default function Vergelijker2() {
             <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Snelle Hulp Aanvragen</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Vul uw gegevens in zodat wij u gericht kunnen adviseren of doorverwijzen
+                Vul uw gegevens in zodat wij u gericht kunnen adviseren
               </p>
               
               {/* Savings Calculator Form */}
@@ -533,7 +533,7 @@ export default function Vergelijker2() {
               📞 Heeft u Hulp Nodig?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Onze klantenservice van Contractvergelijkers staat klaar met onafhankelijk advies en, indien nodig, doorverwijzing naar uw leverancier.
+              Onze klantenservice van Contractvergelijkers staat klaar met onafhankelijk advies over uw energievraag.
             </p>
             
             <a 
@@ -545,7 +545,7 @@ export default function Vergelijker2() {
             </a>
             
             <p className="text-blue-100 text-sm mt-4">
-              Wij zijn de klantenservice van contractvergelijkers.nl (onafhankelijke advieslijn) en niet de officiële klantenservice van energieleveranciers.
+              Wij zijn de klantenservice van contractvergelijkers.nl (onafhankelijke advieslijn) en niet de officiële klantenservice van energieleveranciers. Voor contract- en factuurzaken bij uw huidige provider kunt u rechtstreeks bij uw leverancier terecht.
             </p>
           </div>
         </section>
