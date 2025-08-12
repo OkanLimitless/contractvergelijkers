@@ -211,6 +211,8 @@ export default function Klantenservice() {
                     <option value="eengezinswoning">Eengezinswoning</option>
                     <option value="appartement">Appartement</option>
                     <option value="studio">Studio/kamer</option>
+                    <option value="vrijstaand">Vrijstaande woning</option>
+                    <option value="twee-onder-een-kap">Twee-onder-een-kap</option>
                   </select>
                 </div>
                 
@@ -318,6 +320,8 @@ export default function Klantenservice() {
                         <option value="eengezinswoning">Eengezinswoning</option>
                         <option value="appartement">Appartement</option>
                         <option value="studio">Studio/kamer</option>
+                        <option value="vrijstaand">Vrijstaande woning</option>
+                        <option value="twee-onder-een-kap">Twee-onder-een-kap</option>
                       </select>
                     </div>
 
@@ -560,6 +564,9 @@ export default function Klantenservice() {
                   <li>✓ 100% onafhankelijk advies</li>
                   <li>✓ Gratis service</li>
                   <li>✓ Overstap volledig geregeld</li>
+                  <li>
+                    <Link href="/privacy" className="underline text-gray-300 hover:text-white">Privacy</Link>
+                  </li>
                 </ul>
               </div>
 
