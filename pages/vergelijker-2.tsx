@@ -53,9 +53,9 @@ export default function Vergelijker2() {
   return (
     <>
       <Head>
-        <title>Bespaar Tot €600 Per Jaar op je Energierekening! | Contractvergelijkers</title>
-        <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
-        <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
+        <title>Bespaar en Vind Klantenservice | Contractvergelijkers Advieslijn</title>
+        <meta name="description" content="Klantenservice Contractvergelijkers: onafhankelijk advies, tarieven vergelijken en doorverwijzing naar officiële klantenservice van uw energieleverancier. Bel direct." />
+        <meta name="keywords" content="klantenservice energie, energieleverancier telefoonnummer, energie vergelijken, onafhankelijk advies, overstappen energie" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
@@ -114,13 +114,12 @@ export default function Vergelijker2() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                <span className="text-blue-600">Energie Klantenservice</span>
+                <span className="text-blue-600">Klantenservice Contractvergelijkers</span>
                 <br />
-                <span className="text-2xl md:text-3xl text-gray-700">Direct Hulp & Ondersteuning</span>
+                <span className="text-2xl md:text-3xl text-gray-700">Direct hulp & onafhankelijk energie-advies</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Heeft u vragen over uw energiecontract, factuur of wilt u uw tarieven bekijken? 
-                Onze specialisten staan klaar om u direct te helpen
+                Zoekt u de klantenservice van uw energieleverancier of wilt u besparen? Wij geven onafhankelijk advies, vergelijken tarieven en verwijzen u indien nodig door naar de officiële klantenservice van uw leverancier.
               </p>
             </div>
 
@@ -130,8 +129,8 @@ export default function Vergelijker2() {
                 <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <span className="text-white text-lg md:text-xl">📋</span>
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Contract & Facturen</h3>
-                <p className="text-xs md:text-sm text-gray-600">Vragen over uw contract of factuur</p>
+                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Doorverwijzing naar Leverancier</h3>
+                <p className="text-xs md:text-sm text-gray-600">Officiële contactgegevens en juiste loketten</p>
               </div>
               
               <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
@@ -153,10 +152,9 @@ export default function Vergelijker2() {
 
             {/* Main CTA */}
             <div className="bg-blue-600 text-white p-8 rounded-xl mb-8">
-              <h2 className="text-2xl font-bold mb-4">Direct Contact met Klantenservice</h2>
+              <h2 className="text-2xl font-bold mb-4">Direct contact met Contractvergelijkers Klantenservice</h2>
               <p className="text-blue-100 mb-6">
-                Voor snelle hulp kunt u direct bellen. Onze medewerkers zijn bereikbaar 
-                en helpen u graag verder met al uw energievragen.
+                Bel voor onafhankelijk energie-advies, vergelijking van tarieven en snelle doorverwijzing naar de juiste klantenservice van uw leverancier. Wij zijn geen onderdeel van energieleveranciers.
               </p>
               <a 
                 href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
@@ -174,7 +172,7 @@ export default function Vergelijker2() {
             <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Snelle Hulp Aanvragen</h3>
               <p className="text-sm text-gray-600 mb-4">
-                Vul uw gegevens in zodat onze klantenservice u zo goed mogelijk kan helpen
+                Vul uw gegevens in zodat wij u gericht kunnen adviseren of doorverwijzen
               </p>
               
               {/* Savings Calculator Form */}
@@ -535,7 +533,7 @@ export default function Vergelijker2() {
               📞 Heeft u Hulp Nodig?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Onze klantenservice staat klaar om u te helpen met al uw energievragen en problemen.
+              Onze klantenservice van Contractvergelijkers staat klaar met onafhankelijk advies en, indien nodig, doorverwijzing naar uw leverancier.
             </p>
             
             <a 
@@ -547,7 +545,7 @@ export default function Vergelijker2() {
             </a>
             
             <p className="text-blue-100 text-sm mt-4">
-              contractvergelijkers.nl
+              Wij zijn de klantenservice van contractvergelijkers.nl (onafhankelijke advieslijn) en niet de officiële klantenservice van energieleveranciers.
             </p>
           </div>
         </section>
@@ -559,7 +557,7 @@ export default function Vergelijker2() {
               <div>
                 <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
                 <p className="text-gray-300 mb-4">
-                  Nederland's grootste onafhankelijke energievergelijker. Gemiddeld €700 besparing per jaar.
+                  Onafhankelijk energievergelijkingsplatform. Gemiddeld €700 besparing per jaar.
                 </p>
                 <div className="flex space-x-4">
                   <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
