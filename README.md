@@ -1,10 +1,10 @@
-# Contractvergelijkers Landing Pages
+# Adviesneutraal Landing Pages
 
 Professional landing pages for energy comparison services in the Netherlands, targeting Google Ads campaigns for branded keywords.
 
 ## Project Overview
 
-**Business**: Contractvergelijkers - Energy comparison service with 200+ call center representatives  
+**Business**: Adviesneutraal - Energy comparison and advice service with 200+ call center representatives  
 **Target Market**: Netherlands  
 **Phone Number**: +31 85 087 2183  
 **Campaign Strategy**: Target branded keywords of major Dutch energy providers  
@@ -141,7 +141,7 @@ Professional landing pages for energy comparison services in the Netherlands, ta
 
 ### Production Setup
 1. Upload all files to web server
-2. Configure domain: `contractvergelijkers.nl`
+2. Configure domain: `adviesneutraal.nl`
 3. Set up SSL certificate
 4. Configure Google Analytics tracking
 5. Submit sitemap to Google Search Console
@@ -178,4 +178,4 @@ Professional landing pages for energy comparison services in the Netherlands, ta
 
 ---
 
-*This landing page system is designed to capture high-intent traffic from users searching for energy provider customer service, converting them into phone calls for the Contractvergelijkers call center.*
+*This landing page system is designed to capture high-intent traffic from users searching for energy provider customer service, converting them into phone calls for the Adviesneutraal call center.*

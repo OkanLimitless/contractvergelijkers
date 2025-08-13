@@ -53,8 +53,8 @@ export default function Vergelijker2() {
   return (
     <>
       <Head>
-        <title>Bespaar en Vind Klantenservice | Contractvergelijkers Advieslijn</title>
-        <meta name="description" content="Klantenservice Contractvergelijkers: onafhankelijk advies en tarieven vergelijken. Wij helpen met vragen en overstappen. Bel direct." />
+        <title>Bespaar en Vind Klantenservice | Adviesneutraal Advieslijn</title>
+        <meta name="description" content="Klantenservice Adviesneutraal: onafhankelijk advies en tarieven vergelijken. Wij helpen met vragen en overstappen. Bel direct." />
         <meta name="keywords" content="klantenservice energie, energieleverancier telefoonnummer, energie vergelijken, onafhankelijk advies, overstappen energie" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -96,7 +96,7 @@ export default function Vergelijker2() {
                   <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
+                  <span className="text-2xl font-bold text-gray-900">Adviesneutraal</span>
                 </div>
               </Link>
               <div className="flex items-center space-x-4">
@@ -114,7 +114,7 @@ export default function Vergelijker2() {
           <div className="max-w-4xl mx-auto px-6 text-center">
             <div className="mb-8">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                <span className="text-blue-600">Klantenservice Contractvergelijkers</span>
+                <span className="text-blue-600">Klantenservice Adviesneutraal</span>
                 <br />
                 <span className="text-2xl md:text-3xl text-gray-700">Direct hulp & onafhankelijk energie-advies</span>
               </h1>
@@ -152,7 +152,7 @@ export default function Vergelijker2() {
 
             {/* Main CTA */}
             <div className="bg-blue-600 text-white p-8 rounded-xl mb-8">
-              <h2 className="text-2xl font-bold mb-4">Direct contact met Contractvergelijkers Klantenservice</h2>
+              <h2 className="text-2xl font-bold mb-4">Direct contact met Adviesneutraal Klantenservice</h2>
               <p className="text-blue-100 mb-6">
                 Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
               </p>
@@ -533,7 +533,7 @@ export default function Vergelijker2() {
               📞 Heeft u Hulp Nodig?
             </h2>
             <p className="text-blue-100 text-lg mb-8">
-              Onze klantenservice van Contractvergelijkers staat klaar met onafhankelijk advies over uw energievraag.
+              Onze klantenservice van Adviesneutraal staat klaar met onafhankelijk advies over uw energievraag.
             </p>
             
             <a 
@@ -545,7 +545,7 @@ export default function Vergelijker2() {
             </a>
             
             <p className="text-blue-100 text-sm mt-4">
-              Wij zijn de klantenservice van contractvergelijkers.nl (onafhankelijke advieslijn) en niet de officiële klantenservice van energieleveranciers. Voor contract- en factuurzaken bij uw huidige provider kunt u rechtstreeks bij uw leverancier terecht.
+              Wij zijn de klantenservice van adviesneutraal.nl (onafhankelijke advieslijn) en niet de officiële klantenservice van energieleveranciers. Voor contract- en factuurzaken bij uw huidige provider kunt u rechtstreeks bij uw leverancier terecht.
             </p>
           </div>
         </section>
@@ -555,7 +555,7 @@ export default function Vergelijker2() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
+                <img src="/logos/contractvergelijkers-logo.png" alt="Adviesneutraal" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
                 <p className="text-gray-300 mb-4">
                   Onafhankelijk energievergelijkingsplatform. Gemiddeld €700 besparing per jaar.
                 </p>
@@ -594,7 +594,7 @@ export default function Vergelijker2() {
             </div>
 
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Contractvergelijkers. Alle rechten voorbehouden.</p>
+              <p>&copy; 2025 Adviesneutraal. Alle rechten voorbehouden.</p>
             </div>
           </div>
         </footer>

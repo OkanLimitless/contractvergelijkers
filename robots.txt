@@ -1,24 +1,13 @@
-User-agent: *
-Allow: /
+# robots.txt for Next.js
 
 # Sitemap
-Sitemap: https://contractvergelijkers.nl/sitemap.xml
+Sitemap: https://adviesneutraal.nl/sitemap.xml
 
 # Allow crawling of CSS and JS files
-Allow: /styles.css
-Allow: /script.js
+User-agent: *
+Allow: /*.js$
+Allow: /*.css$
 
-# Allow all HTML pages
-Allow: /index.html
-Allow: /essent-klantenservice.html
-Allow: /eneco-klantenservice.html
-Allow: /vattenfall-klantenservice.html
-Allow: /budget-energie-klantenservice.html
-
-# Disallow any admin or private directories (if they exist)
+# Disallow sensitive paths
+Disallow: /api/
 Disallow: /admin/
-Disallow: /private/
-Disallow: /.git/
-
-# Crawl-delay (optional, for large sites)
-# Crawl-delay: 1

@@ -8,8 +8,8 @@ export default function Greenchoice() {
   return (
     <>
       <Head>
-        <title>Greenchoice Informatie 2025 - 100% Duurzame Energie | Contractvergelijkers</title>
-        <meta name="description" content="Greenchoice informatie 2025: Nederlandse groene energie pionier, 100% duurzame elektriciteit, tarieven en klantenservice. Vergelijk via Contractvergelijkers." />
+        <title>Greenchoice Informatie 2025 - Duurzame Energie | Adviesneutraal</title>
+        <meta name="description" content="Greenchoice informatie 2025: 100% duurzame elektriciteit, tarieven en klantenservice. Vergelijk via Adviesneutraal." />
         <meta name="keywords" content="Greenchoice tarieven 2025, groene energie, duurzame stroom, Greenchoice overstappen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -18,7 +18,7 @@ export default function Greenchoice() {
       <main className="min-h-screen bg-gradient-to-br from-green-600 via-emerald-600 to-green-800">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
           <Link href="/" className="text-white text-2xl font-bold hover:text-green-200 transition-colors">
-            ← Contractvergelijkers
+            ← Adviesneutraal
           </Link>
           <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
             📞 {phoneNumber}
@@ -90,7 +90,7 @@ export default function Greenchoice() {
         <footer className="border-t border-white/20 mt-20">
           <div className="max-w-7xl mx-auto px-6 py-8 text-center">
             <Link href="/" className="text-white text-2xl font-bold hover:text-green-200 transition-colors">
-              Contractvergelijkers
+              Adviesneutraal
             </Link>
             <p className="text-green-200 mt-4">
               <a href={`tel:${phoneNumber}`} className="text-green-300 hover:text-green-200 font-bold">

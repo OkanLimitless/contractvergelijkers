@@ -8,8 +8,8 @@ export default function Vandebron() {
   return (
     <>
       <Head>
-        <title>Vandebron Informatie 2025 - 100% Nederlandse Duurzame Energie | Contractvergelijkers</title>
-        <meta name="description" content="Vandebron informatie 2025: 100% Nederlandse duurzame energie van lokale producenten. Tarieven, klantenservice en overstappen via Contractvergelijkers." />
+        <title>Vandebron Informatie 2025 - 100% Nederlandse Duurzame Energie | Adviesneutraal</title>
+        <meta name="description" content="Vandebron informatie 2025: 100% Nederlandse duurzame energie van lokale producenten. Tarieven, klantenservice en overstappen via Adviesneutraal." />
         <meta name="keywords" content="Vandebron tarieven 2025, lokale duurzame energie, Nederlandse producenten, Vandebron overstappen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -18,7 +18,7 @@ export default function Vandebron() {
       <main className="min-h-screen bg-gradient-to-br from-green-600 via-blue-600 to-green-800">
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
           <Link href="/" className="text-white text-2xl font-bold hover:text-green-200 transition-colors">
-            ← Contractvergelijkers
+            ← Adviesneutraal
           </Link>
           <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
             📞 {phoneNumber}
@@ -64,7 +64,7 @@ export default function Vandebron() {
         <footer className="border-t border-white/20 mt-20">
           <div className="max-w-7xl mx-auto px-6 py-8 text-center">
             <Link href="/" className="text-white text-2xl font-bold hover:text-green-200 transition-colors">
-              Contractvergelijkers
+              Adviesneutraal
             </Link>
             <p className="text-blue-200 mt-4">
               <a href={`tel:${phoneNumber}`} className="text-green-400 hover:text-green-300 font-bold">

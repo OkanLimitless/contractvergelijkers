@@ -5,14 +5,14 @@ export default function Privacy() {
   return (
     <>
       <Head>
-        <title>Privacyverklaring | Contractvergelijkers</title>
-        <meta name="description" content="Privacyverklaring van Contractvergelijkers: uitleg over waarom en hoe wij persoonsgegevens verwerken en uw AVG-rechten." />
+        <title>Privacyverklaring | Adviesneutraal</title>
+        <meta name="description" content="Privacyverklaring van Adviesneutraal: uitleg over waarom en hoe wij persoonsgegevens verwerken en uw AVG-rechten." />
       </Head>
 
       <main className="min-h-screen bg-gray-50">
         <header className="bg-white shadow-sm">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-gray-900">Contractvergelijkers</Link>
+            <Link href="/" className="text-xl font-bold text-gray-900">Adviesneutraal</Link>
             <nav className="space-x-4 text-sm">
               <Link href="/klantenservice" className="text-blue-600 hover:underline">Klantenservice</Link>
             </nav>
@@ -24,18 +24,18 @@ export default function Privacy() {
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-3">Inleiding</h2>
           <p className="text-gray-700 mb-6">
-            Contractvergelijkers verwerkt persoonsgegevens van haar klanten en websitebezoekers. Wij doen dit om u zo goed mogelijk te helpen en onze doelstellingen te bereiken. In dit privacy statement leggen we uit waarom en op welke manier we uw persoonsgegevens verwerken.
+            Adviesneutraal verwerkt persoonsgegevens van haar klanten en websitebezoekers. Wij doen dit om u zo goed mogelijk te helpen en onze doelstellingen te bereiken. In dit privacy statement leggen we uit waarom en op welke manier we uw persoonsgegevens verwerken.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-3">Wie zijn wij?</h2>
           <p className="text-gray-700 mb-4">
-            Wij zijn <strong>Contractvergelijkers</strong>: adviseur op het gebied van energiezaken. Dit privacy statement ziet op al onze verwerkingen – ook indien we samen met andere partijen persoonsgegevens verwerken.
+            Wij zijn <strong>Adviesneutraal</strong>: adviseur op het gebied van energiezaken. Dit privacy statement ziet op al onze verwerkingen – ook indien we samen met andere partijen persoonsgegevens verwerken.
           </p>
           <ul className="list-disc pl-6 text-gray-700 mb-6">
-            <li>Contractvergelijkers B.V.</li>
+            <li>Adviesneutraal B.V.</li>
             <li>Adres: [Straatnaam] [Huisnummer], [Postcode] [Plaats]</li>
             <li>Telefoon: 085 087 2183</li>
-            <li>E-mail: info@contractvergelijkers.nl</li>
+            <li>E-mail: info@adviesneutraal.nl</li>
             <li>KvK: [KvK-nummer]</li>
           </ul>
 
@@ -52,7 +52,7 @@ export default function Privacy() {
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-3">Waarom verwerken wij die persoonsgegevens?</h2>
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-2">Werving (marketing)</h3>
           <p className="text-gray-700 mb-4">
-            Binnen Contractvergelijkers werven wij o.a. nieuwe prospects voor interessante aanbiedingen op de energiemarkt bij verschillende leveranciers en ook nieuwe collega’s. Om met iedereen contact te onderhouden verwerken wij ook van hen contactdetails en interessegebieden indien aangegeven door de prospects. Wij geven geen persoonsgegevens door aan derde partijen, tenzij u daar ondubbelzinnige toestemming voor hebt gegeven.
+            Binnen Adviesneutraal werven wij o.a. nieuwe prospects voor interessante aanbiedingen op de energiemarkt bij verschillende leveranciers en ook nieuwe collega’s. Om met iedereen contact te onderhouden verwerken wij ook van hen contactdetails en interessegebieden indien aangegeven door de prospects. Wij geven geen persoonsgegevens door aan derde partijen, tenzij u daar ondubbelzinnige toestemming voor hebt gegeven.
           </p>
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-2">Partneradministratie en dienstverlening</h3>
           <p className="text-gray-700 mb-4">
@@ -74,7 +74,7 @@ export default function Privacy() {
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-3">Rechten van betrokkenen</h2>
           <p className="text-gray-700 mb-4">
-            In de AVG zijn een aantal rechten opgenomen die voor iedereen gelden. Wij doen ons uiterste best om hier zo goed mogelijk aan te voldoen. Heeft u tips of opmerkingen? Laat het ons dan weten! Om van uw rechten gebruik te maken kunt u contact met ons opnemen via 085 087 2183 of <a href="mailto:info@contractvergelijkers.nl" className="text-blue-600 underline">info@contractvergelijkers.nl</a>.
+            In de AVG zijn een aantal rechten opgenomen die voor iedereen gelden. Wij doen ons uiterste best om hier zo goed mogelijk aan te voldoen. Heeft u tips of opmerkingen? Laat het ons dan weten! Om van uw rechten gebruik te maken kunt u contact met ons opnemen via 085 087 2183 of <a href="mailto:info@adviesneutraal.nl" className="text-blue-600 underline">info@adviesneutraal.nl</a>.
           </p>
           <ul className="list-disc pl-6 text-gray-700 mb-6">
             <li><strong>Informatie en inzage:</strong> u kunt inzien welke persoonsgegevens we van u verwerken en waarom.</li>
@@ -110,7 +110,7 @@ export default function Privacy() {
 
         <footer className="bg-gray-900 text-white py-10">
           <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-            <div>© {new Date().getFullYear()} Contractvergelijkers</div>
+            <div>© {new Date().getFullYear()} Adviesneutraal</div>
             <div className="space-x-4">
               <Link href="/" className="hover:underline">Home</Link>
               <Link href="/klantenservice" className="hover:underline">Klantenservice</Link>

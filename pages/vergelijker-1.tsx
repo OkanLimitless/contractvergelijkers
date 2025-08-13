@@ -53,7 +53,7 @@ export default function Vergelijker1() {
   return (
     <>
       <Head>
-        <title>Persoonlijke Energieadviseur - Gratis Consultatie | Contractvergelijkers</title>
+        <title>Persoonlijke Energieadviseur - Gratis Consultatie | Adviesneutraal</title>
         <meta name="description" content="Vergelijk alle energieleveranciers in Nederland en ontdek binnen 2 minuten hoeveel je kunt besparen. 100% Gratis advies." />
         <meta name="keywords" content="energie vergelijken, energierekening besparen, goedkoopste energie, energieleverancier vergelijken" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,7 +96,7 @@ export default function Vergelijker1() {
                   <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center">
                     <span className="text-white text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">Contractvergelijkers</span>
+                  <span className="text-2xl font-bold text-gray-900">Adviesneutraal</span>
                 </div>
               </Link>
               <div className="flex items-center space-x-4">
@@ -157,7 +157,7 @@ export default function Vergelijker1() {
               </a>
               
               <p className="text-sm text-gray-600">
-                contractvergelijkers.nl
+                adviesneutraal.nl
               </p>
             </div>
 
@@ -720,7 +720,7 @@ export default function Vergelijker1() {
             </a>
             
             <p className="text-green-100 text-sm mt-4">
-              contractvergelijkers.nl
+              adviesneutraal.nl
             </p>
           </div>
         </section>
@@ -730,7 +730,7 @@ export default function Vergelijker1() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
+                <img src="/logos/contractvergelijkers-logo.png" alt="Adviesneutraal" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
                 <p className="text-gray-300 mb-4">
                   24/7 energieklantenservice voor directe hulp en gemiddeld €700 besparing per jaar.
                 </p>
@@ -769,7 +769,7 @@ export default function Vergelijker1() {
             </div>
 
             <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Contractvergelijkers. Alle rechten voorbehouden.</p>
+              <p>&copy; 2025 Adviesneutraal. Alle rechten voorbehouden.</p>
             </div>
           </div>
         </footer>

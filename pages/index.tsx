@@ -74,16 +74,16 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Energie Informatie 2025 - Contractvergelijkers | Vergelijk ALLE energieleveranciers | +31 85 087 2183</title>
-        <meta name="description" content="🆕 Energie Informatie 2025: Vergelijk ALLE 50+ energieleveranciers in Nederland. Onafhankelijk advies, gratis service, bespaar tot €500 per jaar. Bel: +31 85 087 2183" />
+        <title>Energie Informatie 2025 - Adviesneutraal | Vergelijk ALLE energieleveranciers | +31 85 087 2183</title>
+        <meta name="description" content="🆕 Energie Informatie 2025: Vergelijk ALLE 50+ energieleveranciers in Nederland. Onafhankelijk advies van Adviesneutraal, gratis service, bespaar tot €500 per jaar. Bel: +31 85 087 2183" />
         <meta name="keywords" content="energie vergelijken 2025, energieleverancier vergelijken, klantenservice energie, goedkoopste energie, groene energie, energie overstappen" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://contractvergelijkers.nl/" />
-        <meta property="og:title" content="Energie Informatie 2025 - Contractvergelijkers" />
+        <meta property="og:url" content="https://adviesneutraal.nl/" />
+        <meta property="og:title" content="Energie Informatie 2025 - Adviesneutraal" />
         <meta property="og:description" content="Vergelijk ALLE 50+ energieleveranciers in Nederland. Onafhankelijk advies, gratis service, bespaar tot €500 per jaar." />
       </Head>
 
@@ -91,7 +91,7 @@ export default function Home() {
         {/* Navigation */}
         <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
                       <div className="flex items-center">
-              <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-16 md:h-18 w-auto" />
+              <img src="/logos/contractvergelijkers-logo.png" alt="Adviesneutraal Logo" className="h-16 md:h-18 w-auto" />
             </div>
                       <div className="hidden md:flex space-x-6 items-center">
               <Link href="/vergelijker" className="text-white hover:text-green-200 transition-colors">
@@ -172,7 +172,7 @@ export default function Home() {
         {/* Trust Indicators - Enhanced */}
         <section className="max-w-7xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Waarom 10.000+ Nederlanders kiezen voor Contractvergelijkers?
+            Waarom 10.000+ Nederlanders kiezen voor Adviesneutraal?
           </h2>
           <div className="grid md:grid-cols-5 gap-6">
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center">
@@ -369,7 +369,7 @@ export default function Home() {
         {/* About Section - Enhanced */}
         <section id="over-ons" className="max-w-7xl mx-auto px-6 py-16">
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
-            <h2 className="text-3xl font-bold text-white mb-6">Over Contractvergelijkers</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Over Adviesneutraal</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <p className="text-blue-100 text-lg leading-relaxed">
@@ -574,14 +574,52 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Transparency & Compliance Section */}
+        <section id="transparantie" className="max-w-7xl mx-auto px-6 py-16">
+          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
+            <h2 className="text-3xl font-bold text-white mb-6">Transparantie & Onafhankelijkheid</h2>
+            <div className="grid md:grid-cols-2 gap-8 text-blue-100">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Wie zijn wij?</h3>
+                  <p>Adviesneutraal is een onafhankelijk adviesplatform. Wij zijn geen energieleverancier en beheren geen klantdossiers van leveranciers.</p>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Wat doen wij?</h3>
+                  <p>Wij vergelijken alle Nederlandse energieleveranciers (vast, variabel, dynamisch; groen en traditioneel) en geven neutraal advies passend bij uw situatie.</p>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Hoe verdienen wij?</h3>
+                  <p>Onze dienst is gratis voor consumenten. Bij een overstap kunnen wij een vergoeding ontvangen van een leverancier of partner. Dit beïnvloedt ons advies niet.</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Methodologie</h3>
+                  <p>Wij wegen o.a. prijs, contractduur, tariefzekerheid, duurzaamheid (GvO), voorwaarden en klanttevredenheid. Persoonlijke factoren (verbruik, postcode) bepalen de best passende opties.</p>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Privacy & AVG</h3>
+                  <p>Wij verwerken alleen noodzakelijke gegevens volgens de AVG. Wij verkopen geen persoonsgegevens. Zie onze privacyverklaring voor details.</p>
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Bereikbaarheid</h3>
+                  <p>Telefonisch bereikbaar Ma–Vr: 09:00–20:30. Voor vragen of klachten: info@adviesneutraal.nl.</p>
+                </div>
+              </div>
+            </div>
+            <p className="text-blue-200 text-sm mt-6">Adviesneutraal vergelijkt de volledige Nederlandse markt voor consumenten. Wij zijn onafhankelijk en werken transparant.</p>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="border-t border-white/20 mt-20">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="grid md:grid-cols-3 gap-8 mb-8">
                              <div>
-                                   <img src="/logos/contractvergelijkers-logo.png" alt="Contractvergelijkers Logo" className="h-14 md:h-16 w-auto mb-4" />
+                                   <img src="/logos/contractvergelijkers-logo.png" alt="Adviesneutraal Logo" className="h-14 md:h-16 w-auto mb-4" />
                  <p className="text-blue-200 mb-4">
-                   Het grootste onafhankelijke energievergelijkingsplatform van Nederland.
+                   Het grootste onafhankelijke energie-adviesplatform van Nederland.
                  </p>
                  <p className="text-green-400 font-bold">
                    📞 {phoneNumber}
@@ -607,10 +645,8 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-white/20 pt-8 text-center text-blue-200">
-              <p>&copy; 2025 Contractvergelijkers. Alle rechten voorbehouden.</p>
-              <p className="mt-2 text-sm">
-                Onafhankelijk energievergelijker • Geen verborgen kosten • 100% gratis service
-              </p>
+              <p>&copy; 2025 Adviesneutraal. Alle rechten voorbehouden.</p>
+              <p className="mt-2 text-sm">Onafhankelijk energie-advies • Geen verborgen kosten • 100% gratis service</p>
             </div>
           </div>
         </footer>

@@ -1,71 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://contractvergelijkers.nl/</loc>
+        <loc>https://adviesneutraal.nl/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
     </url>
 
     <!-- Essent Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/essent-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/essent-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- Eneco Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/eneco-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/eneco-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- Vattenfall Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/vattenfall-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/vattenfall-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- Budget Energie Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/budget-energie-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/budget-energie-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
 
     <!-- Greenchoice Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/greenchoice-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/greenchoice-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- NUON Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/nuon-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/nuon-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 
     <!-- Oxxio Customer Service Page -->
     <url>
-        <loc>https://contractvergelijkers.nl/oxxio-klantenservice.html</loc>
+        <loc>https://adviesneutraal.nl/oxxio-klantenservice.html</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
-
 </urlset>
