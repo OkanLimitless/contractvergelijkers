@@ -110,8 +110,8 @@ export default function Klantenservice() {
 
         {/* Hero Section */}
         <section className="bg-white py-12 md:py-16">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <div className="mb-8">
+          <div className="max-w-4xl mx-auto px-6 text-center flex flex-col">
+            <div className="mb-8 order-1">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                 <span className="text-blue-600">Klantenservice Adviesneutraal</span>
                 <br />
@@ -123,7 +123,7 @@ export default function Klantenservice() {
             </div>
 
             {/* Service Options - Mobile Optimized */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-8 order-3 md:order-2">
               <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
                 <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                   <span className="text-white text-lg md:text-xl">📋</span>
@@ -150,7 +150,7 @@ export default function Klantenservice() {
             </div>
 
             {/* Main CTA */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8">
+            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8 order-2 md:order-3">
               <h2 className="text-2xl font-bold mb-4">Direct contact met Adviesneutraal Klantenservice</h2>
               <p className="text-blue-100 mb-6">
                 Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
@@ -168,7 +168,7 @@ export default function Klantenservice() {
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto">
+            <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto order-4">
               <h3 className="text-lg font-bold text-gray-900 mb-4">Snelle Hulp Aanvragen</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Vul uw gegevens in zodat wij u gericht kunnen adviseren
