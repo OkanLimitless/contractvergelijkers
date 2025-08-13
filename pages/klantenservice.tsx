@@ -92,10 +92,10 @@ export default function Klantenservice() {
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center">
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">⚡</span>
+                  <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-lg md:text-xl font-bold">⚡</span>
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">Adviesneutraal</span>
+                  <span className="text-xl md:text-2xl font-bold text-gray-900">Adviesneutraal</span>
                 </div>
               </Link>
               <div className="flex items-center space-x-4">
@@ -109,9 +109,27 @@ export default function Klantenservice() {
         </header>
 
         {/* Hero Section */}
-        <section className="bg-white py-12 md:py-16">
+        <section className="bg-white pt-6 pb-12 md:py-16">
           <div className="max-w-4xl mx-auto px-6 text-center flex flex-col">
-            <div className="mb-8 order-1">
+            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8 order-1 md:order-3">
+              <h2 className="text-2xl font-bold mb-4">Direct contact met Adviesneutraal Klantenservice</h2>
+              <p className="text-blue-100 mb-6">
+                Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
+              </p>
+              <a 
+                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
+              >
+                Bel Klantenservice: {phoneNumber}
+              </a>
+              
+              <p className="text-sm text-blue-200 mt-4">
+                Maandag t/m vrijdag: 08:00 - 20:00 | Weekend: 10:00 - 16:00
+              </p>
+            </div>
+
+            <div className="mb-8 order-2 md:order-1">
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                 <span className="text-blue-600">Klantenservice Adviesneutraal</span>
                 <br />
@@ -147,25 +165,6 @@ export default function Klantenservice() {
                 <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Overstappen & Wijzigen</h3>
                 <p className="text-xs md:text-sm text-gray-600">Hulp bij contractwijzigingen</p>
               </div>
-            </div>
-
-            {/* Main CTA */}
-            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8 order-2 md:order-3">
-              <h2 className="text-2xl font-bold mb-4">Direct contact met Adviesneutraal Klantenservice</h2>
-              <p className="text-blue-100 mb-6">
-                Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
-              </p>
-              <a 
-                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                Bel Klantenservice: {phoneNumber}
-              </a>
-              
-              <p className="text-sm text-blue-200 mt-4">
-                Maandag t/m vrijdag: 08:00 - 20:00 | Weekend: 10:00 - 16:00
-              </p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto order-4">
