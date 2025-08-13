@@ -9,7 +9,7 @@ declare global {
 }
 
 export default function Klantenservice() {
-  const [phoneNumber] = useState('085 087 2183')
+  const [phoneNumber] = useState('085 087 0276')
   const [formStep, setFormStep] = useState(1)
   const [showStickyButton, setShowStickyButton] = useState(false)
   const [formData, setFormData] = useState({
