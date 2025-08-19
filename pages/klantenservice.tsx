@@ -640,10 +640,14 @@ export default function Klantenservice() {
             <p className="mb-5 text-center text-gray-600">
               Onze klantenservice helpt u direct met persoonlijk advies om te besparen
             </p>
-            <div className="mb-4 rounded-2xl bg-blue-600 p-5 text-center text-white">
+            <a
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+              className="mb-4 block rounded-2xl bg-blue-600 p-5 text-center text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
               <div className="text-sm opacity-90">Bel direct:</div>
               <div className="mt-1 text-3xl font-extrabold tracking-wide">{phoneNumber}</div>
-            </div>
+            </a>
             <p className="mb-4 text-center text-sm text-gray-500">Ma–Vrij 08:00 tot 20:00 uur</p>
             <a
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
