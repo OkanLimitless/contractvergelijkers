@@ -12,6 +12,7 @@ export default function Klantenservice() {
   const [phoneNumber] = useState('085 087 0276')
   const [formStep, setFormStep] = useState(1)
   const [showStickyButton, setShowStickyButton] = useState(false)
+  const [showMobilePopup, setShowMobilePopup] = useState(false)
   const [formData, setFormData] = useState({
     postcode: '',
     huisnummer: '',
@@ -47,6 +48,15 @@ export default function Klantenservice() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // On initial load, show popup on mobile only
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const isMobileViewport = window.matchMedia('(max-width: 767px)').matches
+    if (isMobileViewport) {
+      setShowMobilePopup(true)
+    }
   }, [])
 
   return (
@@ -605,6 +615,46 @@ export default function Klantenservice() {
           </div>
         )}
       </main>
+      {/* Mobile-only phone popup */}
+      {showMobilePopup && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50"
+          onClick={() => setShowMobilePopup(false)}
+        >
+          <div
+            className="relative mx-4 w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="absolute right-3 top-3 rounded-full bg-gray-100 p-2 text-gray-600 hover:bg-gray-200"
+              aria-label="Sluiten"
+              onClick={() => setShowMobilePopup(false)}
+            >
+              ×
+            </button>
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600">
+              <span className="text-3xl text-white">✓</span>
+            </div>
+            <h3 className="mb-2 text-center text-2xl font-bold text-blue-700">Bel Klantenservice Direct!</h3>
+            <p className="mb-5 text-center text-gray-600">
+              Onze klantenservice helpt u direct met persoonlijk advies om te besparen
+            </p>
+            <div className="mb-4 rounded-2xl bg-blue-600 p-5 text-center text-white">
+              <div className="text-sm opacity-90">Bel direct:</div>
+              <div className="mt-1 text-3xl font-extrabold tracking-wide">{phoneNumber}</div>
+            </div>
+            <p className="mb-4 text-center text-sm text-gray-500">Ma–Vrij 08:00 tot 20:00 uur</p>
+            <a
+              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+              className="block rounded-xl bg-blue-600 py-3 text-center font-bold text-white hover:bg-blue-700"
+            >
+              Bel Klantenservice Nu
+            </a>
+          </div>
+        </div>
+      )}
     </>
   )
 }
