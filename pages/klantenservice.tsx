@@ -31,7 +31,7 @@ export default function Klantenservice() {
       setFormStep(formStep + 1)
       if (formStep === 2) {
         gtag('event', 'conversion', {
-          'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC'
+          'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B'
         })
       }
     }
@@ -69,14 +69,14 @@ export default function Klantenservice() {
         <link rel="icon" href="/favicon.ico" />
         
         {/* Google Ads tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-697295426"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-697295426');
+              gtag('config', 'AW-17614565914');
               
               function gtag_report_conversion(url) {
                 var callback = function () {
@@ -85,7 +85,7 @@ export default function Klantenservice() {
                   }
                 };
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC',
+                    'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B',
                     'event_callback': callback
                 });
                 return false;
@@ -118,138 +118,74 @@ export default function Klantenservice() {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="bg-white pt-6 pb-12 md:py-16">
-          <div className="max-w-4xl mx-auto px-6 text-center flex flex-col">
-            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8 order-1 md:order-3">
-              <h2 className="text-2xl font-bold mb-4">Direct contact met Adviesneutraal Klantenservice</h2>
-              <p className="text-blue-100 mb-6">
-                Bel voor onafhankelijk energie-advies en vergelijking van tarieven. Wij zijn geen onderdeel van energieleveranciers en behandelen geen klantdossiers van providers.
-              </p>
-              <a 
-                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                Bel Klantenservice: {phoneNumber}
-              </a>
-              
-              <p className="text-sm text-blue-200 mt-4">
-                Maandag t/m vrijdag: 08:00 - 20:00 | Weekend: 10:00 - 16:00
-              </p>
-            </div>
-
-            <div className="mb-8 order-2 md:order-1">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                <span className="text-blue-600">Klantenservice Adviesneutraal</span>
-                <br />
-                <span className="text-2xl md:text-3xl text-gray-700">Direct hulp & onafhankelijk energie-advies</span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Zoekt u de klantenservice van uw energieleverancier? Wij geven onafhankelijk advies, vergelijken tarieven en verwijzen u indien nodig door naar de officiële klantenservice van uw leverancier.
-              </p>
-            </div>
-
-            {/* Service Options - Mobile Optimized */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mb-8 order-3 md:order-2">
-              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <span className="text-white text-lg md:text-xl">📋</span>
+        {/* Hero Section (New design) */}
+        <section className="relative overflow-hidden bg-white">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-100 blur-3xl" />
+            <div className="absolute right-0 top-16 h-80 w-80 rounded-full bg-blue-50 blur-2xl" />
+          </div>
+          <div className="max-w-6xl mx-auto px-6 py-12 md:py-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700 mb-4">
+                  Onafhankelijk advieslijn
                 </div>
-                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Klantenservice & Advies</h3>
-                <p className="text-xs md:text-sm text-gray-600">Antwoord op vragen en heldere uitleg over opties</p>
-              </div>
-              
-              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <span className="text-white text-lg md:text-xl">💰</span>
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Tarieven & Prijzen</h3>
-                <p className="text-xs md:text-sm text-gray-600">Informatie over tarieven en prijzen</p>
-              </div>
-              
-              <div className="bg-blue-50 p-4 md:p-6 rounded-lg text-center">
-                <div className="w-8 h-8 md:w-12 md:h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
-                  <span className="text-white text-lg md:text-xl">🔄</span>
-                </div>
-                <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2">Overstappen & Wijzigen</h3>
-                <p className="text-xs md:text-sm text-gray-600">Hulp bij contractwijzigingen</p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 rounded-xl p-6 max-w-md mx-auto order-4">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Snelle Hulp Aanvragen</h3>
-              <p className="text-sm text-gray-600 mb-4">
-                Vul uw gegevens in zodat wij u gericht kunnen adviseren
-              </p>
-              
-              {/* Request Form */}
-              <div className="space-y-3">
-                <div className="text-left">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    📍 Uw locatie
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    <input
-                      type="text"
-                      placeholder="1234AB"
-                      value={formData.postcode}
-                      onChange={(e) => handleInputChange('postcode', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-500 text-sm"
-                    />
-                    <input
-                      type="text"
-                      placeholder="12"
-                      value={formData.huisnummer}
-                      onChange={(e) => handleInputChange('huisnummer', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-500 text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="text-left">
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    🏘️ Woonsituatie
-                  </label>
-                  <select
-                    value={formData.woonsituatie}
-                    onChange={(e) => handleInputChange('woonsituatie', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-500 text-sm"
-                  >
-                    <option value="">Kies je woonsituatie</option>
-                    <option value="eengezinswoning">Eengezinswoning</option>
-                    <option value="appartement">Appartement</option>
-                    <option value="studio">Studio/kamer</option>
-                    <option value="vrijstaand">Vrijstaande woning</option>
-                    <option value="twee-onder-een-kap">Twee-onder-een-kap</option>
-                  </select>
-                </div>
-                
-                {formData.postcode && formData.huisnummer && formData.woonsituatie ? (
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-200">
-                    <p className="text-sm text-blue-700 font-medium text-center">
-                      ✓ Gegevens ontvangen! Bel nu voor directe hulp
-                    </p>
-                  </div>
-                ) : (
-                  <div className="bg-gray-50 p-3 rounded-lg">
-                    <p className="text-xs text-gray-600 text-center">
-                      Vul uw gegevens in voor gerichte ondersteuning
-                    </p>
-                  </div>
-                )}
-                
-                <a
-                  href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                  onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                  className="block w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors text-center"
-                >
-                  Bel Klantenservice: {phoneNumber}
-                </a>
-                
-                <p className="text-xs text-gray-500 text-center">
-                  Direct contact met onze energiespecialisten
+                <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
+                  Klantenservice Adviesneutraal
+                </h1>
+                <p className="mt-4 text-lg text-gray-600 md:max-w-xl">
+                  Direct hulp bij energievragen, tarieven en overstappen. Wij zijn geen onderdeel van energieleveranciers en geven 100% onafhankelijk advies.
                 </p>
+                <ul className="mt-6 space-y-2 text-gray-700">
+                  <li>✓ Persoonlijk en duidelijk advies</li>
+                  <li>✓ Vergelijking van actuele tarieven</li>
+                  <li>✓ Complete overstapservice zonder gedoe</li>
+                </ul>
+                <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3">
+                  <a
+                    href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                    onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                    className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3 font-bold text-white shadow-md transition-colors hover:bg-blue-700"
+                  >
+                    📞 Bel Klantenservice: {phoneNumber}
+                  </a>
+                  <div className="text-sm text-gray-500">Ma–Vr 08:00–20:00, Za–Zo 10:00–16:00</div>
+                </div>
+              </div>
+
+              <div>
+                <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-xl">
+                  <div className="mb-4 text-sm font-medium text-blue-700">Snel naar</div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-lg border border-blue-100 bg-blue-50 p-4">
+                      <div className="text-2xl">📋</div>
+                      <div className="mt-1 font-semibold text-gray-900">Klantenservice & advies</div>
+                      <div className="text-sm text-gray-600">Vragen en uitleg</div>
+                    </div>
+                    <div className="rounded-lg border border-blue-100 bg-blue-50 p-4">
+                      <div className="text-2xl">💰</div>
+                      <div className="mt-1 font-semibold text-gray-900">Tarieven & prijzen</div>
+                      <div className="text-sm text-gray-600">Actuele opties</div>
+                    </div>
+                    <div className="rounded-lg border border-blue-100 bg-blue-50 p-4">
+                      <div className="text-2xl">🔄</div>
+                      <div className="mt-1 font-semibold text-gray-900">Overstappen</div>
+                      <div className="text-sm text-gray-600">Zonder gedoe</div>
+                    </div>
+                    <div className="rounded-lg border border-blue-100 bg-blue-50 p-4">
+                      <div className="text-2xl">📞</div>
+                      <div className="mt-1 font-semibold text-gray-900">Direct bellen</div>
+                      <div className="text-sm text-gray-600">Spreek een specialist</div>
+                    </div>
+                  </div>
+                  <a
+                    href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
+                    onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
+                    className="mt-6 block w-full rounded-xl bg-blue-600 px-6 py-4 text-center font-bold text-white hover:bg-blue-700"
+                  >
+                    Bel direct: {phoneNumber}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

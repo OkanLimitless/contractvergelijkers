@@ -31,7 +31,7 @@ export default function Vergelijker3() {
       // Track form completion when reaching final step
       if (formStep === 2) {
         gtag('event', 'conversion', {
-          'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC'
+          'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B'
         })
       }
     }
@@ -60,14 +60,14 @@ export default function Vergelijker3() {
         <link rel="icon" href="/favicon.ico" />
         
         {/* Google Ads tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-697295426"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-697295426');
+              gtag('config', 'AW-17614565914');
               
               function gtag_report_conversion(url) {
                 var callback = function () {
@@ -76,7 +76,7 @@ export default function Vergelijker3() {
                   }
                 };
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-697295426/H2cDCNC_pfEaEMLEv8wC',
+                    'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B',
                     'event_callback': callback
                 });
                 return false;
