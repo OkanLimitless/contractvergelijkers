@@ -9,14 +9,7 @@ declare global {
 
 export default function Klantenservice() {
   const [phoneNumber] = useState('085 087 0276')
-  const [showStickyButton, setShowStickyButton] = useState(false)
   const [showMobilePopup, setShowMobilePopup] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setShowStickyButton(window.scrollY > 600)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -50,7 +43,7 @@ export default function Klantenservice() {
         />
       </Head>
 
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-gray-50 pb-28">
         {/* Header */}
         <header className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-6 py-4">
@@ -97,8 +90,6 @@ export default function Klantenservice() {
           <div className="max-w-3xl mx-auto px-6 py-10">
             <h2 className="text-center text-sm font-semibold text-gray-800 mb-4">Waarom ons bellen?</h2>
             <div className="mx-auto max-w-2xl">
-              <div className="mx-auto w-full rounded-full bg-orange-500 px-4 py-3 text-center font-semibold text-white shadow">📞 Bel Nu – Direct Verbonden</div>
-              <div className="mt-2 text-center text-xs text-gray-600">{phoneNumber} • Direct beschikbaar</div>
               <div className="mt-4 space-y-4">
                 <div className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">🕒</div>
@@ -187,18 +178,23 @@ export default function Klantenservice() {
           </div>
         </footer>
 
-        {/* Sticky Call Button - Only show after scrolling */}
-        {showStickyButton && (
-          <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto md:max-w-xs">
+        {/* Sticky bottom CTA (Figma-aligned) */}
+        <div className="fixed inset-x-0 bottom-0 z-50">
+          <div className="mx-auto w-full max-w-3xl px-4 pt-3 pb-4" style={{background:'rgba(255,255,255,0.96)', backdropFilter:'saturate(180%) blur(8px)'}}>
+            <div className="text-center text-[13px] font-semibold text-gray-800 mb-2">Waarom ons bellen?</div>
             <a
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center transition-colors text-sm"
+              className="block w-full rounded-full text-center font-semibold text-white shadow-md hover:opacity-95 transition-opacity"
+              style={{background:'#F46A0F', padding:'12px 16px'}}
             >
-              📞 Bel Direct: {phoneNumber}
+              <span className="mr-2">📞</span> Bel Nu – Direct Verbonden
             </a>
+            <div className="mt-2 text-center text-[12px] text-gray-600">
+              {phoneNumber} • Direct beschikbaar
+            </div>
           </div>
-        )}
+        </div>
       </main>
 
       {/* Mobile-only phone popup */}
@@ -221,4 +217,3 @@ export default function Klantenservice() {
     </>
   )
 }
-
