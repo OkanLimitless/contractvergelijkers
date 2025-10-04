@@ -44,29 +44,6 @@ export default function Klantenservice() {
       </Head>
 
       <main className="min-h-screen bg-gray-50 pb-28">
-        {/* Header */}
-        <header className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="flex items-center">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-lg md:text-xl font-bold">⚡</span>
-                  </div>
-                  <span className="text-xl md:text-2xl font-bold text-gray-900">Adviesneutraal</span>
-                </div>
-              </Link>
-              <a
-                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors"
-              >
-                {phoneNumber}
-              </a>
-            </div>
-          </div>
-        </header>
-
         {/* Hero */}
         <section className="bg-gradient-to-b from-blue-50 to-white">
           <div className="max-w-2xl mx-auto px-6 py-14 md:py-20 text-center">
@@ -77,7 +54,7 @@ export default function Klantenservice() {
             <a
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3 font-bold text-white shadow-md transition-colors hover:bg-blue-700"
+              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-12 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-blue-700"
             >
               <span>📞</span> Bel Nu
             </a>
@@ -160,8 +137,7 @@ export default function Klantenservice() {
 
         {/* Sticky bottom CTA (Figma-aligned) */}
         <div className="fixed inset-x-0 bottom-0 z-50">
-          <div className="mx-auto w-full max-w-3xl px-4 pt-3 pb-4" style={{background:'rgba(255,255,255,0.96)', backdropFilter:'saturate(180%) blur(8px)'}}>
-            <div className="text-center text-[13px] font-semibold text-gray-800 mb-2">Waarom ons bellen?</div>
+          <div className="mx-auto w-full max-w-3xl px-4 pt-2 pb-4" style={{background:'rgba(255,255,255,0.96)', backdropFilter:'saturate(180%) blur(8px)'}}>
             <a
               href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
               onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
