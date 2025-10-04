@@ -142,12 +142,17 @@ export default function Klantenservice() {
 
         {/* Footer (Figma-aligned) */}
         <footer className="bg-white border-t border-gray-200">
-          <div className="mx-auto max-w-3xl px-6 py-10 text-center">
+          <div className="mx-auto max-w-3xl px-6 py-10 text-center space-y-4">
             <p className="text-sm font-medium text-gray-700">
               Adviesneutraal · Onafhankelijke klantenservice voor al uw energievraag.
             </p>
-            <div className="mt-4 h-px bg-gray-200" />
-            <p className="mt-4 text-xs text-gray-500">
+            <div>
+              <Link href="/privacy" className="text-sm text-blue-600 hover:underline">
+                Privacyverklaring
+              </Link>
+            </div>
+            <div className="h-px bg-gray-200" />
+            <p className="text-xs text-gray-500">
               &copy; 2025 Energie Klantenservice · Alle rechten voorbehouden.
             </p>
           </div>
