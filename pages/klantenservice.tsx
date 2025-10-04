@@ -140,41 +140,16 @@ export default function Klantenservice() {
           </div>
         </section>
 
-        {/* Footer (kept) */}
-        <footer className="bg-gray-900 text-white py-12">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <img src="/logos/contractvergelijkers-logo.png" alt="Adviesneutraal" className="h-12 md:h-14 w-auto mb-4 brightness-0 invert" />
-                <p className="text-gray-300 mb-4">Transparant en onafhankelijk energie-advies.</p>
-                <div className="flex space-x-4"><span className="text-yellow-400">⭐⭐⭐⭐⭐</span><span className="text-sm text-gray-400">4.9/5 (2.100+ reviews)</span></div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Waarom Wij?</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>✓ Alle leveranciers vergelijken</li>
-                  <li>✓ 100% onafhankelijk advies</li>
-                  <li>✓ Gratis service</li>
-                  <li>✓ Overstap volledig geregeld</li>
-                  <li><Link href="/privacy" className="underline text-gray-300 hover:text-white">Privacy</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Bel Klantenservice</h4>
-                <div className="space-y-4">
-                  <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="block">
-                    <div className="bg-blue-600 text-white p-4 rounded-lg text-center hover:bg-blue-700 transition-colors">
-                      <div className="text-sm">Direct Contact</div>
-                      <div className="text-xl font-bold">{phoneNumber}</div>
-                    </div>
-                  </a>
-                  <p className="text-xs text-gray-400 text-center">Maandag t/m vrijdag: 08:00 - 22:00<br/>Weekend: 09:00 - 18:00</p>
-                </div>
-              </div>
-            </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 Adviesneutraal. Alle rechten voorbehouden.</p>
-            </div>
+        {/* Footer (Figma-aligned) */}
+        <footer className="bg-white border-t border-gray-200">
+          <div className="mx-auto max-w-3xl px-6 py-10 text-center">
+            <p className="text-sm font-medium text-gray-700">
+              Adviesneutraal · Onafhankelijke klantenservice voor al uw energievraag.
+            </p>
+            <div className="mt-4 h-px bg-gray-200" />
+            <p className="mt-4 text-xs text-gray-500">
+              &copy; 2025 Energie Klantenservice · Alle rechten voorbehouden.
+            </p>
           </div>
         </footer>
 
