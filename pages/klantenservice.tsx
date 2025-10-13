@@ -1,36 +1,86 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { CheckCircle2, Clock, Phone, Shield } from 'lucide-react'
+
+const DISPLAY_PHONE_NUMBER = '085 087 0276'
+const PHONE_NUMBER_CANONICAL = DISPLAY_PHONE_NUMBER.replace(/\s+/g, '')
+const PHONE_NUMBER_TEL =
+  PHONE_NUMBER_CANONICAL.startsWith('0')
+    ? `+31${PHONE_NUMBER_CANONICAL.slice(1)}`
+    : `+31${PHONE_NUMBER_CANONICAL}`
 
 declare global {
   function gtag(...args: any[]): void
   function gtag_report_conversion(url?: string): boolean
 }
 
-export default function Klantenservice() {
-  const [phoneNumber] = useState('085 087 0276')
-  const [showMobilePopup, setShowMobilePopup] = useState(false)
+const highlightBadges = [
+  {
+    text: 'Gratis bellen',
+    className: 'bg-green-50 text-green-700',
+  },
+  {
+    text: 'Direct verbonden',
+    className: 'bg-blue-50 text-blue-700',
+  },
+  {
+    text: 'Geen wachtrij',
+    className: 'bg-purple-50 text-purple-700',
+  },
+]
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (window.matchMedia('(max-width: 767px)').matches) setShowMobilePopup(true)
-  }, [])
+const trustCards = [
+  {
+    title: 'Onafhankelijk advies',
+    description: 'Wij vergelijken alle energieleveranciers voor u.',
+    icon: CheckCircle2,
+    iconWrapperClass: 'bg-green-100 text-green-600',
+  },
+  {
+    title: 'Snelle hulp',
+    description: 'Direct contact met onze klantenservice experts.',
+    icon: Clock,
+    iconWrapperClass: 'bg-blue-100 text-blue-600',
+  },
+  {
+    title: 'Betrouwbaar',
+    description: 'Persoonlijk advies op maat voor uw situatie.',
+    icon: Shield,
+    iconWrapperClass: 'bg-purple-100 text-purple-600',
+  },
+]
+
+const serviceItems = [
+  'Vragen over uw energiecontract',
+  'Overstappen naar een goedkopere aanbieder',
+  'Uitleg over uw energiefactuur',
+  'Vergelijken van energietarieven',
+]
+
+export default function Klantenservice() {
+  const trackConversion = () => {
+    if (typeof window !== 'undefined' && typeof gtag_report_conversion === 'function') {
+      gtag_report_conversion(`tel:${PHONE_NUMBER_TEL}`)
+    }
+  }
 
   return (
     <>
       <Head>
         <title>Klantenservice | Adviesneutraal Advieslijn</title>
-        <meta name="description" content="Klantenservice Adviesneutraal: onafhankelijk advies en tarieven vergelijken. Wij helpen met vragen en overstappen. Bel direct." />
+        <meta
+          name="description"
+          content="Klantenservice Adviesneutraal: onafhankelijk advies en tarieven vergelijken. Wij helpen met vragen en overstappen. Bel direct."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
-        {/* Google Ads tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);} 
+              function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-17614565914');
               function gtag_report_conversion(url){
@@ -43,133 +93,92 @@ export default function Klantenservice() {
         />
       </Head>
 
-      <main className="min-h-screen bg-gray-50 pb-28">
-        {/* Hero */}
-        <section className="bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-2xl mx-auto px-6 py-14 md:py-20 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Klantenservice Energie – Bel Nu</h1>
-            <p className="text-gray-600 text-lg md:text-xl mb-8">Binnen 20 seconden verbonden met een energie-expert. Direct bereikbaar.</p>
-            <div className="text-sm text-gray-500 mb-2">Bel direct:</div>
-            <div className="text-2xl md:text-3xl font-extrabold text-blue-700 tracking-wide mb-4">{phoneNumber}</div>
-            <a
-              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-12 py-4 text-lg font-bold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-blue-700"
-            >
-              <span>📞</span> Bel Nu
-            </a>
-            <div className="mt-3 text-sm text-gray-500">Direct verbonden • Geen wachtrij</div>
-          </div>
-        </section>
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+        <main className="mx-auto max-w-md px-4 py-12">
+          <section className="text-center">
+            <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
+              <Phone className="h-10 w-10 text-blue-600" aria-hidden />
+            </div>
 
-        {/* Waarom */}
-        <section className="bg-white">
-          <div className="max-w-3xl mx-auto px-6 py-10">
-            <h2 className="text-center text-sm font-semibold text-gray-800 mb-4">Waarom ons bellen?</h2>
-            <div className="mx-auto max-w-2xl">
-              <div className="mt-4 space-y-4">
-                <div className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">🕒</div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Direct Bereikbaar</div>
-                    <div className="text-sm text-gray-600">Snelle hulp tijdens kantooruren voor al uw vragen</div>
-                  </div>
+            <p className="mb-2 text-sm text-gray-500">Advies Neutraal</p>
+            <h1 className="mb-4 text-2xl font-semibold text-gray-900">
+              Hulp nodig met uw energieleverancier?
+            </h1>
+            <p className="mb-6 text-sm text-gray-600">
+              Bel direct met onze klantenservice voor persoonlijk advies over uw energiecontract.
+            </p>
+
+            <div className="mb-8 flex flex-wrap justify-center gap-2">
+              {highlightBadges.map((badge) => (
+                <span
+                  key={badge.text}
+                  className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm ${badge.className}`}
+                >
+                  <CheckCircle2 className="h-4 w-4" aria-hidden />
+                  {badge.text}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={`tel:${PHONE_NUMBER_TEL}`}
+              onClick={trackConversion}
+              className="mb-3 inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-semibold text-white transition hover:bg-blue-700"
+            >
+              <Phone className="h-6 w-6" aria-hidden />
+              {DISPLAY_PHONE_NUMBER}
+            </a>
+            <p className="text-xs text-gray-500">Bereikbaar op werkdagen van 08:00 - 20:00 uur</p>
+          </section>
+
+          <section className="mt-10 grid gap-3">
+            {trustCards.map(({ title, description, icon: Icon, iconWrapperClass }) => (
+              <div key={title} className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <div
+                  className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ${iconWrapperClass}`}
+                >
+                  <Icon className="h-5 w-5" aria-hidden />
                 </div>
-                <div className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">€</div>
-                  <div>
-                    <div className="font-semibold text-gray-900">Persoonlijke Service</div>
-                    <div className="text-sm text-gray-600">Deskundige medewerkers helpen u verder</div>
-                  </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900">{title}</h3>
+                  <p className="text-sm text-gray-600">{description}</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
+            ))}
+          </section>
 
-        {/* Hulp bij */}
-        <section className="bg-gray-50">
-          <div className="max-w-3xl mx-auto px-6 py-14">
-            <h2 className="text-center text-gray-900 text-xl font-semibold mb-8">Hulp bij:</h2>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm border border-gray-200"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600">🧾</div><div className="font-medium text-gray-900">Factuur vragen</div></div>
-              <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm border border-gray-200"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600">✏️</div><div className="font-medium text-gray-900">Contract wijzigen</div></div>
-              <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm border border-gray-200"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600">🔀</div><div className="font-medium text-gray-900">Overstappen naar andere leverancier</div></div>
-              <div className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm border border-gray-200"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-600">🚧</div><div className="font-medium text-gray-900">Storing melden</div></div>
-            </div>
-            <div className="mt-6 text-center text-sm text-gray-500">En nog veel meer energie-gerelateerde vragen</div>
-          </div>
-        </section>
+          <section className="mt-10 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <h3 className="mb-4 text-center text-base font-semibold text-gray-900">Wij helpen u met:</h3>
+            <ul className="space-y-3 text-left">
+              {serviceItems.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" aria-hidden />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        {/* Testimonials */}
-        <section className="bg-white">
-          <div className="max-w-3xl mx-auto px-6 py-14">
-            <h2 className="text-center text-gray-900 text-xl font-semibold mb-8">Wat zeggen onze klanten?</h2>
-            <div className="rounded-2xl border border-gray-200 bg-blue-50 p-8 text-center shadow-sm">
-              <div className="text-yellow-400 text-xl mb-3">⭐⭐⭐⭐⭐</div>
-              <p className="text-lg font-medium text-gray-900 mb-2">"Gebeld binnen 20 seconden – super snel geholpen!"</p>
-              <div className="text-sm text-gray-600">— Sandra M., Amsterdam</div>
-            </div>
-            <div className="mt-8 grid grid-cols-1 gap-3 text-sm text-gray-700">
-              <div className="flex items-center gap-2"><span className="text-green-500">●</span> Duizenden tevreden klanten</div>
-              <div className="flex items-center gap-2"><span className="text-green-500">●</span> Snelle verbinding gegarandeerd</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer (Figma-aligned) */}
-        <footer className="bg-white border-t border-gray-200">
-          <div className="mx-auto max-w-3xl px-6 py-10 text-center space-y-4">
-            <p className="text-sm font-medium text-gray-700">
-              Adviesneutraal · Onafhankelijke klantenservice voor al uw energievraag.
-            </p>
-            <div>
-              <Link href="/privacy" className="text-sm text-blue-600 hover:underline">
-                Privacyverklaring
-              </Link>
-            </div>
-            <div className="h-px bg-gray-200" />
-            <p className="text-xs text-gray-500">
-              &copy; 2025 Energie Klantenservice · Alle rechten voorbehouden.
-            </p>
-          </div>
-        </footer>
-
-        {/* Sticky bottom CTA (Figma-aligned) */}
-        <div className="fixed inset-x-0 bottom-0 z-50">
-          <div className="mx-auto w-full max-w-3xl px-4 pt-2 pb-4" style={{background:'rgba(255,255,255,0.96)', backdropFilter:'saturate(180%) blur(8px)'}}>
+          <section className="mt-8 text-center">
             <a
-              href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-              onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)}
-              className="block w-full rounded-full text-center font-semibold text-white shadow-md hover:opacity-95 transition-opacity"
-              style={{background:'#F46A0F', padding:'12px 16px'}}
+              href={`tel:${PHONE_NUMBER_TEL}`}
+              onClick={trackConversion}
+              className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-xl border-2 border-blue-600 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
             >
-              <span className="mr-2">📞</span> Bel Nu – Direct Verbonden
+              <Phone className="h-5 w-5" aria-hidden />
+              Bel nu: {DISPLAY_PHONE_NUMBER}
             </a>
-            <div className="mt-2 text-center text-[12px] text-gray-600">
-              {phoneNumber} • Direct beschikbaar
-            </div>
-          </div>
-        </div>
-      </main>
+          </section>
+        </main>
 
-      {/* Mobile-only phone popup */}
-      {showMobilePopup && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50" onClick={() => setShowMobilePopup(false)}>
-          <div className="relative mx-4 w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button type="button" className="absolute right-3 top-3 rounded-full bg-gray-100 p-2 text-gray-600 hover:bg-gray-200" aria-label="Sluiten" onClick={() => setShowMobilePopup(false)}>×</button>
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600"><span className="text-3xl text-white">✓</span></div>
-            <h3 className="mb-2 text-center text-2xl font-bold text-blue-700">Bel Klantenservice Direct!</h3>
-            <p className="mb-5 text-center text-gray-600">Onze klantenservice helpt u direct met persoonlijk advies om te besparen</p>
-            <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="mb-4 block rounded-2xl bg-blue-600 p-5 text-center text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <div className="text-sm opacity-90">Bel direct:</div>
-              <div className="mt-1 text-3xl font-extrabold tracking-wide">{phoneNumber}</div>
-            </a>
-            <p className="mb-4 text-center text-sm text-gray-500">Ma–Vrij 08:00 tot 20:00 uur</p>
-            <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} onClick={() => gtag_report_conversion(`tel:+31${phoneNumber.replace(/\s/g, '')}`)} className="block rounded-xl bg-blue-600 py-3 text-center font-bold text-white hover:bg-blue-700">Bel Klantenservice Nu</a>
-          </div>
-        </div>
-      )}
+        <footer className="mx-auto max-w-md px-4 pb-12 text-center text-xs text-gray-500">
+          <p className="mb-1">&copy; 2025 Advies Neutraal - Onafhankelijk Energieadvies</p>
+          <p className="mb-3">Klantenservice bereikbaar op werkdagen</p>
+          <Link href="/privacy" className="text-gray-500 underline">
+            Privacybeleid
+          </Link>
+        </footer>
+      </div>
     </>
   )
 }
