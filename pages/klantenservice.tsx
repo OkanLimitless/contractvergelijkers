@@ -123,7 +123,7 @@ export default function Klantenservice() {
             <a
               href={`tel:${PHONE_NUMBER_TEL}`}
               onClick={trackConversion}
-              className="mb-3 inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-semibold text-white transition hover:bg-blue-700"
+              className="mb-3 inline-flex h-16 w-full items-center justify-center gap-3 rounded-xl bg-blue-600 text-xl font-semibold text-white shadow-lg transition hover:bg-blue-700 motion-safe:animate-ctaPulse"
             >
               <Phone className="h-6 w-6" aria-hidden />
               {DISPLAY_PHONE_NUMBER}
