@@ -148,17 +148,26 @@ export default function Klantenservice() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17637600129" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17614565914');
-              function gtag_report_conversion(url){
-                var cb=function(){ if(typeof(url)!='undefined'){ window.location=url; } };
-                gtag('event','conversion',{ send_to:'AW-17614565914/jLQ1CM6j9KYbEJrko89B', event_callback:cb });
+              gtag('config', 'AW-17637600129');
+              function gtag_report_conversion(url) {
+                var callback = function () {
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
+                };
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-17637600129/OkdvCNzg_a8bEIHXodpB',
+                  'value': 1.0,
+                  'currency': 'USD',
+                  'event_callback': callback
+                });
                 return false;
               }
             `,
