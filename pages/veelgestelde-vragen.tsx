@@ -1,4 +1,5 @@
 import { BookOpen, HelpCircle, Lightbulb, PhoneCall, Shield, Zap } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -11,7 +12,7 @@ type FaqEntry = {
 
 type FaqCategory = {
   id: string
-  icon: React.ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
+  icon: LucideIcon
   title: string
   description: string
   entries: FaqEntry[]
