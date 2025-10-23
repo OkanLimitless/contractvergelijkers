@@ -185,13 +185,6 @@ export default function Klantenservice() {
                 >
                   📞 Bel nu: {DISPLAY_PHONE_NUMBER}
                 </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/60 px-5 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
-                >
-                  Vraag terugbelverzoek aan
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
               </div>
               <p className="mt-4 text-xs text-blue-100">
                 Openingstijden: ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00. U betaalt alleen uw reguliere beltarief.
@@ -246,7 +239,7 @@ export default function Klantenservice() {
           </div>
         </section>
 
-        <section className="bg-slate-50">
+        <section className="bg-slate-50 pb-24 sm:pb-16">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
@@ -431,7 +424,7 @@ export default function Klantenservice() {
               Direct iemand spreken over uw energie?
             </h2>
             <p className="max-w-2xl text-base text-slate-600">
-              Bel ons voor onafhankelijk advies of plan via de contactpagina een terugbelverzoek. We reageren altijd binnen één werkdag.
+              Bel ons voor onafhankelijk advies. U krijgt direct een medewerker aan de lijn die met u meekijkt en waar nodig de officiële contactkanalen van uw leverancier doorgeeft.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
@@ -441,18 +434,29 @@ export default function Klantenservice() {
               >
                 📞 Bel klantenservice
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
-              >
-                Stel uw vraag online
-              </Link>
             </div>
             <p className="text-xs text-slate-500">
               Belkosten: u betaalt het standaardtarief van uw telecomaanbieder voor bellen naar een Nederlands servicenummer.
             </p>
+            <p className="text-xs text-slate-500">
+              Buiten openingstijden kunt u een bericht achterlaten via ons{' '}
+              <Link href="/contact" className="underline">
+                contactformulier
+              </Link>
+              . We bellen u dan terug.
+            </p>
           </div>
         </section>
+
+        <div className="fixed bottom-4 left-4 right-4 z-50 sm:hidden">
+          <a
+            href={`tel:${PHONE_NUMBER_TEL}`}
+            onClick={trackConversion}
+            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-blue-700"
+          >
+            📞 Bel nu: {DISPLAY_PHONE_NUMBER}
+          </a>
+        </div>
       </div>
     </>
   )
