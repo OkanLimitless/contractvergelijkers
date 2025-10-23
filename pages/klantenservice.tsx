@@ -126,10 +126,10 @@ export default function Klantenservice() {
   return (
     <>
       <Head>
-        <title>Klantenservice | AdviesNeutraal Advieslijn</title>
+        <title>Klantenservice energie | Onafhankelijke hulplijn</title>
         <meta
           name="description"
-          content="Bel AdviesNeutraal voor onafhankelijk energieadvies bij vragen over contracten, leveranciers en overstappen. Direct geholpen zonder wachtrijen."
+          content="Bel onze onafhankelijke hulplijn voor vragen over energieleveranciers, contracten en overstappen. Direct geholpen zonder wachtrijen."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -171,7 +171,7 @@ export default function Klantenservice() {
                 Energieadviseur aan de lijn
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Klantenservice energie? Bel direct met AdviesNeutraal
+                Klantenservice energie? Bel direct voor hulp
               </h1>
               <p className="mt-4 max-w-2xl text-base text-blue-100 sm:text-lg">
                 Onze onafhankelijke adviseurs staan klaar voor vragen over uw energieleverancier, contract
