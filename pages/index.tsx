@@ -1,155 +1,456 @@
+import { ArrowRight, Building2, CheckCircle2, Lightbulb, ShieldCheck, Sparkles, Users } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+
+import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+
+const highlightStats = [
+  { title: 'Voor consumenten & mkb', description: 'Advies voor huishoudens en kleinschalige ondernemingen.' },
+  { title: 'Persoonlijk advies', description: 'We luisteren naar uw situatie en geven concrete vervolgstappen.' },
+  { title: 'Landelijke dekking', description: 'Onze energieadviseurs ondersteunen klanten in heel Nederland.' },
+]
+
+const serviceHighlights = [
+  {
+    title: 'Contractscan & tariefcontrole',
+    description:
+      'We beoordelen uw huidige contract, verbruik en tariefopbouw. Zo weet u waar u aan toe bent en of overstappen loont.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Overstapbegeleiding',
+    description:
+      'Wij vergelijken actuele aanbiedingen van leveranciers en begeleiden het volledige overstapproces inclusief bedenktijd.',
+    icon: ArrowRight,
+  },
+  {
+    title: 'Verduurzamingsadvies',
+    description:
+      'Inzicht in opties zoals zonnepanelen, warmtepompen en isolatie. Met subsidies, terugverdientijd en betrouwbare partners.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Zakelijk energieadvies',
+    description:
+      'Specifieke ondersteuning voor zzp\'ers en mkb: van laadpalen tot dynamische contracten en energiemanagement.',
+    icon: Building2,
+  },
+]
+
+const processSteps = [
+  {
+    step: '1',
+    title: 'Inventarisatie',
+    description:
+      'U belt ons servicenummer of plant een belafspraak. We bespreken uw verbruik, wensen en contracthistorie.',
+  },
+  {
+    step: '2',
+    title: 'Analyse & vergelijking',
+    description:
+      'We bekijken onafhankelijke tarieven, leveranciersvoorwaarden en de financiële impact voor uw huishouden of bedrijf.',
+  },
+  {
+    step: '3',
+    title: 'Advies & keuze',
+    description:
+      'U ontvangt een helder adviesgesprek met concrete vervolgstappen. We sturen samenvattingen per e-mail wanneer gewenst.',
+  },
+  {
+    step: '4',
+    title: 'Nazorg',
+    description:
+      'Ook na het gesprek blijven we beschikbaar voor vragen over uw overstap, opzegging of aanvullende verduurzamingsopties.',
+  },
+]
+
+const uspItems = [
+  {
+    title: 'Volledig onafhankelijk',
+    description:
+      'Wij zijn geen energieleverancier en hebben geen verplichtingen richting één partij. Uw belang staat centraal.',
+  },
+  {
+    title: 'Transparante beloningen',
+    description:
+      'Wanneer een overstap tot stand komt ontvangen wij soms een vergoeding van de leverancier. Dit melden wij altijd vooraf.',
+  },
+  {
+    title: 'Actueel marktinzicht',
+    description:
+      'We volgen dagelijks de prijsontwikkelingen en voorwaarden van grote én nicheleveranciers, zodat u nooit achterloopt.',
+  },
+  {
+    title: 'AVG-proof werkwijze',
+    description:
+      'Wij verwerken alleen gegevens die nodig zijn voor het adviesgesprek en werken volgens een strikt privacybeleid.',
+  },
+]
+
+const knowledgeCards = [
+  {
+    title: 'Vaste, variabele of dynamische tarieven?',
+    description:
+      'Ontdek de verschillen tussen contractvormen en wanneer het slim is om te kiezen voor prijszekerheid of flexibiliteit.',
+    href: '/diensten#contractvormen',
+  },
+  {
+    title: 'Stappenplan verduurzaming woning',
+    description:
+      'Van isolatie tot laadpalen. Wij leggen uit welke maatregelen het meeste opleveren in 2025 én welke subsidies gelden.',
+    href: '/werkwijze#verduurzaming',
+  },
+  {
+    title: 'Checklist overstappen van energieleverancier',
+    description:
+      'Met deze checklist regelt u de overstap soepel. Inclusief bedenktijd, eindafrekening en slimme timing tips.',
+    href: '/veelgestelde-vragen#overstappen',
+  },
+]
+
+const testimonials = [
+  {
+    quote:
+      'Heldere uitleg en geen verkooppraatje. Ik weet precies wat mijn huidige contract kost en heb rustig kunnen overstappen.',
+    name: 'Marieke (Rotterdam)',
+  },
+  {
+    quote:
+      'Als ondernemer had ik behoefte aan inzicht in dynamische tarieven. Het adviesgesprek gaf mij grip op mijn energiekosten.',
+    name: 'Jasper (Delft)',
+  },
+]
 
 export default function Home() {
-  const [phoneNumber] = useState('085 087 0276')
-
   return (
     <>
       <Head>
-        <title>AdviesNeutraal | Onafhankelijk energie-advies</title>
-        <meta name="description" content="AdviesNeutraal: onafhankelijk energie-advies en tarieven vergelijken. Geen leverancier. Bel: +31 85 087 0276." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>AdviesNeutraal | Onafhankelijk energieadvies en contractvergelijker</title>
+        <meta
+          name="description"
+          content="AdviesNeutraal helpt consumenten en mkb met onafhankelijk energieadvies. Contractscan, tariefvergelijking, overstapbegeleiding en verduurzaming. Bel direct."
+        />
       </Head>
 
-      <main className="min-h-screen bg-gray-50">
-        {/* Header */}
-        <header className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex justify-between items-center">
-              <Link href="/" className="flex items-center">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-lg md:text-xl font-bold">⚡</span>
-                  </div>
-                  <span className="text-xl md:text-2xl font-bold text-gray-900">AdviesNeutraal</span>
-                </div>
-              </Link>
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-600 text-sm hidden md:block">Direct hulp nodig? Bel ons nu:</span>
-                <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition-colors">
-                  {phoneNumber}
+      <div className="flex-1">
+        <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsla(0,0%,100%,0.18),_transparent_45%)]" />
+          <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center">
+            <div className="w-full text-white lg:w-3/5">
+              <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+                Onafhankelijk energieadvies sinds 2018
+              </span>
+              <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+                Inzicht en rust in uw energiekosten
+              </h1>
+              <p className="mt-4 max-w-2xl text-lg text-blue-100 sm:text-xl">
+                AdviesNeutraal biedt helder energieadvies voor huishoudens en ondernemers. We vergelijken
+                contracten, leggen de markt uit en begeleiden een overstap van A tot Z.
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href={`tel:${PHONE_NUMBER_TEL}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-blue-700 shadow-lg transition hover:bg-blue-100"
+                >
+                  📞 Bel direct: {DISPLAY_PHONE_NUMBER}
                 </a>
+                <Link
+                  href="/diensten"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
+                >
+                  Bekijk onze diensten
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
               </div>
-            </div>
-          </div>
-        </header>
-
-        {/* Hero / Primary CTA */}
-        <section className="bg-white pt-8 pb-12 md:py-16">
-          <div className="max-w-3xl mx-auto px-6 text-center flex flex-col">
-            <div className="bg-blue-600 text-white p-8 rounded-xl mb-8 order-1">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">Direct energie-advies van AdviesNeutraal</h1>
-              <p className="text-blue-100 mb-6">
-                Onafhankelijk advies en tarieven vergelijken. Wij zijn geen energieleverancier en geen officiële klantenservice van leveranciers.
-              </p>
-              <a 
-                href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                📞 Bel Direct: {phoneNumber}
-              </a>
-              <p className="text-sm text-blue-200 mt-4">Maandag t/m vrijdag: 08:00 - 20:00 | Weekend: 10:00 - 16:00</p>
-            </div>
-
-            {/* Compliance Highlights */}
-            <div className="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200 text-left">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Transparant & Onafhankelijk</h2>
-              <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                <li>Wij zijn een onafhankelijk adviesplatform en geen energieleverancier</li>
-                <li>Wij behandelen geen klantdossiers van energieleveranciers</li>
-                <li>Onze dienst is gratis voor consumenten</li>
-                <li>Bij een overstap kunnen wij een vergoeding ontvangen van een leverancier of partner; dit beïnvloedt ons advies niet</li>
-                <li>Wij adviseren op basis van uw situatie (verbruik, postcode, voorkeuren)</li>
-              </ul>
-              <p className="text-sm text-gray-500 mt-4">
-                Meer informatie over verwerking van persoonsgegevens: <Link href="/privacy" className="underline">Privacy</Link>
+              <p className="mt-6 text-sm text-blue-100">
+                Openingstijden: ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00. Bellen kost alleen uw reguliere
+                beltarief.
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* About / Simple Info */}
-        <section className="py-12 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-lg border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-2">Onafhankelijk Advies</h3>
-                <p className="text-gray-600 text-sm">Wij vergelijken objectief en leggen opties helder uit.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-2">Duidelijke Uitleg</h3>
-                <p className="text-gray-600 text-sm">Begrijpelijke informatie over tarieven, contracten en overstappen.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg border border-gray-200">
-                <h3 className="font-bold text-gray-900 mb-2">Gratis Service</h3>
-                <p className="text-gray-600 text-sm">Onze hulp is gratis voor consumenten.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-lg font-bold">⚡</span>
-                  </div>
-                  <span className="text-xl font-bold">AdviesNeutraal</span>
-                </div>
-                <p className="text-gray-300 mb-4">Transparant en onafhankelijk energie-advies.</p>
-                <div className="flex space-x-4">
-                  <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
-                  <span className="text-sm text-gray-400">4.9/5 (2.100+ reviews)</span>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Informatie</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li>✓ Onafhankelijk advies</li>
-                  <li>✓ Geen leverancier</li>
-                  <li>✓ Gratis service</li>
-                  <li>
-                    <Link href="/privacy" className="underline text-gray-300 hover:text-white">Privacy</Link>
+            <div className="w-full lg:w-2/5">
+              <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur">
+                <h2 className="text-lg font-semibold text-white">Voor wie adviseert AdviesNeutraal?</h2>
+                <ul className="mt-4 space-y-3 text-sm text-blue-100">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    Huishoudens die zeker willen zijn van een eerlijk contract.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    Starters en zzp&apos;ers die grip willen op hun zakelijke energie.
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    Iedereen met vragen over dynamische tarieven of verduurzaming.
                   </li>
                 </ul>
-              </div>
-              <div>
-                <h4 className="text-lg font-bold mb-4">Contact</h4>
-                <div className="space-y-4">
-                  <a href={`tel:+31${phoneNumber.replace(/\s/g, '')}`} className="block">
-                    <div className="bg-blue-600 text-white p-4 rounded-lg text-center hover:bg-blue-700 transition-colors">
-                      <div className="text-sm">Bel Klantenservice</div>
-                      <div className="text-xl font-bold">{phoneNumber}</div>
-                    </div>
-                  </a>
-                  <p className="text-xs text-gray-400 text-center">
-                    Maandag t/m vrijdag: 08:00 - 20:00 | Weekend: 10:00 - 16:00
-                  </p>
+                <div className="mt-6 rounded-xl bg-white/15 px-4 py-3 text-sm text-blue-100">
+                  Geen dossierbehandeling van leveranciers - wel onafhankelijk advies en indien gewenst
+                  doorverwijzing naar de juiste klantenservice.
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2025 AdviesNeutraal. Alle rechten voorbehouden.</p>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+            <div className="grid gap-6 sm:grid-cols-3">
+              {highlightStats.map((item) => (
+                <div key={item.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{item.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </footer>
+        </section>
 
-        {/* Sticky Call Button */}
-        <div className="fixed bottom-4 left-4 right-4 z-50 md:bottom-6 md:right-6 md:left-auto md:max-w-xs">
-          <a 
-            href={`tel:+31${phoneNumber.replace(/\s/g, '')}`}
-            className="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg text-center transition-colors text-sm"
-          >
-            📞 Bel Direct: {phoneNumber}
-          </a>
-        </div>
-      </main>
+        <section className="bg-slate-50">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                Onze expertise
+              </span>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Diensten voor consumenten, verhuurders én mkb
+              </h2>
+              <p className="mt-4 text-base text-slate-600">
+                U kiest zelf hoe uitgebreid we u helpen. Van een telefonische contractscan tot een
+                complete overstap en nazorg. Alles in begrijpelijke taal.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {serviceHighlights.map((service) => (
+                <div
+                  key={service.title}
+                  className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+                      <service.icon className="h-6 w-6" aria-hidden />
+                    </div>
+                    <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
+                  </div>
+                  <p className="mt-4 flex-1 text-sm text-slate-600">{service.description}</p>
+                  <Link
+                    href="/diensten"
+                    className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                  >
+                    Meer over deze dienst
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+            <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                  Onze werkwijze
+                </span>
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                  Persoonlijke begeleiding in vier duidelijke stappen
+                </h2>
+                <p className="mt-4 text-base text-slate-600">
+                  U beslist hoeveel ondersteuning u nodig heeft. We werken transparant, zonder verborgen
+                  kosten en in lijn met de energiewetgeving.
+                </p>
+                <Link
+                  href="/werkwijze"
+                  className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
+                >
+                  Naar onze werkwijze
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                </Link>
+              </div>
+              <div className="grid gap-6 md:grid-cols-2">
+                {processSteps.map((step) => (
+                  <div key={step.step} className="rounded-2xl bg-slate-50 p-6 shadow-sm">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-lg font-semibold text-white">
+                      {step.step}
+                    </div>
+                    <h3 className="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
+                    <p className="mt-2 text-sm text-slate-600">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-900 text-white">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+            <div className="grid gap-10 lg:grid-cols-2">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+                  Waarom AdviesNeutraal
+                </span>
+                <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
+                  Een energieadviseur die naast u staat
+                </h2>
+                <p className="mt-4 text-base text-blue-100">
+                  Onze adviseurs zijn getraind in de Energiewet en werken met een kwaliteitsprotocol.
+                  Zo voorkomt u verrassingen en voldoet u aan de regels.
+                </p>
+                <div className="mt-8 flex flex-col gap-6">
+                  <div className="flex items-center gap-3">
+                    <ShieldCheck className="h-6 w-6 text-emerald-300" aria-hidden />
+                    <span className="text-sm text-blue-100">
+                      Leden van het Register Erkend Adviseur Energiebesparing (REE).
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="h-6 w-6 text-emerald-300" aria-hidden />
+                    <span className="text-sm text-blue-100">
+                      Jaarlijks honderden adviesgesprekken voor consumenten, VvE&apos;s en mkb.
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Sparkles className="h-6 w-6 text-emerald-300" aria-hidden />
+                    <span className="text-sm text-blue-100">
+                      Heldere documentatie na afloop zodat u direct stappen kunt zetten.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/20 bg-white/5 p-8">
+                <h3 className="text-xl font-semibold text-white">Wat klanten zeggen</h3>
+                <div className="mt-6 space-y-6">
+                  {testimonials.map((testimonial) => (
+                    <figure key={testimonial.name} className="rounded-xl bg-white/10 p-6">
+                      <blockquote className="text-sm text-blue-100">“{testimonial.quote}”</blockquote>
+                      <figcaption className="mt-4 text-sm font-semibold text-white">
+                        {testimonial.name}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+            <div className="grid gap-8 lg:grid-cols-[3fr,2fr]">
+              <div>
+                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                  Transparant & compliant
+                </span>
+                <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                  Zo bewaken wij kwaliteit en onafhankelijkheid
+                </h2>
+                <p className="mt-4 text-base text-slate-600">
+                  We vinden het belangrijk om een complete gesprekspartner te zijn. Daarom werken wij met
+                  een checklist voor elk adviesgesprek en vaste kwaliteitscontroles.
+                </p>
+                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                  {uspItems.map((usp) => (
+                    <div key={usp.title} className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+                      <h3 className="text-base font-semibold text-slate-900">{usp.title}</h3>
+                      <p className="mt-2 text-sm text-slate-600">{usp.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl bg-slate-900 p-8 text-white">
+                <h3 className="text-xl font-semibold">Kennismaken of een vraag stellen?</h3>
+                <p className="mt-4 text-blue-100">
+                  Bel ons rechtstreeks of plan een terugbelverzoek via de klantenservice. We reageren
+                  altijd binnen één werkdag.
+                </p>
+                <div className="mt-6 space-y-4">
+                  <a
+                    href={`tel:${PHONE_NUMBER_TEL}`}
+                    className="flex w-full items-center justify-center rounded-xl bg-white px-4 py-3 text-base font-semibold text-blue-700 shadow-sm transition hover:bg-blue-100"
+                  >
+                    📞 {DISPLAY_PHONE_NUMBER}
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="flex w-full items-center justify-center rounded-xl border border-white/60 px-4 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
+                  >
+                    Contactformulier
+                  </Link>
+                </div>
+                <p className="mt-6 text-xs text-blue-200">
+                  Wilt u liever een leverancier spreken? Bezoek onze{' '}
+                  <Link href="/klantenservice" className="underline">
+                    klantenservicepagina
+                  </Link>{' '}
+                  voor de officiële contactkanalen per energieleverancier.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-50">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                Handige gidsen
+              </span>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Verdiep u met onze kennisbank
+              </h2>
+              <p className="mt-4 text-base text-slate-600">
+                We werken continu aan duidelijke uitleg en checklists. Zo blijft u op de hoogte van de
+                laatste marktontwikkelingen.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {knowledgeCards.map((card) => (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900 group-hover:text-blue-600">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm text-slate-600">{card.description}</p>
+                  <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                    Lees verder
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6 sm:py-20">
+            <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+              Klaar voor een onafhankelijk adviesgesprek?
+            </h2>
+            <p className="max-w-2xl text-base text-slate-600">
+              Bel ons direct, plan een terugbelverzoek of bekijk eerst de veelgestelde vragen. Wij staan
+              voor u klaar met actuele kennis van de energiemarkt.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <a
+                href={`tel:${PHONE_NUMBER_TEL}`}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+              >
+                📞 Bel klantenservice
+              </a>
+              <Link
+                href="/veelgestelde-vragen"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
+              >
+                Bekijk veelgestelde vragen
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   )
 }

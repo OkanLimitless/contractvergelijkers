@@ -30,9 +30,15 @@ export default function Vergelijker1() {
       setFormStep(formStep + 1)
       // Track form completion when reaching final step
       if (formStep === 2) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B'
-        })
+        if (typeof gtag_report_conversion === 'function') {
+          gtag_report_conversion()
+        } else {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17637611913/8TUBCOCwsbIbEImzotpB',
+            'value': 1.0,
+            'currency': 'USD'
+          })
+        }
       }
     }
   }
@@ -60,14 +66,14 @@ export default function Vergelijker1() {
         <link rel="icon" href="/favicon.ico" />
         
         {/* Google Ads tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17614565914"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17637611913"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17614565914');
+              gtag('config', 'AW-17637611913');
               
               function gtag_report_conversion(url) {
                 var callback = function () {
@@ -76,7 +82,9 @@ export default function Vergelijker1() {
                   }
                 };
                 gtag('event', 'conversion', {
-                    'send_to': 'AW-17614565914/jLQ1CM6j9KYbEJrko89B',
+                    'send_to': 'AW-17637611913/8TUBCOCwsbIbEImzotpB',
+                    'value': 1.0,
+                    'currency': 'USD',
                     'event_callback': callback
                 });
                 return false;
