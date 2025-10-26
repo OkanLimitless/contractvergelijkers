@@ -47,37 +47,40 @@ const serviceItems = [
 const brandSections = [
   {
     id: 'essent',
-    name: 'Advies over Essent',
+    name: 'Essent',
+    title: 'Hulp met Essent klantenservice',
     description:
-      'Hulp nodig met uw Essent-contract? Wij lopen samen met u de nota\'s en tarieven door en geven aan of overstappen slim is.',
+      'Vragen over uw Essent-contract, factuur of tarieven? Wij helpen u direct of verbinden u door naar de officiële klantenservice.',
     bullets: [
-      'Onafhankelijke controle van termijnbedragen en contractduur',
-      'Actuele Essent-acties versus alternatieven vergelijken',
-      'Doorverwijzing naar officiële Essent-klantenservice indien nodig',
+      'Uitleg over termijnbedragen en contractvoorwaarden',
+      'Vergelijking met alternatieve leveranciers',
+      'Direct doorschakelen naar officiële Essent indien nodig',
     ],
     officialUrl: 'https://www.essent.nl/service/contact',
   },
   {
     id: 'eneco',
-    name: 'Advies over Eneco',
+    name: 'Eneco',
+    title: 'Hulp met Eneco klantenservice',
     description:
-      'Onze adviseurs leggen Eneco-contracten helder uit en bespreken welke opties het beste aansluiten op uw verbruik.',
+      'Vragen over uw Eneco-contract, dynamische tarieven of Eneco Toon? Wij staan direct voor u klaar.',
     bullets: [
-      'Actuele tarieven en dynamische contracten vergelijken',
-      'Onafhankelijk advies over Eneco Toon, zonnepanelen en laadoplossingen',
-      'Doorverwijzing naar officiële Eneco-servicekanalen bij wijzigingen',
+      'Uitleg over tarieven en contractopties',
+      'Advies over slimme meters en laadpalen',
+      'Doorverwijzing naar officiële Eneco service',
     ],
     officialUrl: 'https://www.eneco.nl/service-en-contact/',
   },
   {
     id: 'vattenfall',
-    name: 'Advies over Vattenfall',
+    name: 'Vattenfall',
+    title: 'Hulp met Vattenfall klantenservice',
     description:
-      'Wilt u iemand spreken over uw Vattenfall-contract? Wij bereiden samen het gesprek voor of verwijzen door naar de officiële klantenservice.',
+      'Vragen over uw Vattenfall-contract of MijnVattenfall-account? Bel ons voor directe hulp.',
     bullets: [
-      'Onafhankelijke controle van prijsbescherming en eventuele acties',
-      'Uitleg over het MijnVattenfall-portaal en termijnbedragen',
-      'Doorverwijzing naar juiste Vattenfall-afdeling wanneer nodig',
+      'Controle van prijsbescherming en acties',
+      'Uitleg over termijnbedragen en facturen',
+      'Doorschakeling naar officiële Vattenfall',
     ],
     officialUrl: 'https://www.vattenfall.nl/klantenservice/',
   },
@@ -126,10 +129,10 @@ export default function Klantenservice() {
   return (
     <>
       <Head>
-        <title>Onafhankelijk energieadvies | AdviesNeutraal hulplijn</title>
+        <title>Energie Klantenservice Hulp | Direct Adviseur Bereikbaar</title>
         <meta
           name="description"
-          content="Onafhankelijk advies over energiecontracten, tarieven en overstappen. Wij zijn GEEN officiële klantenservice, maar helpen u verder of verwijzen door naar de juiste kanalen."
+          content="Hulp nodig met uw energieleverancier? Direct een adviseur aan de lijn. Wij helpen met vragen over contracten, tarieven en overstappen of verbinden u door naar de officiële klantenservice."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -166,31 +169,11 @@ export default function Klantenservice() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_hsla(0,0%,100%,0.18),_transparent_40%)]" />
           <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:px-6 md:py-20 lg:flex-row lg:items-center">
             <div className="lg:w-3/5">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
-                <Headset className="h-4 w-4" aria-hidden />
-                Energieadviseur aan de lijn
-              </span>
-              <div className="mb-4 rounded-xl bg-yellow-500/20 border-2 border-yellow-300 px-4 py-3 text-sm font-semibold text-yellow-100">
-                ⚠️ Let op: Wij zijn GEEN officiële klantenservice van energieleveranciers. AdviesNeutraal is een onafhankelijke advieslijn.
-              </div>
-              <h1 className="mt-6 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Onafhankelijk energieadvies en hulp
+              <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+                Hulp nodig met uw energie klantenservice?
               </h1>
-              <p className="mt-4 max-w-2xl text-base text-blue-100 sm:text-lg">
-                Vragen over uw energieleverancier, contract of overstap? Onze onafhankelijke adviseurs staan klaar om u te helpen. 
-                Wanneer nodig verwijzen we door naar het juiste officiële contactkanaal van uw leverancier.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href={`tel:${PHONE_NUMBER_TEL}`}
-                  onClick={trackConversion}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-base font-semibold text-blue-700 shadow-lg transition hover:bg-blue-100"
-                >
-                  📞 Bel nu: {DISPLAY_PHONE_NUMBER}
-                </a>
-              </div>
-              <p className="mt-4 text-xs text-blue-100">
-                Openingstijden: ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00. U betaalt alleen uw reguliere beltarief.
+              <p className="mt-4 max-w-2xl text-lg text-white sm:text-xl">
+                Direct een adviseur aan de lijn voor vragen over uw energiecontract, tarieven of overstap.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {highlightBadges.map((badge) => (
@@ -202,6 +185,21 @@ export default function Klantenservice() {
                     {badge.text}
                   </span>
                 ))}
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href={`tel:${PHONE_NUMBER_TEL}`}
+                  onClick={trackConversion}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-lg font-bold text-blue-700 shadow-xl transition hover:bg-blue-50 hover:scale-105"
+                >
+                  📞 Bel Direct: {DISPLAY_PHONE_NUMBER}
+                </a>
+              </div>
+              <p className="mt-4 text-sm text-blue-100">
+                Ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00 | Gratis adviesgesprek
+              </p>
+              <div className="mt-6 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs text-blue-100 backdrop-blur">
+                Onafhankelijk advies • Geen officiële leverancier
               </div>
             </div>
             <div className="lg:w-2/5">
@@ -245,25 +243,20 @@ export default function Klantenservice() {
         <section className="bg-slate-50 pb-24 sm:pb-16">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
-                Onafhankelijk advies
-              </span>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
-                Wij geven advies over verschillende leveranciers
+              <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Direct hulp bij uw energieleverancier
               </h2>
               <p className="mt-4 text-base text-slate-600">
-                Onafhankelijke uitleg over uw energiecontract en tarieven. Wij zijn GEEN officiële klantenservice, maar kunnen u wel helpen of doorverwijzen naar de juiste contactkanalen.
+                Onafhankelijke adviseurs klaar om u te helpen. Wij verbinden u indien nodig direct door naar de officiële klantenservice.
               </p>
             </div>
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
               {brandSections.map((brand) => (
                 <div key={brand.id} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-slate-900">{brand.name}</h3>
-                    <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                      Onafhankelijk
-                    </span>
-                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">{brand.title}</h3>
+                  <span className="mt-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
+                    Onafhankelijk advies
+                  </span>
                   <p className="mt-4 text-sm text-slate-600">{brand.description}</p>
                   <ul className="mt-6 space-y-2 text-sm text-slate-600">
                     {brand.bullets.map((bullet) => (
@@ -278,19 +271,18 @@ export default function Klantenservice() {
                       <a
                         href={`tel:${PHONE_NUMBER_TEL}`}
                         onClick={trackConversion}
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-bold text-white shadow-sm transition hover:bg-blue-700"
                       >
-                        <Phone className="h-4 w-4" aria-hidden />
-                        Bel onafhankelijk advies
+                        <Phone className="h-5 w-5" aria-hidden />
+                        Bel Nu: {DISPLAY_PHONE_NUMBER}
                       </a>
                       <Link
                         href={brand.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-blue-600 transition hover:border-blue-600 hover:text-blue-700"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-700"
                       >
-                        Officiële {brand.name.replace('Advies over ', '')} klantenservice
-                        <ArrowRight className="h-4 w-4" aria-hidden />
+                        Officiële {brand.name} →
                       </Link>
                     </div>
                   </div>
