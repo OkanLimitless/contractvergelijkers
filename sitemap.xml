@@ -13,6 +13,14 @@
         <loc>https://adviesneutraal.nl/klantenservice</loc>
         <lastmod>2025-01-15</lastmod>
         <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Main Energie Advies Page -->
+    <url>
+        <loc>https://adviesneutraal.nl/energie-advies</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
