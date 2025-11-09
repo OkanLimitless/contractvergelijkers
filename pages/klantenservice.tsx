@@ -137,14 +137,14 @@ export default function Klantenservice() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17637493757" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17714599796" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-17637493757');
+              gtag('config', 'AW-17714599796');
               function gtag_report_conversion(url) {
                 var callback = function () {
                   if (typeof(url) != 'undefined') {
@@ -152,7 +152,7 @@ export default function Klantenservice() {
                   }
                 };
                 gtag('event', 'conversion', {
-                  'send_to': 'AW-17637493757/xEaLCLHDprQbEP2Xm9pB',
+                  'send_to': 'AW-17714599796/ZVMnCILcgr0bEPSu_f5B',
                   'value': 1.0,
                   'currency': 'USD',
                   'event_callback': callback
