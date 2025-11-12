@@ -67,14 +67,16 @@ export function getBrandContentPath(brand: string): string {
  * Builds a content path for a given hostname
  */
 export function getContentPathForHost(hostname: string, pageType: string): string {
-  return `content/${hostname}/${pageType}.json`
+  const clean = hostname.replace(/^www\./, '')
+  return `content/${clean}/${pageType}.json`
 }
 
 /**
  * Builds a brand content path for a given hostname
  */
 export function getBrandContentPathForHost(hostname: string, brand: string): string {
-  return `content/${hostname}/brands/${brand.toLowerCase()}.json`
+  const clean = hostname.replace(/^www\./, '')
+  return `content/${clean}/brands/${brand.toLowerCase()}.json`
 }
 
 /**

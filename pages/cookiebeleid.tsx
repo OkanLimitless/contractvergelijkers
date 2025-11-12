@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import { loadHomepageContent } from '../lib/content'
-import { getBaseUrlFromReq } from '../lib/config'
+import { getBaseUrlFromReq, getDomainConfig } from '../lib/config'
 import { getColorScheme } from '../lib/colors'
 
 const cookieTypes = [
@@ -155,7 +155,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const homepage = await loadHomepageContent(baseUrl)
   return {
     props: {
-      brandColor: homepage?.brandColor || 'blue'
+      brandColor: homepage?.brandColor || getDomainConfig().brandColor || 'blue'
     }
   }
 }

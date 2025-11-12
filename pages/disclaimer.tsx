@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 import { loadHomepageContent } from '../lib/content'
-import { getBaseUrlFromReq } from '../lib/config'
+import { getBaseUrlFromReq, getDomainConfig } from '../lib/config'
 import { getColorScheme } from '../lib/colors'
 
 interface DisclaimerProps { brandColor?: string }
@@ -123,7 +123,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const homepage = await loadHomepageContent(baseUrl)
   return {
     props: {
-      brandColor: homepage?.brandColor || 'blue'
+      brandColor: homepage?.brandColor || getDomainConfig().brandColor || 'blue'
     }
   }
 }

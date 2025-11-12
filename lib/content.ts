@@ -62,23 +62,26 @@ export interface BrandSection {
  */
 export async function loadContent<T>(path: string, baseUrl?: string): Promise<T | null> {
   try {
-    // Build an absolute URL so SSR can fetch reliably
-    let origin = baseUrl
-    if (!origin) {
-      if (typeof window !== 'undefined') {
-        origin = window.location.origin
-      } else if (process.env.NEXT_PUBLIC_DOMAIN_NAME) {
-        const proto = 'https'
-        origin = `${proto}://${process.env.NEXT_PUBLIC_DOMAIN_NAME}`
+    // On the server (SSR), read from filesystem to avoid network variability
+    if (typeof window === 'undefined') {
+      const fs = await import('fs')
+      const p = await import('path')
+      const publicPath = p.join(process.cwd(), 'public', path)
+      const localPath = p.join(process.cwd(), path)
+      if (fs.existsSync(publicPath)) {
+        const raw = fs.readFileSync(publicPath, 'utf8')
+        return JSON.parse(raw) as T
       }
-    }
-
-    if (!origin) {
-      console.warn(`No base URL available to fetch content for: ${path}`)
+      if (fs.existsSync(localPath)) {
+        const raw = fs.readFileSync(localPath, 'utf8')
+        return JSON.parse(raw) as T
+      }
+      console.warn(`Content not found on filesystem: ${path}`)
       return null
     }
 
-    const response = await fetch(`${origin}/${path}`)
+    // On the client, fetch relatively from the same host
+    const response = await fetch(`/${path}`)
     if (!response.ok) {
       console.warn(`Content not found: ${path}`)
       return null

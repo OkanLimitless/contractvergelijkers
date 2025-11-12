@@ -7,6 +7,7 @@ import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout
 import { loadHomepageContent, getDefaultContent, type HomepageContent } from '../lib/content'
 import { getBaseUrlFromReq } from '../lib/config'
 import { getColorScheme } from '../lib/colors'
+import { getDomainConfig } from '../lib/config'
 
 const highlightStats = [
   { title: 'Voor consumenten & mkb', description: 'Advies voor huishoudens en kleinschalige ondernemingen.' },
@@ -131,7 +132,7 @@ interface HomeProps {
 
 export default function Home({ content }: HomeProps) {
   const homepageContent = content || getDefaultContent('homepage')
-  const brandColor = homepageContent.brandColor || 'blue'
+  const brandColor = homepageContent.brandColor || getDomainConfig().brandColor || 'blue'
   const colors = getColorScheme(brandColor)
   
   return (

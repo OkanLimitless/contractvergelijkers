@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 import { loadHomepageContent } from '../lib/content'
-import { getBaseUrlFromReq } from '../lib/config'
+import { getBaseUrlFromReq, getDomainConfig } from '../lib/config'
 import { getColorScheme } from '../lib/colors'
 
 const contactOptions = [
@@ -248,7 +248,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const homepage = await loadHomepageContent(baseUrl)
   return {
     props: {
-      brandColor: homepage?.brandColor || 'blue'
+      brandColor: homepage?.brandColor || getDomainConfig().brandColor || 'blue'
     }
   }
 }
