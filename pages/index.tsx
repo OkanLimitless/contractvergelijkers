@@ -5,6 +5,7 @@ import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 import { loadHomepageContent, getDefaultContent, type HomepageContent } from '../lib/content'
+import { getColorScheme } from '../lib/colors'
 
 const highlightStats = [
   { title: 'Voor consumenten & mkb', description: 'Advies voor huishoudens en kleinschalige ondernemingen.' },
@@ -129,6 +130,8 @@ interface HomeProps {
 
 export default function Home({ content }: HomeProps) {
   const homepageContent = content || getDefaultContent('homepage')
+  const brandColor = homepageContent.brandColor || 'blue'
+  const colors = getColorScheme(brandColor)
   
   return (
     <>
@@ -141,23 +144,23 @@ export default function Home({ content }: HomeProps) {
       </Head>
 
       <div className="flex-1">
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600">
+        <section className={`relative overflow-hidden ${colors.gradient}`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsla(0,0%,100%,0.18),_transparent_45%)]" />
           <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center">
             <div className="w-full text-white lg:w-3/5">
-              <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+              <span className={`inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 {homepageContent.valueProposition || 'Onafhankelijk energieadvies sinds 2018'}
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
                 {homepageContent.heroTitle || 'Inzicht en rust in uw energiekosten'}
               </h1>
-              <p className="mt-4 max-w-2xl text-lg text-blue-100 sm:text-xl">
+              <p className={`mt-4 max-w-2xl text-lg ${colors.badgeText} sm:text-xl`}>
                 {homepageContent.heroSubtitle || 'AdviesNeutraal biedt helder energieadvies voor huishoudens en ondernemers. We vergelijken contracten, leggen de markt uit en begeleiden een overstap van A tot Z.'}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-blue-700 shadow-lg transition hover:bg-blue-100"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-3 text-base font-semibold ${colors.buttonText} shadow-lg transition ${colors.buttonHover}`}
                 >
                   {homepageContent.primaryCTA || `📞 Bel direct: ${DISPLAY_PHONE_NUMBER}`}
                 </a>
@@ -171,7 +174,7 @@ export default function Home({ content }: HomeProps) {
                   </Link>
                 )}
               </div>
-              <p className="mt-6 text-sm text-blue-100">
+              <p className={`mt-6 text-sm ${colors.badgeText}`}>
                 Openingstijden: ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00. Bellen kost alleen uw reguliere
                 beltarief.
               </p>
@@ -180,7 +183,7 @@ export default function Home({ content }: HomeProps) {
                   {homepageContent.trustBadges.map((badge, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100"
+                      className={`inline-flex items-center gap-2 rounded-full ${colors.badgeBg} px-3 py-1 text-xs font-semibold ${colors.badgeText}`}
                     >
                       <CheckCircle2 className="h-3 w-3" aria-hidden />
                       {badge}
@@ -192,7 +195,7 @@ export default function Home({ content }: HomeProps) {
             <div className="w-full lg:w-2/5">
               <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur">
                 <h2 className="text-lg font-semibold text-white">Voor wie adviseert AdviesNeutraal?</h2>
-                <ul className="mt-4 space-y-3 text-sm text-blue-100">
+                <ul className={`mt-4 space-y-3 text-sm ${colors.badgeText}`}>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
                     Huishoudens die zeker willen zijn van een eerlijk contract.
@@ -231,7 +234,7 @@ export default function Home({ content }: HomeProps) {
         <section className="bg-slate-50">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Onze expertise
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -249,7 +252,7 @@ export default function Home({ content }: HomeProps) {
                   className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${colors.primaryBg}/10 ${colors.primaryText}`}>
                       <service.icon className="h-6 w-6" aria-hidden />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
@@ -257,7 +260,7 @@ export default function Home({ content }: HomeProps) {
                   <p className="mt-4 flex-1 text-sm text-slate-600">{service.description}</p>
                   <Link
                     href="/diensten"
-                    className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                    className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} transition ${colors.primaryHoverText}`}
                   >
                     Meer over deze dienst
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -272,7 +275,7 @@ export default function Home({ content }: HomeProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
             <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                   Onze werkwijze
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -284,7 +287,7 @@ export default function Home({ content }: HomeProps) {
                 </p>
                 <Link
                   href="/werkwijze"
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
+                  className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHover}`}
                 >
                   Naar onze werkwijze
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -293,7 +296,7 @@ export default function Home({ content }: HomeProps) {
               <div className="grid gap-6 md:grid-cols-2">
                 {processSteps.map((step) => (
                   <div key={step.step} className="rounded-2xl bg-slate-50 p-6 shadow-sm">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-lg font-semibold text-white">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${colors.primaryBg} text-lg font-semibold text-white`}>
                       {step.step}
                     </div>
                     <h3 className="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
@@ -415,9 +418,9 @@ export default function Home({ content }: HomeProps) {
         <section className="bg-slate-50">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
-                Handige gidsen
-              </span>
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
+                  Handige gidsen
+                </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
                 Verdiep u met onze kennisbank
               </h2>
@@ -433,11 +436,11 @@ export default function Home({ content }: HomeProps) {
                   href={card.href}
                   className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 group-hover:text-blue-600">
+                  <h3 className={`text-lg font-semibold text-slate-900 ${colors.groupHoverText}`}>
                     {card.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm text-slate-600">{card.description}</p>
-                  <span className="mt-5 inline-flex items-center text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                    <span className={`mt-5 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHoverText}`}>
                     Lees verder
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
                   </span>
@@ -459,13 +462,13 @@ export default function Home({ content }: HomeProps) {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 📞 Bel klantenservice
               </a>
               <Link
                 href="/veelgestelde-vragen"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl border ${colors.primaryBorder} px-6 py-3 text-base font-semibold ${colors.primaryText} transition ${colors.buttonHover}`}
               >
                 Bekijk veelgestelde vragen
               </Link>
