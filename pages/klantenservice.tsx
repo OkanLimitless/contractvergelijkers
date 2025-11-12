@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
-import { loadKlantenserviceContent, getDefaultContent, type KlantenserviceContent } from '../lib/content'
+import { loadKlantenserviceContent, loadHomepageContent, getDefaultContent, type KlantenserviceContent } from '../lib/content'
 import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 declare global {
   function gtag(...args: any[]): void
@@ -124,10 +125,12 @@ const faqItems = [
 
 interface KlantenserviceProps {
   content: KlantenserviceContent
+  brandColor?: string
 }
 
-export default function Klantenservice({ content }: KlantenserviceProps) {
+export default function Klantenservice({ content, brandColor = 'blue' }: KlantenserviceProps) {
   const klantenserviceContent = content || getDefaultContent('klantenservice')
+  const colors = getColorScheme(brandColor)
   
   const trackConversion = () => {
     if (typeof window !== 'undefined' && typeof gtag_report_conversion === 'function') {
@@ -148,7 +151,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
       </Head>
 
       <div className="flex-1">
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700">
+        <section className={`relative overflow-hidden ${colors.gradient}`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_hsla(0,0%,100%,0.18),_transparent_40%)]" />
           <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:px-6 md:py-20 lg:flex-row lg:items-center">
             <div className="lg:w-3/5">
@@ -175,7 +178,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
                   onClick={trackConversion}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-lg font-bold text-blue-700 shadow-xl transition hover:bg-blue-50 hover:scale-105"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-4 text-lg font-bold ${colors.buttonText} shadow-xl transition ${colors.buttonHover} hover:scale-105`}
                 >
                   {klantenserviceContent.primaryCTA || `📞 Bel Direct: ${DISPLAY_PHONE_NUMBER}`}
                 </a>
@@ -246,7 +249,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                   <ul className="mt-6 space-y-2 text-sm text-slate-600">
                     {brand.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <CheckCircle2 className="mt-1 h-4 w-4 text-blue-600" aria-hidden />
+                        <CheckCircle2 className={`mt-1 h-4 w-4 ${colors.primaryText}`} aria-hidden />
                         {bullet}
                       </li>
                     ))}
@@ -256,7 +259,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                       <a
                         href={`tel:${PHONE_NUMBER_TEL}`}
                         onClick={trackConversion}
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-bold text-white shadow-sm transition hover:bg-blue-700"
+                        className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-4 py-3 text-base font-bold text-white shadow-sm transition ${colors.primaryHover}`}
                       >
                         <Phone className="h-5 w-5" aria-hidden />
                         Bel Nu: {DISPLAY_PHONE_NUMBER}
@@ -281,7 +284,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
             <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                   Hoe wij werken
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -293,7 +296,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                 </p>
                 <Link
                   href="/werkwijze"
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                  className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHover}`}
                 >
                   Naar onze volledige werkwijze
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -302,7 +305,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
               <div className="grid gap-6 md:grid-cols-2">
                 {howItWorksSteps.map((step, index) => (
                   <div key={step.title} className="rounded-2xl bg-slate-50 p-6 shadow-sm">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-base font-semibold text-white">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${colors.primaryBg} text-base font-semibold text-white`}>
                       {index + 1}
                     </div>
                     <h3 className="mt-4 text-base font-semibold text-slate-900">{step.title}</h3>
@@ -348,11 +351,11 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                 <h3 className="text-lg font-semibold text-slate-900">Belangrijk om te weten</h3>
                 <ul className="mt-4 space-y-3 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Wij behandelen geen klachten of dossiers namens leveranciers, maar leggen wel uit hoe u een klacht officieel indient.
                   </li>
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Uw gegevens gebruiken we alleen voor het adviesgesprek. Meer informatie leest u in onze{' '}
                     <Link href="/privacy" className="underline">
                       privacyverklaring
@@ -360,7 +363,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                     .
                   </li>
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Kiest u voor een overstap? Dan ontvangen wij soms een provisie van een leverancier. Dit vermelden we altijd vooraf.
                   </li>
                 </ul>
@@ -370,7 +373,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
                 <p className="mt-3 text-sm text-slate-600">
                   Direct contact opnemen met uw leverancier? Gebruik onderstaande links:
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-blue-600">
+                <ul className={`mt-4 space-y-2 text-sm ${colors.primaryText}`}>
                   <li>
                     <Link href="https://www.essent.nl/service/contact" target="_blank" className="hover:text-blue-700">
                       Essent klantenservice
@@ -412,7 +415,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
                 onClick={trackConversion}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 📞 Bel klantenservice
               </a>
@@ -434,7 +437,7 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
           <a
             href={`tel:${PHONE_NUMBER_TEL}`}
             onClick={trackConversion}
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-blue-700"
+            className={`flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-4 py-3 text-base font-semibold text-white shadow-lg transition ${colors.primaryHover}`}
           >
             📞 Bel nu: {DISPLAY_PHONE_NUMBER}
           </a>
@@ -447,9 +450,12 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const baseUrl = getBaseUrlFromReq(ctx.req)
   const content = await loadKlantenserviceContent(baseUrl)
+  const homepage = await loadHomepageContent(baseUrl)
+  const brandColor = homepage?.brandColor || 'blue'
   return {
     props: {
-      content: content || getDefaultContent('klantenservice')
+      content: content || getDefaultContent('klantenservice'),
+      brandColor
     }
   }
 }

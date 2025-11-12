@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 
@@ -68,7 +72,10 @@ const dataRights = [
   'Recht om toestemming in te trekken: heeft u toestemming gegeven? Dan kunt u die altijd intrekken.',
 ]
 
-export default function Privacy() {
+interface PrivacyProps { brandColor?: string }
+
+export default function Privacy({ brandColor = 'blue' }: PrivacyProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -80,7 +87,7 @@ export default function Privacy() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-800 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Privacyverklaring</h1>
             <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
@@ -112,13 +119,13 @@ export default function Privacy() {
                 </li>
                 <li>
                   <strong>Telefoon:</strong>{' '}
-                  <a href={`tel:${PHONE_NUMBER_TEL}`} className="text-blue-600 hover:text-blue-700">
+                  <a href={`tel:${PHONE_NUMBER_TEL}`} className={`${colors.primaryText}`}>
                     {DISPLAY_PHONE_NUMBER}
                   </a>
                 </li>
                 <li>
                   <strong>E-mail:</strong>{' '}
-                  <a href="mailto:privacy@adviesneutraal.nl" className="text-blue-600 hover:text-blue-700">
+                  <a href="mailto:privacy@adviesneutraal.nl" className={`${colors.primaryText}`}>
                     privacy@adviesneutraal.nl
                   </a>
                 </li>
@@ -283,7 +290,7 @@ export default function Privacy() {
               impact op uw privacy. Denk aan geanonimiseerde statistieken om de website te verbeteren en
               het onthouden van uw cookievoorkeuren. Voor marketingcookies vragen we altijd expliciete
               toestemming. Meer informatie leest u in het{' '}
-              <a href="/cookiebeleid" className="text-blue-600 underline">
+              <a href="/cookiebeleid" className={`${colors.primaryText} underline`}>
                 cookiebeleid
               </a>
               .
@@ -300,10 +307,10 @@ export default function Privacy() {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-600">
               <li>
-                E-mail: <a href="mailto:privacy@adviesneutraal.nl" className="text-blue-600 underline">privacy@adviesneutraal.nl</a>
+                E-mail: <a href="mailto:privacy@adviesneutraal.nl" className={`${colors.primaryText} underline`}>privacy@adviesneutraal.nl</a>
               </li>
               <li>
-                Telefoon: <a href={`tel:${PHONE_NUMBER_TEL}`} className="text-blue-600 underline">{DISPLAY_PHONE_NUMBER}</a>
+                Telefoon: <a href={`tel:${PHONE_NUMBER_TEL}`} className={`${colors.primaryText} underline`}>{DISPLAY_PHONE_NUMBER}</a>
               </li>
               <li>
                 Post: Kamperingweg 45-D, 2803 PE Gouda (t.a.v. Privacy Officer)
@@ -318,4 +325,14 @@ export default function Privacy() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

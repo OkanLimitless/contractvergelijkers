@@ -1,8 +1,12 @@
 import { Clock, Mail, MapPin, MessageCircle, Phone, Send, ShieldCheck } from 'lucide-react'
 import Head from 'next/head'
 import { FormEvent } from 'react'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 const contactOptions = [
   {
@@ -33,7 +37,10 @@ const contactOptions = [
   },
 ]
 
-export default function Contact() {
+interface ContactProps { brandColor?: string }
+
+export default function Contact({ brandColor = 'blue' }: ContactProps) {
+  const colors = getColorScheme(brandColor)
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
   }
@@ -49,7 +56,7 @@ export default function Contact() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
               Contact met AdviesNeutraal
@@ -68,15 +75,15 @@ export default function Contact() {
                 <a
                   key={option.title}
                   href={option.href}
-                  className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:border-blue-600 hover:shadow-md"
+                  className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 ${colors.primaryText}`}>
                     <option.icon className="h-6 w-6" aria-hidden />
                   </div>
                   <h2 className="mt-4 text-lg font-semibold text-slate-900">{option.title}</h2>
                   <p className="mt-2 flex-1 text-sm text-slate-600">{option.description}</p>
-                  <div className="mt-4 text-sm font-semibold text-blue-600">{option.detail}</div>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                  <div className={`mt-4 text-sm font-semibold ${colors.primaryText}`}>{option.detail}</div>
+                  <span className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold ${colors.primaryText}`}>
                     {option.cta}
                     <Send className="h-4 w-4" aria-hidden />
                   </span>
@@ -111,7 +118,7 @@ export default function Contact() {
                       name="name"
                       type="text"
                       required
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                    className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200"
                       placeholder="Voor- en achternaam"
                     />
                   </div>
@@ -125,7 +132,7 @@ export default function Contact() {
                         name="email"
                         type="email"
                         required
-                        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200"
                         placeholder="naam@email.nl"
                       />
                     </div>
@@ -137,7 +144,7 @@ export default function Contact() {
                         id="phone"
                         name="phone"
                         type="tel"
-                        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                        className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200"
                         placeholder="Bijvoorbeeld 06 12345678"
                       />
                     </div>
@@ -150,7 +157,7 @@ export default function Contact() {
                       id="subject"
                       name="subject"
                       type="text"
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200"
                       placeholder="Waar gaat uw vraag over?"
                     />
                   </div>
@@ -169,14 +176,14 @@ export default function Contact() {
                   </div>
                   <div className="text-xs text-slate-500">
                     Door dit formulier te verzenden gaat u akkoord met onze{' '}
-                    <a href="/privacy" className="text-blue-600 underline">
+                    <a href="/privacy" className={`${colors.primaryText} underline`}>
                       privacyverklaring
                     </a>
                     . We gebruiken uw gegevens alleen om uw vraag te beantwoorden.
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className={`inline-flex w-full items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-4 py-3 text-sm font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
                   >
                     <Send className="h-4 w-4" aria-hidden />
                     Verstuur bericht
@@ -189,7 +196,7 @@ export default function Contact() {
               <aside className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-slate-900">Bezoek- en postadres</h3>
                 <div className="mt-4 flex items-start gap-3 text-sm text-slate-600">
-                  <MapPin className="mt-1 h-5 w-5 text-blue-600" aria-hidden />
+                  <MapPin className={`mt-1 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                   <div>
                     <p>AdviesNeutraal</p>
                     <p>Kamperingweg 45-D</p>
@@ -197,7 +204,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="mt-6 flex items-start gap-3 text-sm text-slate-600">
-                  <Clock className="mt-1 h-5 w-5 text-blue-600" aria-hidden />
+                  <Clock className={`mt-1 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                   <div>
                     <p>Openingstijden klantenservice</p>
                     <p>Maandag t/m vrijdag: 08:00 - 20:00</p>
@@ -205,7 +212,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="mt-6 rounded-xl bg-slate-50 p-4 text-sm text-slate-600">
-                  <ShieldCheck className="mb-2 h-5 w-5 text-blue-600" aria-hidden />
+                  <ShieldCheck className={`mb-2 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                   <p>
                     Uw gegevens worden beveiligd verstuurd. We slaan ze alleen op zolang nodig is om uw vraag
                     te beantwoorden en verwijderen ze daarna automatisch.
@@ -223,7 +230,7 @@ export default function Contact() {
                 Wilt u wijzigingen doorgeven aan uw energieleverancier? Neem dan rechtstreeks contact op met
                 de officiele klantenservice van uw leverancier. We helpen u graag aan de juiste contactgegevens
                 via onze{' '}
-                <a href="/klantenservice" className="text-blue-600 underline">
+                <a href="/klantenservice" className={`${colors.primaryText} underline`}>
                   klantenservicepagina
                 </a>
                 .
@@ -234,4 +241,14 @@ export default function Contact() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

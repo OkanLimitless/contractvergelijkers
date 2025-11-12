@@ -11,8 +11,12 @@ import {
 } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 const serviceBlocks = [
   {
@@ -130,7 +134,10 @@ const useCases = [
   },
 ]
 
-export default function Diensten() {
+interface DienstenProps { brandColor?: string }
+
+export default function Diensten({ brandColor = 'blue' }: DienstenProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -142,7 +149,7 @@ export default function Diensten() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
@@ -159,7 +166,7 @@ export default function Diensten() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-blue-700 shadow-lg transition hover:bg-blue-100"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-3 text-base font-semibold ${colors.buttonText} shadow-lg transition ${colors.buttonHover}`}
                 >
                   📞 Bel direct: {DISPLAY_PHONE_NUMBER}
                 </a>
@@ -194,7 +201,7 @@ export default function Diensten() {
               {serviceBlocks.map((service) => (
                 <div key={service.title} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 ${colors.primaryText}`}>
                       <service.icon className="h-6 w-6" aria-hidden />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-900">{service.title}</h3>
@@ -203,14 +210,14 @@ export default function Diensten() {
                   <ul className="mt-4 space-y-2 text-sm text-slate-600">
                     {service.bulletPoints.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <Sparkles className="mt-0.5 h-4 w-4 text-blue-600" aria-hidden />
+                        <Sparkles className={`mt-0.5 h-4 w-4 ${colors.primaryText}`} aria-hidden />
                         {bullet}
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/contact"
-                    className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                    className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHover}`}
                   >
                     Vraag meer informatie
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -259,7 +266,7 @@ export default function Diensten() {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="max-w-3xl">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Tarieven & pakketten
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -275,7 +282,7 @@ export default function Diensten() {
                 <div key={pkg.title} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-slate-900">{pkg.title}</h3>
-                    <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
                       <Wallet className="h-4 w-4" aria-hidden />
                       {pkg.price}
                     </span>
@@ -284,14 +291,14 @@ export default function Diensten() {
                   <ul className="mt-4 space-y-2 text-sm text-slate-600">
                     {pkg.list.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <Sparkles className="mt-0.5 h-4 w-4 text-blue-600" aria-hidden />
+                        <Sparkles className={`mt-0.5 h-4 w-4 ${colors.primaryText}`} aria-hidden />
                         {item}
                       </li>
                     ))}
                   </ul>
                   <Link
                     href="/contact"
-                    className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                    className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHover}`}
                   >
                     Neem contact op
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -309,7 +316,7 @@ export default function Diensten() {
         <section className="bg-slate-50">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="max-w-3xl text-center sm:text-left">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Wanneer schakelt u ons in?
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -343,14 +350,14 @@ export default function Diensten() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 <PhoneCall className="h-5 w-5" aria-hidden />
                 Bel klantenservice
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl border ${colors.primaryBorder} px-6 py-3 text-base font-semibold ${colors.primaryText} transition hover:bg-slate-50`}
               >
                 Vraag advies aan
               </Link>
@@ -360,4 +367,14 @@ export default function Diensten() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

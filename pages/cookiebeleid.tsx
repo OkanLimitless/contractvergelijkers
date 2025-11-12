@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import { GetServerSideProps } from 'next'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 const cookieTypes = [
   {
@@ -21,7 +25,10 @@ const cookieTypes = [
   },
 ]
 
-export default function CookieBeleid() {
+interface CookieProps { brandColor?: string }
+
+export default function CookieBeleid({ brandColor = 'blue' }: CookieProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -33,7 +40,7 @@ export default function CookieBeleid() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Cookiebeleid</h1>
             <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
@@ -101,7 +108,7 @@ export default function CookieBeleid() {
               Houd er rekening mee dat sommige functies van de website dan mogelijk niet goed werken. Op
               onderstaande websites vindt u uitleg per browser:
             </p>
-            <ul className="mt-6 list-disc space-y-1 pl-6 text-sm text-blue-600">
+            <ul className={`mt-6 list-disc space-y-1 pl-6 text-sm ${colors.primaryText}`}>
               <li>
                 <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noreferrer" className="underline">
                   Google Chrome
@@ -141,4 +148,14 @@ export default function CookieBeleid() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

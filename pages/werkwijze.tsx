@@ -13,8 +13,12 @@ import {
 } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 const phases = [
   {
@@ -131,7 +135,10 @@ const documentationItems = [
   },
 ]
 
-export default function Werkwijze() {
+interface WerkwijzeProps { brandColor?: string }
+
+export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -143,7 +150,7 @@ export default function Werkwijze() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-indigo-600 via-indigo-500 to-blue-600 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
@@ -159,7 +166,7 @@ export default function Werkwijze() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-indigo-700 shadow-lg transition hover:bg-blue-100"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-3 text-base font-semibold ${colors.buttonText} shadow-lg transition ${colors.buttonHover}`}
                 >
                   📞 Bel direct: {DISPLAY_PHONE_NUMBER}
                 </a>
@@ -190,7 +197,7 @@ export default function Werkwijze() {
               {phases.map((phase) => (
                 <div key={phase.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600/10 text-indigo-600">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 ${colors.primaryText}`}>
                       <phase.icon className="h-6 w-6" aria-hidden />
                     </div>
                     <h3 className="text-lg font-semibold text-slate-900">{phase.title}</h3>
@@ -199,7 +206,7 @@ export default function Werkwijze() {
                   <ul className="mt-4 space-y-2 text-sm text-slate-600">
                     {phase.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <Sparkles className="mt-0.5 h-4 w-4 text-indigo-600" aria-hidden />
+                        <Sparkles className={`mt-0.5 h-4 w-4 ${colors.primaryText}`} aria-hidden />
                         {bullet}
                       </li>
                     ))}
@@ -354,13 +361,13 @@ export default function Werkwijze() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 📞 Bel klantenservice
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-indigo-600 px-6 py-3 text-base font-semibold text-indigo-600 transition hover:bg-indigo-50"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl border ${colors.primaryBorder} px-6 py-3 text-base font-semibold ${colors.primaryText} transition hover:bg-slate-50`}
               >
                 Plan een gesprek
               </Link>
@@ -370,4 +377,14 @@ export default function Werkwijze() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'indigo'
+    }
+  }
 }

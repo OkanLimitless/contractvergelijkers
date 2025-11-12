@@ -1,8 +1,12 @@
 import { AlertCircle, ArrowRight, CheckCircle2, Clock, Headset, Phone, Shield, Sparkles } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 declare global {
   function gtag(...args: any[]): void
@@ -119,7 +123,10 @@ const faqItems = [
   },
 ]
 
-export default function EnergieAdvies() {
+interface EnergieAdviesProps { brandColor?: string }
+
+export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProps) {
+  const colors = getColorScheme(brandColor)
   const trackConversion = () => {
     if (typeof window !== 'undefined' && typeof gtag_report_conversion === 'function') {
       gtag_report_conversion(`tel:${PHONE_NUMBER_TEL}`)
@@ -165,7 +172,7 @@ export default function EnergieAdvies() {
       </Head>
 
       <div className="flex-1">
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700">
+        <section className={`relative overflow-hidden ${colors.gradient}`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_hsla(0,0%,100%,0.18),_transparent_40%)]" />
           <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:px-6 md:py-20 lg:flex-row lg:items-center">
             <div className="lg:w-3/5">
@@ -190,7 +197,7 @@ export default function EnergieAdvies() {
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
                   onClick={trackConversion}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-lg font-bold text-blue-700 shadow-xl transition hover:bg-blue-50 hover:scale-105"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-4 text-lg font-bold ${colors.buttonText} shadow-xl transition ${colors.buttonHover} hover:scale-105`}
                 >
                   📞 Bel Direct: {DISPLAY_PHONE_NUMBER}
                 </a>
@@ -270,7 +277,7 @@ export default function EnergieAdvies() {
                       <a
                         href={`tel:${PHONE_NUMBER_TEL}`}
                         onClick={trackConversion}
-                        className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-bold text-white shadow-sm transition hover:bg-blue-700"
+                        className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-4 py-3 text-base font-bold text-white shadow-sm transition ${colors.primaryHover}`}
                       >
                         <Phone className="h-5 w-5" aria-hidden />
                         Bel Nu: {DISPLAY_PHONE_NUMBER}
@@ -295,7 +302,7 @@ export default function EnergieAdvies() {
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
             <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                   Onze werkwijze
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -306,7 +313,7 @@ export default function EnergieAdvies() {
                 </p>
                 <Link
                   href="/werkwijze"
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-blue-600 transition hover:text-blue-700"
+                  className={`mt-6 inline-flex items-center text-sm font-semibold ${colors.primaryText} ${colors.primaryHover}`}
                 >
                   Meer over onze werkwijze
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -457,3 +464,12 @@ export default function EnergieAdvies() {
   )
 }
 
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
+}

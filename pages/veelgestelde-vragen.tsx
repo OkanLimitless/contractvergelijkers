@@ -2,6 +2,10 @@ import { BookOpen, HelpCircle, Lightbulb, PhoneCall, Shield, Zap } from 'lucide-
 import type { LucideIcon } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 
@@ -113,7 +117,10 @@ const faqCategories: FaqCategory[] = [
   },
 ]
 
-export default function VeelGevraagdeVragen() {
+interface FAQProps { brandColor?: string }
+
+export default function VeelGevraagdeVragen({ brandColor = 'blue' }: FAQProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -125,7 +132,7 @@ export default function VeelGevraagdeVragen() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-800 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
@@ -141,7 +148,7 @@ export default function VeelGevraagdeVragen() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-lg transition hover:bg-blue-100"
+                  className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.buttonBg} px-6 py-3 text-base font-semibold ${colors.buttonText} shadow-lg transition ${colors.buttonHover}`}
                 >
                   📞 Bel direct: {DISPLAY_PHONE_NUMBER}
                 </a>
@@ -180,7 +187,7 @@ export default function VeelGevraagdeVragen() {
                 {faqCategories.map((category) => (
                   <section key={category.id} id={category.id} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                     <div className="mb-4 flex items-center gap-3">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 text-blue-600">
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 ${colors.primaryText}`}>
                         <category.icon className="h-6 w-6" aria-hidden />
                       </div>
                       <div>
@@ -191,7 +198,7 @@ export default function VeelGevraagdeVragen() {
                     <div className="space-y-4">
                       {category.entries.map((entry) => (
                         <details key={entry.question} className="group rounded-xl border border-slate-200 bg-white p-4">
-                          <summary className="cursor-pointer text-sm font-semibold text-slate-900 transition group-open:text-blue-600">
+                          <summary className={`cursor-pointer text-sm font-semibold text-slate-900 transition group-open:${colors.primaryText.replace('text-','text-')}` }>
                             {entry.question}
                           </summary>
                           <p className="mt-3 text-sm text-slate-600">{entry.answer}</p>
@@ -217,13 +224,13 @@ export default function VeelGevraagdeVragen() {
                 <div className="mt-5 space-y-3 text-sm text-slate-600">
                   <p>
                     <strong>Direct bellen:</strong>{' '}
-                    <a href={`tel:${PHONE_NUMBER_TEL}`} className="text-blue-600 hover:text-blue-700">
+                    <a href={`tel:${PHONE_NUMBER_TEL}`} className={`${colors.primaryText}`}>
                       {DISPLAY_PHONE_NUMBER}
                     </a>
                   </p>
                   <p>
                     <strong>Stuur een e-mail:</strong>{' '}
-                    <a href="mailto:info@adviesneutraal.nl" className="text-blue-600 hover:text-blue-700">
+                    <a href="mailto:info@adviesneutraal.nl" className={`${colors.primaryText}`}>
                       info@adviesneutraal.nl
                     </a>
                   </p>
@@ -234,7 +241,7 @@ export default function VeelGevraagdeVragen() {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-white p-6">
                 <h3 className="text-lg font-semibold text-slate-900">Handige pagina&apos;s</h3>
-                <ul className="mt-4 space-y-3 text-sm text-blue-600">
+                <ul className={`mt-4 space-y-3 text-sm ${colors.primaryText}`}>
                   <li>
                     <Link href="/diensten" className="hover:text-blue-700">
                       Onze diensten
@@ -273,14 +280,14 @@ export default function VeelGevraagdeVragen() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 <PhoneCall className="h-5 w-5" aria-hidden />
                 Bel klantenservice
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl border ${colors.primaryBorder} px-6 py-3 text-base font-semibold ${colors.primaryText} transition hover:bg-slate-50`}
               >
                 Stuur een bericht
               </Link>
@@ -290,4 +297,14 @@ export default function VeelGevraagdeVragen() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

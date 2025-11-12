@@ -12,8 +12,12 @@ import {
 } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
 const coreValues = [
   {
@@ -108,7 +112,10 @@ const certifications = [
   },
 ]
 
-export default function OverOns() {
+interface OverOnsProps { brandColor?: string }
+
+export default function OverOns({ brandColor = 'blue' }: OverOnsProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -120,7 +127,7 @@ export default function OverOns() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
@@ -157,20 +164,20 @@ export default function OverOns() {
                 <h3 className="text-lg font-semibold text-slate-900">Kerncijfers</h3>
                 <ul className="mt-5 space-y-3 text-sm text-slate-600">
                   <li className="flex items-start gap-3">
-                    <Users className="h-5 w-5 text-blue-600" aria-hidden />
+                    <Users className={`h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Ruim 3.500 adviesgesprekken per jaar met consumenten en mkb.
                   </li>
                   <li className="flex items-start gap-3">
-                    <Briefcase className="h-5 w-5 text-blue-600" aria-hidden />
+                    <Briefcase className={`h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Expertise in contractoptimalisatie, verduurzaming en compliance.
                   </li>
                   <li className="flex items-start gap-3">
-                    <Building className="h-5 w-5 text-blue-600" aria-hidden />
+                    <Building className={`h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Kantoor in Gouda, actief in heel Nederland via telefoon en video.
                   </li>
                 </ul>
                 <div className="mt-6 rounded-xl bg-white p-4 text-sm text-slate-600">
-                  <MapPin className="mb-2 h-5 w-5 text-blue-600" aria-hidden />
+                  <MapPin className={`mb-2 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                   <p>
                     Bezoekadres: Kamperingweg 45-D, 2803 PE Gouda <br />
                     KvK: 84091355
@@ -184,7 +191,7 @@ export default function OverOns() {
         <section className="bg-slate-50">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="max-w-3xl">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Waar wij voor staan
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -199,7 +206,7 @@ export default function OverOns() {
               {coreValues.map((value) => (
                 <div key={value.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <value.icon className="h-6 w-6 text-blue-600" aria-hidden />
+                    <value.icon className={`h-6 w-6 ${colors.primaryText}`} aria-hidden />
                     <h3 className="text-lg font-semibold text-slate-900">{value.title}</h3>
                   </div>
                   <p className="mt-3 text-sm text-slate-600">{value.description}</p>
@@ -212,7 +219,7 @@ export default function OverOns() {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="max-w-3xl text-center sm:text-left">
-              <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Mensen achter het advies
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -227,7 +234,7 @@ export default function OverOns() {
               {teamMembers.map((member) => (
                 <div key={member.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <Users className="h-6 w-6 text-blue-600" aria-hidden />
+                    <Users className={`h-6 w-6 ${colors.primaryText}`} aria-hidden />
                     <div>
                       <h3 className="text-base font-semibold text-slate-900">{member.name}</h3>
                       <p className="text-xs text-slate-500">{member.role}</p>
@@ -266,7 +273,7 @@ export default function OverOns() {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-8 lg:grid-cols-[3fr,2fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                   Kwaliteit & certificering
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -281,7 +288,7 @@ export default function OverOns() {
                 <ul className="space-y-4 text-sm text-slate-600">
                   {certifications.map((cert) => (
                     <li key={cert.title} className="flex items-start gap-3">
-                      <Award className="h-6 w-6 text-blue-600" aria-hidden />
+                      <Award className={`h-6 w-6 ${colors.primaryText}`} aria-hidden />
                       <div>
                         <h3 className="text-sm font-semibold text-slate-900">{cert.title}</h3>
                         <p className="mt-1 text-sm text-slate-600">{cert.description}</p>
@@ -306,14 +313,14 @@ export default function OverOns() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 <Phone className="h-5 w-5" aria-hidden />
                 Bel klantenservice
               </a>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-6 py-3 text-base font-semibold text-blue-600 transition hover:bg-blue-50"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl border ${colors.primaryBorder} px-6 py-3 text-base font-semibold ${colors.primaryText} transition hover:bg-slate-50`}
               >
                 Contactformulier
               </Link>
@@ -323,4 +330,14 @@ export default function OverOns() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }

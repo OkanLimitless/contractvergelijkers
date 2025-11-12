@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
+import { loadHomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
+import { getColorScheme } from '../lib/colors'
 
-export default function Disclaimer() {
+interface DisclaimerProps { brandColor?: string }
+
+export default function Disclaimer({ brandColor = 'blue' }: DisclaimerProps) {
+  const colors = getColorScheme(brandColor)
   return (
     <>
       <Head>
@@ -13,7 +20,7 @@ export default function Disclaimer() {
       </Head>
 
       <div className="flex-1">
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-800 text-white">
+        <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Disclaimer</h1>
             <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
@@ -35,7 +42,7 @@ export default function Disclaimer() {
             </p>
             <p className="mt-4 text-sm text-slate-600">
               Heeft u een fout gevonden of mist u informatie? Laat het ons weten via{' '}
-              <a href="mailto:info@adviesneutraal.nl" className="text-blue-600 underline">
+              <a href="mailto:info@adviesneutraal.nl" className={`${colors.primaryText} underline`}>
                 info@adviesneutraal.nl
               </a>
               . We passen dit dan zo snel mogelijk aan.
@@ -98,7 +105,7 @@ export default function Disclaimer() {
                 info@adviesneutraal.nl
               </a>{' '}
               of bekijk onze{' '}
-              <Link href="/contact" className="text-blue-600 underline">
+              <Link href="/contact" className={`${colors.primaryText} underline`}>
                 contactpagina
               </Link>
               .
@@ -109,4 +116,14 @@ export default function Disclaimer() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const homepage = await loadHomepageContent(baseUrl)
+  return {
+    props: {
+      brandColor: homepage?.brandColor || 'blue'
+    }
+  }
 }
