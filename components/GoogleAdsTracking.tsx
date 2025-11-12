@@ -4,8 +4,9 @@ import { getDomainConfig, isTrackingEnabled } from '../lib/config'
 declare global {
   interface Window {
     dataLayer: any[]
-    gtag: (...args: any[]) => void
-    gtag_report_conversion: (url?: string) => boolean
+    // Mark as optional because gtag may not be loaded yet at runtime
+    gtag?: (...args: any[]) => void
+    gtag_report_conversion?: (url?: string) => boolean
   }
 }
 
@@ -24,7 +25,7 @@ export function GoogleAdsTracking() {
     }
 
     // Prevent duplicate loading
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
       console.log('gtag already loaded')
       return
     }
@@ -103,10 +104,10 @@ export function usePhoneConversion() {
       return
     }
 
-    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+    if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
       const url = phoneNumber ? `tel:${phoneNumber}` : undefined
       console.log(`Phone conversion tracked: ${config.domain} - ${phoneNumber}`)
-      window.gtag_report_conversion(url)
+      ;(window as any).gtag_report_conversion(url)
     } else {
       console.warn('gtag_report_conversion not available')
     }
@@ -128,9 +129,9 @@ export function useAnalytics() {
       return
     }
 
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
       console.log(`Event tracked: ${eventName}`, eventParams)
-      window.gtag('event', eventName, {
+      ;(window as any).gtag('event', eventName, {
         ...eventParams,
         domain: config.domain
       })
