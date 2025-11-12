@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 
 import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getBaseUrlFromReq } from '../../lib/config'
 import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
 
 interface EnecoProps {
@@ -219,8 +220,9 @@ export default function Eneco({ content }: EnecoProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const content = await loadBrandContent('eneco')
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const content = await loadBrandContent('eneco', baseUrl)
   return {
     props: {
       content

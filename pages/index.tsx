@@ -5,6 +5,7 @@ import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 import { loadHomepageContent, getDefaultContent, type HomepageContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
 import { getColorScheme } from '../lib/colors'
 
 const highlightStats = [
@@ -480,8 +481,9 @@ export default function Home({ content }: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const content = await loadHomepageContent()
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const content = await loadHomepageContent(baseUrl)
   return {
     props: {
       content: content || getDefaultContent('homepage')

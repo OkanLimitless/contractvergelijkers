@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 
 import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getBaseUrlFromReq } from '../../lib/config'
 import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
 
 interface VattenfallProps {
@@ -158,8 +159,9 @@ export default function Vattenfall({ content }: VattenfallProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const content = await loadBrandContent('vattenfall')
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const content = await loadBrandContent('vattenfall', baseUrl)
   return {
     props: {
       content

@@ -60,26 +60,30 @@ export interface BrandSection {
  * @param path - Path to the content file
  * @returns Parsed content object
  */
-export async function loadContent<T>(path: string): Promise<T | null> {
+export async function loadContent<T>(path: string, baseUrl?: string): Promise<T | null> {
   try {
-    // In development, use require for synchronous loading
-    if (process.env.NODE_ENV === 'development') {
-      try {
-        const content = require(`../${path}`)
-        return content as T
-      } catch (error) {
-        console.warn(`Content not found: ${path}`)
-        return null
+    // Build an absolute URL so SSR can fetch reliably
+    let origin = baseUrl
+    if (!origin) {
+      if (typeof window !== 'undefined') {
+        origin = window.location.origin
+      } else if (process.env.NEXT_PUBLIC_DOMAIN_NAME) {
+        const proto = 'https'
+        origin = `${proto}://${process.env.NEXT_PUBLIC_DOMAIN_NAME}`
       }
     }
-    
-    // In production, use dynamic import
-    const response = await fetch(`/${path}`)
+
+    if (!origin) {
+      console.warn(`No base URL available to fetch content for: ${path}`)
+      return null
+    }
+
+    const response = await fetch(`${origin}/${path}`)
     if (!response.ok) {
       console.warn(`Content not found: ${path}`)
       return null
     }
-    return await response.json()
+    return (await response.json()) as T
   } catch (error) {
     console.error(`Error loading content from ${path}:`, error)
     return null
@@ -90,20 +94,34 @@ export async function loadContent<T>(path: string): Promise<T | null> {
  * Loads homepage content for the current domain
  * @returns HomepageContent or null if not found
  */
-export async function loadHomepageContent(): Promise<HomepageContent | null> {
-  const { getContentPath } = await import('./config')
-  const path = getContentPath('homepage')
-  return loadContent<HomepageContent>(path)
+export async function loadHomepageContent(baseUrl?: string): Promise<HomepageContent | null> {
+  let path: string
+  if (baseUrl) {
+    const { getContentPathForHost } = await import('./config')
+    const hostname = new URL(baseUrl).hostname
+    path = getContentPathForHost(hostname, 'homepage')
+  } else {
+    const { getContentPath } = await import('./config')
+    path = getContentPath('homepage')
+  }
+  return loadContent<HomepageContent>(path, baseUrl)
 }
 
 /**
  * Loads klantenservice content for the current domain
  * @returns KlantenserviceContent or null if not found
  */
-export async function loadKlantenserviceContent(): Promise<KlantenserviceContent | null> {
-  const { getContentPath } = await import('./config')
-  const path = getContentPath('klantenservice')
-  return loadContent<KlantenserviceContent>(path)
+export async function loadKlantenserviceContent(baseUrl?: string): Promise<KlantenserviceContent | null> {
+  let path: string
+  if (baseUrl) {
+    const { getContentPathForHost } = await import('./config')
+    const hostname = new URL(baseUrl).hostname
+    path = getContentPathForHost(hostname, 'klantenservice')
+  } else {
+    const { getContentPath } = await import('./config')
+    path = getContentPath('klantenservice')
+  }
+  return loadContent<KlantenserviceContent>(path, baseUrl)
 }
 
 /**
@@ -111,10 +129,17 @@ export async function loadKlantenserviceContent(): Promise<KlantenserviceContent
  * @param brand - The brand name (eneco, essent, vattenfall)
  * @returns BrandContent or null if not found
  */
-export async function loadBrandContent(brand: string): Promise<BrandContent | null> {
-  const { getBrandContentPath } = await import('./config')
-  const path = getBrandContentPath(brand)
-  return loadContent<BrandContent>(path)
+export async function loadBrandContent(brand: string, baseUrl?: string): Promise<BrandContent | null> {
+  let path: string
+  if (baseUrl) {
+    const { getBrandContentPathForHost } = await import('./config')
+    const hostname = new URL(baseUrl).hostname
+    path = getBrandContentPathForHost(hostname, brand)
+  } else {
+    const { getBrandContentPath } = await import('./config')
+    path = getBrandContentPath(brand)
+  }
+  return loadContent<BrandContent>(path, baseUrl)
 }
 
 /**

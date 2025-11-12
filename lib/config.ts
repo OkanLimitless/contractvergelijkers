@@ -64,6 +64,20 @@ export function getBrandContentPath(brand: string): string {
 }
 
 /**
+ * Builds a content path for a given hostname
+ */
+export function getContentPathForHost(hostname: string, pageType: string): string {
+  return `content/${hostname}/${pageType}.json`
+}
+
+/**
+ * Builds a brand content path for a given hostname
+ */
+export function getBrandContentPathForHost(hostname: string, brand: string): string {
+  return `content/${hostname}/brands/${brand.toLowerCase()}.json`
+}
+
+/**
  * Gets the phone number in tel: format
  * @returns Phone number formatted for tel: links
  */
@@ -201,4 +215,24 @@ export function isAnalyticsEnabled(): boolean {
  */
 export function isTrackingEnabled(): boolean {
   return getDomainConfig().enableTracking && isProduction()
+}
+
+/**
+ * Builds an absolute base URL from Next.js request headers
+ * @param req - Next.js GetServerSideProps context.req
+ * @returns Absolute origin like https://example.nl
+ */
+export function getBaseUrlFromReq(req: any): string {
+  try {
+    const host = (req?.headers?.['x-forwarded-host'] || req?.headers?.host || process.env.NEXT_PUBLIC_DOMAIN_NAME || 'localhost:3000') as string
+    let proto = (req?.headers?.['x-forwarded-proto'] || req?.headers?.['x-forwarded-protocol']) as string | undefined
+    if (!proto) {
+      proto = host.includes('localhost') ? 'http' : 'https'
+    }
+    return `${proto}://${host}`
+  } catch {
+    const host = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'localhost:3000'
+    const proto = host.includes('localhost') ? 'http' : 'https'
+    return `${proto}://${host}`
+  }
 }

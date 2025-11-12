@@ -5,6 +5,7 @@ import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
 import { loadKlantenserviceContent, getDefaultContent, type KlantenserviceContent } from '../lib/content'
+import { getBaseUrlFromReq } from '../lib/config'
 
 declare global {
   function gtag(...args: any[]): void
@@ -443,8 +444,9 @@ export default function Klantenservice({ content }: KlantenserviceProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const content = await loadKlantenserviceContent()
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const content = await loadKlantenserviceContent(baseUrl)
   return {
     props: {
       content: content || getDefaultContent('klantenservice')

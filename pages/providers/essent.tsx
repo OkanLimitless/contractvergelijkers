@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GetServerSideProps } from 'next'
 
 import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getBaseUrlFromReq } from '../../lib/config'
 import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
 
 interface EssentProps {
@@ -249,8 +250,9 @@ export default function Essent({ content }: EssentProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const content = await loadBrandContent('essent')
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const baseUrl = getBaseUrlFromReq(ctx.req)
+  const content = await loadBrandContent('essent', baseUrl)
   return {
     props: {
       content
