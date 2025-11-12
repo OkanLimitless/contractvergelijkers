@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import type { ReactElement, ReactNode } from 'react'
 
+import { GoogleAdsTracking } from '../components/GoogleAdsTracking'
 import { SiteLayout } from '../components/SiteLayout'
 import '../styles/globals.css'
 
@@ -16,5 +17,10 @@ type AppPropsWithLayout = AppProps & {
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => <SiteLayout>{page}</SiteLayout>)
 
-  return getLayout(<Component {...pageProps} />)
+  return (
+    <>
+      <GoogleAdsTracking />
+      {getLayout(<Component {...pageProps} />)}
+    </>
+  )
 }

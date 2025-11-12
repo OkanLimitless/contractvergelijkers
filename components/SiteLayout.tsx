@@ -1,13 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { ReactNode, useEffect, useState } from 'react'
+import { getDisplayPhoneNumber, getPhoneNumberTel, getDomainConfig, getBrandColors } from '../lib/config'
 
-export const DISPLAY_PHONE_NUMBER = '085 087 0276'
-const PHONE_NUMBER_CANONICAL = DISPLAY_PHONE_NUMBER.replace(/\s+/g, '')
-export const PHONE_NUMBER_TEL =
-  PHONE_NUMBER_CANONICAL.startsWith('0')
-    ? `+31${PHONE_NUMBER_CANONICAL.slice(1)}`
-    : `+31${PHONE_NUMBER_CANONICAL}`
+export const DISPLAY_PHONE_NUMBER = getDisplayPhoneNumber()
+export const PHONE_NUMBER_TEL = getPhoneNumberTel()
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -57,10 +54,10 @@ export function SiteLayout({ children }: SiteLayoutProps) {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold text-slate-900">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-lg text-white shadow-sm">
+            <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${getBrandColors().primaryBg} text-lg text-white shadow-sm`}>
               ⚡
             </span>
-            <span className="text-lg sm:text-xl">AdviesNeutraal</span>
+            <span className="text-lg sm:text-xl">{getDomainConfig().siteTitle}</span>
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
             {renderNavLinks('transition-colors')}
@@ -69,7 +66,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             <span className="text-xs uppercase tracking-wide text-slate-400">Bel direct</span>
             <a
               href={`tel:${PHONE_NUMBER_TEL}`}
-              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className={`rounded-lg ${getBrandColors().primaryBg} px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
             >
               {DISPLAY_PHONE_NUMBER}
             </a>
@@ -104,7 +101,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               {renderNavLinks('rounded-md px-3 py-2 transition-colors')}
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
-                className="mt-2 inline-flex items-center justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className={`mt-2 inline-flex items-center justify-center rounded-md ${getBrandColors().primaryBg} px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
               >
                 Bel {DISPLAY_PHONE_NUMBER}
               </a>
@@ -119,10 +116,10 @@ export function SiteLayout({ children }: SiteLayoutProps) {
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-2 font-semibold text-slate-900">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-lg text-white shadow-sm">
+              <span className={`flex h-9 w-9 items-center justify-center rounded-lg ${getBrandColors().primaryBg} text-lg text-white shadow-sm`}>
                 ⚡
               </span>
-              <span className="text-lg">AdviesNeutraal</span>
+              <span className="text-lg">{getDomainConfig().siteTitle}</span>
             </Link>
             <p className="text-sm text-slate-600">
               Onafhankelijk advies over energietarieven, contracten en verduurzaming. Wij staan aan de
@@ -180,7 +177,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
           </div>
         </div>
         <div className="border-t border-slate-200 bg-slate-100 py-4 text-center text-xs text-slate-500">
-          &copy; {new Date().getFullYear()} AdviesNeutraal. Alle rechten voorbehouden.
+          &copy; {new Date().getFullYear()} {getDomainConfig().siteTitle}. Alle rechten voorbehouden.
         </div>
       </footer>
     </div>

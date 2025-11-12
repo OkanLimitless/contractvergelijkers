@@ -1,0 +1,55 @@
+{
+  "heroTitle": "Hulp nodig met uw energie klantenservice?",
+  "heroSubtitle": "Vul het formulier in en wij bellen u terug voor vragen over uw energiecontract, tarieven of overstap.",
+  "primaryCTA": "📝 Vul Formulier In - Wij Bellen Terug",
+  "trustBadges": [
+    "Terugbelgarantie binnen 24 uur",
+    "Geen wachtrij",
+    "Gratis advies"
+  ],
+  "serviceItems": [
+    "Uitleg over contracten, tarieven en voorwaarden",
+    "Controle van termijnbedragen en jaarafrekening",
+    "Vergelijking van energieaanbiedingen",
+    "Overstapbegeleiding naar betere leverancier"
+  ],
+  "brandSections": [
+    {
+      "id": "essent",
+      "name": "Essent",
+      "title": "Hulp met Essent klantenservice",
+      "description": "Vragen over uw Essent-contract, factuur of tarieven? Wij helpen u direct of verbinden u door naar de officiële klantenservice.",
+      "bullets": [
+        "Uitleg over termijnbedragen en contractvoorwaarden",
+        "Vergelijking met alternatieve leveranciers",
+        "Direct doorschakelen naar officiële Essent indien nodig"
+      ],
+      "officialUrl": "https://www.essent.nl/service/contact"
+    },
+    {
+      "id": "eneco",
+      "name": "Eneco",
+      "title": "Hulp met Eneco klantenservice",
+      "description": "Vragen over uw Eneco-contract, dynamische tarieven of Eneco Toon? Wij staan direct voor u klaar.",
+      "bullets": [
+        "Uitleg over tarieven en contractopties",
+        "Advies over slimme meters en laadpalen",
+        "Doorverwijzing naar officiële Eneco service"
+      ],
+      "officialUrl": "https://www.eneco.nl/service-en-contact/"
+    },
+    {
+      "id": "vattenfall",
+      "name": "Vattenfall",
+      "title": "Hulp met Vattenfall klantenservice",
+      "description": "Vragen over uw Vattenfall-contract of MijnVattenfall-account? Bel ons voor directe hulp.",
+      "bullets": [
+        "Controle van prijsbescherming en acties",
+        "Uitleg over termijnbedragen en facturen",
+        "Doorschakeling naar officiële Vattenfall"
+      ],
+      "officialUrl": "https://www.vattenfall.nl/klantenservice/"
+    }
+  ]
+}
+

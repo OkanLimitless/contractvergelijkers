@@ -1,0 +1,59 @@
+{
+  "brand": "vattenfall",
+  "domain": "advies-neutraal-inbound.nl",
+  "pageTitle": "Vattenfall Informatie 2025 - Betrouwbare Energie & Tarieven",
+  "metaDescription": "Vattenfall informatie 2025: Zweedse energiegigant, betrouwbare elektriciteit en gas, tarieven en klantenservice. Vergelijk via Adviesneutraal.",
+  "heroTitle": "Vattenfall Betrouwbare Energie 2025",
+  "heroSubtitle": "Vattenfall is een Zweedse energiegigant met meer dan 100 jaar ervaring. Betrouwbare elektriciteit en gas met focus op duurzaamheid en innovatie.",
+  "primaryCTA": "📝 Vul Formulier In - Wij Bellen Terug",
+  "trustBadges": [
+    "Zweedse Gigant",
+    "100+ jaar ervaring",
+    "Betrouwbaar",
+    "Duurzaam"
+  ],
+  "serviceItems": [
+    "Elektriciteit (grijs en groen)",
+    "Aardgas",
+    "Zakelijke energieoplossingen",
+    "Online energiemanagement"
+  ],
+  "howItWorks": [
+    {
+      "step": "1",
+      "title": "Inventarisatie",
+      "description": "U vult het formulier in en wij bellen u terug. We bespreken uw verbruik, wensen en contracthistorie."
+    },
+    {
+      "step": "2",
+      "title": "Analyse & vergelijking",
+      "description": "We bekijken onafhankelijke tarieven, leveranciersvoorwaarden en de financiële impact voor uw situatie."
+    },
+    {
+      "step": "3",
+      "title": "Advies & keuze",
+      "description": "U ontvangt een helder adviesgesprek met concrete vervolgstappen. We sturen samenvattingen per e-mail wanneer gewenst."
+    },
+    {
+      "step": "4",
+      "title": "Nazorg",
+      "description": "Ook na het gesprek blijven we beschikbaar voor vragen over uw overstap, opzegging of aanvullende verduurzamingsopties."
+    }
+  ],
+  "officialUrl": "https://www.vattenfall.nl/klantenservice/",
+  "faqItems": [
+    {
+      "question": "Wat maakt Vattenfall anders?",
+      "answer": "Vattenfall is een Zweedse energiegigant met meer dan 100 jaar ervaring en focus op betrouwbaarheid en duurzaamheid."
+    },
+    {
+      "question": "Is Vattenfall duur?",
+      "answer": "Vattenfall biedt competitieve tarieven. Wij vergelijken Vattenfall met alle andere opties om de beste deal voor u te vinden."
+    },
+    {
+      "question": "Hoe kan ik overstappen naar Vattenfall?",
+      "answer": "Vul het formulier in en wij bellen u terug voor gratis advies. Wij vergelijken Vattenfall met alle andere opties en begeleiden u door het overstapproces."
+    }
+  ]
+}
+

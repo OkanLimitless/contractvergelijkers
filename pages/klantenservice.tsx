@@ -1,8 +1,10 @@
 import { AlertCircle, ArrowRight, CheckCircle2, Clock, Headset, Phone, Shield, Sparkles } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadKlantenserviceContent, getDefaultContent, type KlantenserviceContent } from '../lib/content'
 
 declare global {
   function gtag(...args: any[]): void
@@ -119,7 +121,13 @@ const faqItems = [
   },
 ]
 
-export default function Klantenservice() {
+interface KlantenserviceProps {
+  content: KlantenserviceContent
+}
+
+export default function Klantenservice({ content }: KlantenserviceProps) {
+  const klantenserviceContent = content || getDefaultContent('klantenservice')
+  
   const trackConversion = () => {
     if (typeof window !== 'undefined' && typeof gtag_report_conversion === 'function') {
       gtag_report_conversion(`tel:${PHONE_NUMBER_TEL}`)
@@ -136,32 +144,6 @@ export default function Klantenservice() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17714599796" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17714599796');
-              function gtag_report_conversion(url) {
-                var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                  'send_to': 'AW-17714599796/ZVMnCILcgr0bEPSu_f5B',
-                  'value': 1.0,
-                  'currency': 'USD',
-                  'event_callback': callback
-                });
-                return false;
-              }
-            `,
-          }}
-        />
       </Head>
 
       <div className="flex-1">
@@ -170,29 +152,31 @@ export default function Klantenservice() {
           <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:px-6 md:py-20 lg:flex-row lg:items-center">
             <div className="lg:w-3/5">
               <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                Hulp nodig met uw energie klantenservice?
+                {klantenserviceContent.heroTitle || 'Hulp nodig met uw energie klantenservice?'}
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-white sm:text-xl">
-                Direct een adviseur aan de lijn voor vragen over uw energiecontract, tarieven of overstap.
+                {klantenserviceContent.heroSubtitle || 'Direct een adviseur aan de lijn voor vragen over uw energiecontract, tarieven of overstap.'}
               </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {highlightBadges.map((badge) => (
-                  <span
-                    key={badge.text}
-                    className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold ${badge.className}`}
-                  >
-                    <CheckCircle2 className="h-4 w-4" aria-hidden />
-                    {badge.text}
-                  </span>
-                ))}
-              </div>
+              {klantenserviceContent.trustBadges && klantenserviceContent.trustBadges.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {klantenserviceContent.trustBadges.map((badge, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold bg-emerald-100 text-emerald-700"
+                    >
+                      <CheckCircle2 className="h-4 w-4" aria-hidden />
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
                   onClick={trackConversion}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-4 text-lg font-bold text-blue-700 shadow-xl transition hover:bg-blue-50 hover:scale-105"
                 >
-                  📞 Bel Direct: {DISPLAY_PHONE_NUMBER}
+                  {klantenserviceContent.primaryCTA || `📞 Bel Direct: ${DISPLAY_PHONE_NUMBER}`}
                 </a>
               </div>
               <p className="mt-4 text-sm text-blue-100">
@@ -206,8 +190,8 @@ export default function Klantenservice() {
               <div className="rounded-2xl bg-white/10 p-6 text-white shadow-xl backdrop-blur">
                 <h2 className="text-lg font-semibold">Waarmee wij dagelijks helpen</h2>
                 <ul className="mt-4 space-y-3 text-sm text-blue-100">
-                  {serviceItems.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
+                  {(klantenserviceContent.serviceItems || serviceItems).map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
                       <Sparkles className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
                       {item}
                     </li>
@@ -251,7 +235,7 @@ export default function Klantenservice() {
               </p>
             </div>
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {brandSections.map((brand) => (
+              {(klantenserviceContent.brandSections || brandSections).map((brand) => (
                 <div key={brand.id} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="text-xl font-bold text-slate-900">{brand.title}</h3>
                   <span className="mt-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
@@ -457,4 +441,13 @@ export default function Klantenservice() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const content = await loadKlantenserviceContent()
+  return {
+    props: {
+      content: content || getDefaultContent('klantenservice')
+    }
+  }
 }

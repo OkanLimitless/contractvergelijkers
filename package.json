@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:bellen": "cp .env.advies-neutraal-bellen .env.local && npm run build",
+    "build:inbound": "cp .env.advies-neutraal-inbound .env.local && npm run build",
+    "build:neutraal": "cp .env.advies-neutraal .env.local && npm run build",
+    "build:bel": "cp .env.bel-adviesneutraal .env.local && npm run build",
     "start": "next start",
     "lint": "next lint"
   },

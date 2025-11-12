@@ -1,0 +1,60 @@
+{
+  "brand": "eneco",
+  "domain": "advies-neutraal.nl",
+  "pageTitle": "Eneco Informatie 2025 - Duurzame Energie & Tarieven",
+  "metaDescription": "Eneco informatie 2025: 100% Nederlandse windenergie, tarieven, klantenservice en overstappen. Vergelijk Eneco via Adviesneutraal.",
+  "heroTitle": "Eneco Duurzame Energie 2025",
+  "heroSubtitle": "Eneco is een van de oudste en meest duurzame energieleveranciers van Nederland. 100% Nederlandse windenergie en een groot duurzaam portfolio.",
+  "primaryCTA": "📞 Bel Direct: 085 087 0276",
+  "trustBadges": [
+    "100% Groene Stroom",
+    "Sinds 1995",
+    "2+ Miljoen Klanten",
+    "Innovatief"
+  ],
+  "serviceItems": [
+    "Elektriciteit (grijs en groen)",
+    "Aardgas",
+    "Zonnepanelen en installatie",
+    "Warmtepompen",
+    "Slimme meters en laadpalen"
+  ],
+  "howItWorks": [
+    {
+      "step": "1",
+      "title": "Inventarisatie",
+      "description": "U belt ons servicenummer of plant een belafspraak. We bespreken uw verbruik, wensen en contracthistorie."
+    },
+    {
+      "step": "2",
+      "title": "Analyse & vergelijking",
+      "description": "We bekijken onafhankelijke tarieven, leveranciersvoorwaarden en de financiële impact voor uw huishouden of bedrijf."
+    },
+    {
+      "step": "3",
+      "title": "Advies & keuze",
+      "description": "U ontvangt een helder adviesgesprek met concrete vervolgstappen. We sturen samenvattingen per e-mail wanneer gewenst."
+    },
+    {
+      "step": "4",
+      "title": "Nazorg",
+      "description": "Ook na het gesprek blijven we beschikbaar voor vragen over uw overstap, opzegging of aanvullende verduurzamingsopties."
+    }
+  ],
+  "officialUrl": "https://www.eneco.nl/service-en-contact/",
+  "faqItems": [
+    {
+      "question": "Is Eneco duurder dan andere leveranciers?",
+      "answer": "Eneco focust op duurzame energie, wat vaak iets duurder is dan budget leveranciers. Wij vergelijken alle opties voor u."
+    },
+    {
+      "question": "Wat zijn de voordelen van Eneco?",
+      "answer": "100% Nederlandse windenergie, eigen windparken, goede klantenservice en innovatieve slimme energie oplossingen."
+    },
+    {
+      "question": "Hoe kan ik overstappen naar Eneco?",
+      "answer": "Bel ons voor gratis advies. Wij vergelijken Eneco met alle andere opties en begeleiden u door het overstapproces."
+    }
+  ]
+}
+

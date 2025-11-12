@@ -1,0 +1,61 @@
+{
+  "brand": "essent",
+  "domain": "advies-neutraal-inbound.nl",
+  "pageTitle": "Essent Informatie 2025 - Tarieven & Overstappen",
+  "metaDescription": "Essent informatie 2025: Tarieven, klantenservice, overstappen en reviews. Grootste energieleverancier van Nederland. Vergelijk nu via Adviesneutraal.",
+  "heroTitle": "Essent Tarieven & Klantenservice 2025",
+  "heroSubtitle": "Essent is de grootste energieleverancier van Nederland met meer dan 3 miljoen klanten. Vergelijk hun tarieven en service met andere aanbieders via onze gratis service.",
+  "primaryCTA": "📝 Vul Formulier In - Wij Bellen Terug",
+  "trustBadges": [
+    "Grootste Leverancier",
+    "3+ miljoen klanten",
+    "Volledige Service",
+    "Groene Opties"
+  ],
+  "serviceItems": [
+    "Elektriciteit (grijs en groen)",
+    "Aardgas",
+    "Zonnepanelen en installatie",
+    "Warmtepompen",
+    "Energieadvies voor bedrijven",
+    "Slimme thermostaten"
+  ],
+  "howItWorks": [
+    {
+      "step": "1",
+      "title": "Inventarisatie",
+      "description": "U vult het formulier in en wij bellen u terug. We bespreken uw verbruik, wensen en contracthistorie."
+    },
+    {
+      "step": "2",
+      "title": "Analyse & vergelijking",
+      "description": "We bekijken onafhankelijke tarieven, leveranciersvoorwaarden en de financiële impact voor uw situatie."
+    },
+    {
+      "step": "3",
+      "title": "Advies & keuze",
+      "description": "U ontvangt een helder adviesgesprek met concrete vervolgstappen. We sturen samenvattingen per e-mail wanneer gewenst."
+    },
+    {
+      "step": "4",
+      "title": "Nazorg",
+      "description": "Ook na het gesprek blijven we beschikbaar voor vragen over uw overstap, opzegging of aanvullende verduurzamingsopties."
+    }
+  ],
+  "officialUrl": "https://www.essent.nl/service/contact",
+  "faqItems": [
+    {
+      "question": "Is Essent de goedkoopste leverancier?",
+      "answer": "Essent is niet altijd de goedkoopste optie. Wij vergelijken Essent met alle andere leveranciers om de beste deal voor u te vinden."
+    },
+    {
+      "question": "Wat zijn de voordelen van Essent?",
+      "answer": "Grootste en meest ervaren leverancier, uitgebreid servicenetwerk, goede klantenservice en brede range aan contractopties."
+    },
+    {
+      "question": "Hoe kan ik overstappen van Essent?",
+      "answer": "Vul het formulier in en wij bellen u terug voor gratis advies. Wij vinden de beste deal voor uw situatie en regelen de complete overstap voor u."
+    }
+  ]
+}
+

@@ -1,15 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { GetServerSideProps } from 'next'
 
-export default function Essent() {
-  const [phoneNumber] = useState('+31 85 087 2183')
+import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
+
+interface EssentProps {
+  content: BrandContent | null
+}
+
+export default function Essent({ content }: EssentProps) {
+  const brandContent = content
+  const phoneNumber = getPhoneNumberTel()
+  const displayPhone = getDisplayPhoneNumber()
 
   return (
     <>
       <Head>
-        <title>Essent Informatie 2025 - Tarieven & Overstappen | Adviesneutraal</title>
-        <meta name="description" content="Essent informatie 2025: Tarieven, klantenservice, overstappen en reviews. Grootste energieleverancier van Nederland. Vergelijk nu via Adviesneutraal." />
+        <title>{brandContent?.pageTitle || 'Essent Informatie 2025 - Tarieven & Overstappen | Adviesneutraal'}</title>
+        <meta name="description" content={brandContent?.metaDescription || 'Essent informatie 2025: Tarieven, klantenservice, overstappen en reviews. Grootste energieleverancier van Nederland. Vergelijk nu via Adviesneutraal.'} />
         <meta name="keywords" content="Essent tarieven 2025, Essent klantenservice, Essent overstappen, Essent contract, energieleverancier Essent" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +31,7 @@ export default function Essent() {
             Adviesneutraal
           </Link>
           <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
-            📞 {phoneNumber}
+            {brandContent?.primaryCTA || `📞 ${displayPhone}`}
           </a>
         </nav>
 
@@ -33,14 +42,10 @@ export default function Essent() {
               🆕 Essent Informatie 2025
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Essent Tarieven &{' '}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-yellow-400">
-                Klantenservice 2025
-              </span>
+              {brandContent?.heroTitle || 'Essent Tarieven & Klantenservice 2025'}
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto">
-              Essent is de grootste energieleverancier van Nederland met meer dan 3 miljoen klanten. 
-              Vergelijk hun tarieven en service met andere aanbieders via onze gratis service.
+              {brandContent?.heroSubtitle || 'Essent is de grootste energieleverancier van Nederland met meer dan 3 miljoen klanten. Vergelijk hun tarieven en service met andere aanbieders via onze gratis service.'}
             </p>
           </div>
 
@@ -242,4 +247,13 @@ export default function Essent() {
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const content = await loadBrandContent('essent')
+  return {
+    props: {
+      content
+    }
+  }
 }

@@ -1,15 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { GetServerSideProps } from 'next'
 
-export default function Eneco() {
-  const [phoneNumber] = useState('+31 85 087 2183')
+import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
+
+interface EnecoProps {
+  content: BrandContent | null
+}
+
+export default function Eneco({ content }: EnecoProps) {
+  const brandContent = content
+  const phoneNumber = getPhoneNumberTel()
+  const displayPhone = getDisplayPhoneNumber()
 
   return (
     <>
       <Head>
-        <title>Eneco Informatie 2025 - Duurzame Energie & Tarieven | Adviesneutraal</title>
-        <meta name="description" content="Eneco informatie 2025: 100% Nederlandse windenergie, tarieven, klantenservice en overstappen. Vergelijk Eneco via Adviesneutraal." />
+        <title>{brandContent?.pageTitle || 'Eneco Informatie 2025 - Duurzame Energie & Tarieven | Adviesneutraal'}</title>
+        <meta name="description" content={brandContent?.metaDescription || 'Eneco informatie 2025: 100% Nederlandse windenergie, tarieven, klantenservice en overstappen. Vergelijk Eneco via Adviesneutraal.'} />
         <meta name="keywords" content="Eneco tarieven 2025, Eneco groene energie, Eneco klantenservice, Eneco overstappen, duurzame energie" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -22,7 +31,7 @@ export default function Eneco() {
             ← Adviesneutraal
           </Link>
           <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
-            📞 {phoneNumber}
+            {brandContent?.primaryCTA || `📞 ${displayPhone}`}
           </a>
         </nav>
 
@@ -33,14 +42,10 @@ export default function Eneco() {
               🌱 Eneco Informatie 2025
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Eneco Duurzame{' '}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                Energie 2025
-              </span>
+              {brandContent?.heroTitle || 'Eneco Duurzame Energie 2025'}
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto">
-              Eneco is een van de oudste en meest duurzame energieleveranciers van Nederland. 
-              100% Nederlandse windenergie en een groot duurzaam portfolio.
+              {brandContent?.heroSubtitle || 'Eneco is een van de oudste en meest duurzame energieleveranciers van Nederland. 100% Nederlandse windenergie en een groot duurzaam portfolio.'}
             </p>
           </div>
 
@@ -212,4 +217,13 @@ export default function Eneco() {
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const content = await loadBrandContent('eneco')
+  return {
+    props: {
+      content
+    }
+  }
 }

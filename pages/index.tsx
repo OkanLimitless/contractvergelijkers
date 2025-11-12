@@ -1,8 +1,10 @@
 import { ArrowRight, Building2, CheckCircle2, Lightbulb, ShieldCheck, Sparkles, Users } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { GetServerSideProps } from 'next'
 
 import { DISPLAY_PHONE_NUMBER, PHONE_NUMBER_TEL } from '../components/SiteLayout'
+import { loadHomepageContent, getDefaultContent, type HomepageContent } from '../lib/content'
 
 const highlightStats = [
   { title: 'Voor consumenten & mkb', description: 'Advies voor huishoudens en kleinschalige ondernemingen.' },
@@ -121,14 +123,20 @@ const testimonials = [
   },
 ]
 
-export default function Home() {
+interface HomeProps {
+  content: HomepageContent
+}
+
+export default function Home({ content }: HomeProps) {
+  const homepageContent = content || getDefaultContent('homepage')
+  
   return (
     <>
       <Head>
-        <title>AdviesNeutraal | Onafhankelijk energieadvies en contractvergelijker</title>
+        <title>{homepageContent.metaTitle || 'AdviesNeutraal | Onafhankelijk energieadvies en contractvergelijker'}</title>
         <meta
           name="description"
-          content="AdviesNeutraal helpt consumenten en mkb met onafhankelijk energieadvies. Contractscan, tariefvergelijking, overstapbegeleiding en verduurzaming. Bel direct."
+          content={homepageContent.metaDescription || 'AdviesNeutraal helpt consumenten en mkb met onafhankelijk energieadvies. Contractscan, tariefvergelijking, overstapbegeleiding en verduurzaming. Bel direct.'}
         />
       </Head>
 
@@ -138,34 +146,48 @@ export default function Home() {
           <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center">
             <div className="w-full text-white lg:w-3/5">
               <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
-                Onafhankelijk energieadvies sinds 2018
+                {homepageContent.valueProposition || 'Onafhankelijk energieadvies sinds 2018'}
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-                Inzicht en rust in uw energiekosten
+                {homepageContent.heroTitle || 'Inzicht en rust in uw energiekosten'}
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-blue-100 sm:text-xl">
-                AdviesNeutraal biedt helder energieadvies voor huishoudens en ondernemers. We vergelijken
-                contracten, leggen de markt uit en begeleiden een overstap van A tot Z.
+                {homepageContent.heroSubtitle || 'AdviesNeutraal biedt helder energieadvies voor huishoudens en ondernemers. We vergelijken contracten, leggen de markt uit en begeleiden een overstap van A tot Z.'}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href={`tel:${PHONE_NUMBER_TEL}`}
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-semibold text-blue-700 shadow-lg transition hover:bg-blue-100"
                 >
-                  📞 Bel direct: {DISPLAY_PHONE_NUMBER}
+                  {homepageContent.primaryCTA || `📞 Bel direct: ${DISPLAY_PHONE_NUMBER}`}
                 </a>
-                <Link
-                  href="/diensten"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
-                >
-                  Bekijk onze diensten
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
+                {homepageContent.secondaryCTA && (
+                  <Link
+                    href="/diensten"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/60 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/10"
+                  >
+                    {homepageContent.secondaryCTA}
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                )}
               </div>
               <p className="mt-6 text-sm text-blue-100">
                 Openingstijden: ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00. Bellen kost alleen uw reguliere
                 beltarief.
               </p>
+              {homepageContent.trustBadges && homepageContent.trustBadges.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {homepageContent.trustBadges.map((badge, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-blue-100"
+                    >
+                      <CheckCircle2 className="h-3 w-3" aria-hidden />
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="w-full lg:w-2/5">
               <div className="rounded-2xl bg-white/10 p-6 shadow-xl backdrop-blur">
@@ -453,4 +475,13 @@ export default function Home() {
       </div>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const content = await loadHomepageContent()
+  return {
+    props: {
+      content: content || getDefaultContent('homepage')
+    }
+  }
 }

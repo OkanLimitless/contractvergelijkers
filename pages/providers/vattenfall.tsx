@@ -1,15 +1,24 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { GetServerSideProps } from 'next'
 
-export default function Vattenfall() {
-  const [phoneNumber] = useState('+31 85 087 2183')
+import { loadBrandContent, type BrandContent } from '../../lib/content'
+import { getDisplayPhoneNumber, getPhoneNumberTel } from '../../lib/config'
+
+interface VattenfallProps {
+  content: BrandContent | null
+}
+
+export default function Vattenfall({ content }: VattenfallProps) {
+  const brandContent = content
+  const phoneNumber = getPhoneNumberTel()
+  const displayPhone = getDisplayPhoneNumber()
 
   return (
     <>
       <Head>
-        <title>Vattenfall Informatie 2025 - Betrouwbare Energie & Tarieven | Adviesneutraal</title>
-        <meta name="description" content="Vattenfall informatie 2025: Zweedse energiegigant, betrouwbare elektriciteit en gas, tarieven en klantenservice. Vergelijk via Adviesneutraal." />
+        <title>{brandContent?.pageTitle || 'Vattenfall Informatie 2025 - Betrouwbare Energie & Tarieven | Adviesneutraal'}</title>
+        <meta name="description" content={brandContent?.metaDescription || 'Vattenfall informatie 2025: Zweedse energiegigant, betrouwbare elektriciteit en gas, tarieven en klantenservice. Vergelijk via Adviesneutraal.'} />
         <meta name="keywords" content="Vattenfall tarieven 2025, Vattenfall klantenservice, Vattenfall overstappen, Zweedse energieleverancier" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -21,7 +30,7 @@ export default function Vattenfall() {
             ← Adviesneutraal
           </Link>
           <a href={`tel:${phoneNumber}`} className="bg-green-400 text-black px-4 py-2 rounded-lg hover:bg-green-300 transition-colors font-bold text-lg shadow-lg">
-            📞 {phoneNumber}
+            {brandContent?.primaryCTA || `📞 ${displayPhone}`}
           </a>
         </nav>
 
@@ -31,14 +40,10 @@ export default function Vattenfall() {
               🏢 Vattenfall Informatie 2025
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Vattenfall Betrouwbare{' '}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                Energie 2025
-              </span>
+              {brandContent?.heroTitle || 'Vattenfall Betrouwbare Energie 2025'}
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-4xl mx-auto">
-              Vattenfall is een Zweedse energiegigant met meer dan 100 jaar ervaring. 
-              Betrouwbare elektriciteit en gas met focus op duurzaamheid en innovatie.
+              {brandContent?.heroSubtitle || 'Vattenfall is een Zweedse energiegigant met meer dan 100 jaar ervaring. Betrouwbare elektriciteit en gas met focus op duurzaamheid en innovatie.'}
             </p>
           </div>
 
@@ -151,4 +156,13 @@ export default function Vattenfall() {
       </main>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const content = await loadBrandContent('vattenfall')
+  return {
+    props: {
+      content
+    }
+  }
 }
