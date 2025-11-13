@@ -61,7 +61,7 @@ export default function Contact({ brandColor = 'blue' }: ContactProps) {
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
               Contact met AdviesNeutraal
             </h1>
-            <p className="mt-4 text-base text-blue-100 sm:text-lg">
+            <p className={`mt-4 text-base ${colors.badgeText} sm:text-lg`}>
               Heeft u vragen over uw energiecontract, leverancier of verduurzaming? Onze adviseurs staan
               voor u klaar. U kiest zelf het kanaal dat het beste bij u past.
             </p>
@@ -170,7 +170,7 @@ export default function Contact({ brandColor = 'blue' }: ContactProps) {
                       name="message"
                       rows={4}
                       required
-                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100"
+                      className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-200"
                       placeholder="Geef een korte toelichting zodat wij u gericht kunnen helpen."
                     />
                   </div>

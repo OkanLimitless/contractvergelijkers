@@ -199,19 +199,19 @@ export default function Home({ content }: HomeProps) {
                 <h2 className="text-lg font-semibold text-white">Voor wie adviseert AdviesNeutraal?</h2>
                 <ul className={`mt-4 space-y-3 text-sm ${colors.badgeText}`}>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    <CheckCircle2 className={`mt-0.5 h-5 w-5 ${colors.badgeText}`} aria-hidden />
                     Huishoudens die zeker willen zijn van een eerlijk contract.
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    <CheckCircle2 className={`mt-0.5 h-5 w-5 ${colors.badgeText}`} aria-hidden />
                     Starters en zzp&apos;ers die grip willen op hun zakelijke energie.
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                    <CheckCircle2 className={`mt-0.5 h-5 w-5 ${colors.badgeText}`} aria-hidden />
                     Iedereen met vragen over dynamische tarieven of verduurzaming.
                   </li>
                 </ul>
-                <div className="mt-6 rounded-xl bg-white/15 px-4 py-3 text-sm text-blue-100">
+                <div className={`mt-6 rounded-xl bg-white/15 px-4 py-3 text-sm ${colors.badgeText}`}>
                   Geen dossierbehandeling van leveranciers - wel onafhankelijk advies en indien gewenst
                   doorverwijzing naar de juiste klantenservice.
                 </div>
@@ -314,32 +314,32 @@ export default function Home({ content }: HomeProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                   Waarom AdviesNeutraal
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
                   Een energieadviseur die naast u staat
                 </h2>
-                <p className="mt-4 text-base text-blue-100">
+                <p className={`mt-4 text-base ${colors.badgeText}`}>
                   Onze adviseurs zijn getraind in de Energiewet en werken met een kwaliteitsprotocol.
                   Zo voorkomt u verrassingen en voldoet u aan de regels.
                 </p>
                 <div className="mt-8 flex flex-col gap-6">
                   <div className="flex items-center gap-3">
-                    <ShieldCheck className="h-6 w-6 text-emerald-300" aria-hidden />
-                    <span className="text-sm text-blue-100">
+                    <ShieldCheck className={`h-6 w-6 ${colors.badgeText}`} aria-hidden />
+                    <span className={`text-sm ${colors.badgeText}`}>
                       Leden van het Register Erkend Adviseur Energiebesparing (REE).
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Users className="h-6 w-6 text-emerald-300" aria-hidden />
-                    <span className="text-sm text-blue-100">
+                    <Users className={`h-6 w-6 ${colors.badgeText}`} aria-hidden />
+                    <span className={`text-sm ${colors.badgeText}`}>
                       Jaarlijks honderden adviesgesprekken voor consumenten, VvE&apos;s en mkb.
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Sparkles className="h-6 w-6 text-emerald-300" aria-hidden />
-                    <span className="text-sm text-blue-100">
+                    <Sparkles className={`h-6 w-6 ${colors.badgeText}`} aria-hidden />
+                    <span className={`text-sm ${colors.badgeText}`}>
                       Heldere documentatie na afloop zodat u direct stappen kunt zetten.
                     </span>
                   </div>
@@ -350,7 +350,7 @@ export default function Home({ content }: HomeProps) {
                 <div className="mt-6 space-y-6">
                   {testimonials.map((testimonial) => (
                     <figure key={testimonial.name} className="rounded-xl bg-white/10 p-6">
-                      <blockquote className="text-sm text-blue-100">“{testimonial.quote}”</blockquote>
+                      <blockquote className={`text-sm ${colors.badgeText}`}>“{testimonial.quote}”</blockquote>
                       <figcaption className="mt-4 text-sm font-semibold text-white">
                         {testimonial.name}
                       </figcaption>
@@ -366,7 +366,7 @@ export default function Home({ content }: HomeProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-8 lg:grid-cols-[3fr,2fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                   Transparant & compliant
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -387,14 +387,14 @@ export default function Home({ content }: HomeProps) {
               </div>
               <div className="rounded-2xl bg-slate-900 p-8 text-white">
                 <h3 className="text-xl font-semibold">Kennismaken of een vraag stellen?</h3>
-                <p className="mt-4 text-blue-100">
+                <p className={`mt-4 ${colors.badgeText}`}>
                   Bel ons rechtstreeks of plan een terugbelverzoek via de klantenservice. We reageren
                   altijd binnen één werkdag.
                 </p>
                 <div className="mt-6 space-y-4">
                   <a
                     href={`tel:${PHONE_NUMBER_TEL}`}
-                    className="flex w-full items-center justify-center rounded-xl bg-white px-4 py-3 text-base font-semibold text-blue-700 shadow-sm transition hover:bg-blue-100"
+                    className={`flex w-full items-center justify-center rounded-xl ${colors.buttonBg} px-4 py-3 text-base font-semibold ${colors.buttonText} shadow-sm transition ${colors.buttonHover}`}
                   >
                     📞 {DISPLAY_PHONE_NUMBER}
                   </a>
@@ -405,7 +405,7 @@ export default function Home({ content }: HomeProps) {
                     Contactformulier
                   </Link>
                 </div>
-                <p className="mt-6 text-xs text-blue-200">
+                <p className={`mt-6 text-xs ${colors.badgeText}`}>
                   Wilt u liever een leverancier spreken? Bezoek onze{' '}
                   <Link href="/klantenservice" className="underline">
                     klantenservicepagina

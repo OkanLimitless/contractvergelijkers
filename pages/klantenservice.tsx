@@ -183,25 +183,25 @@ export default function Klantenservice({ content, brandColor = 'blue' }: Klanten
                   {klantenserviceContent.primaryCTA || `📞 Bel Direct: ${DISPLAY_PHONE_NUMBER}`}
                 </a>
               </div>
-              <p className="mt-4 text-sm text-blue-100">
+              <p className={`mt-4 text-sm ${colors.badgeText}`}>
                 Ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00 | Gratis adviesgesprek
               </p>
-              <div className="mt-6 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs text-blue-100 backdrop-blur">
+              <div className={`mt-6 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs ${colors.badgeText} backdrop-blur`}>
                 Onafhankelijk advies • Geen officiële leverancier
               </div>
             </div>
             <div className="lg:w-2/5">
               <div className="rounded-2xl bg-white/10 p-6 text-white shadow-xl backdrop-blur">
                 <h2 className="text-lg font-semibold">Waarmee wij dagelijks helpen</h2>
-                <ul className="mt-4 space-y-3 text-sm text-blue-100">
+                <ul className={`mt-4 space-y-3 text-sm ${colors.badgeText}`}>
                   {(klantenserviceContent.serviceItems || serviceItems).map((item, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <Sparkles className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                      <Sparkles className={`mt-0.5 h-5 w-5 ${colors.badgeText}`} aria-hidden />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 rounded-xl bg-white/15 px-4 py-3 text-xs text-blue-100">
+                <div className={`mt-6 rounded-xl bg-white/15 px-4 py-3 text-xs ${colors.badgeText}`}>
                   <strong>Let op:</strong> wij behandelen geen klachten namens leveranciers, maar leggen u wel uit
                   hoe u dit het beste kunt aanpakken en waar u moet zijn.
                 </div>
@@ -242,7 +242,7 @@ export default function Klantenservice({ content, brandColor = 'blue' }: Klanten
               {(klantenserviceContent.brandSections || brandSections).map((brand) => (
                 <div key={brand.id} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="text-xl font-bold text-slate-900">{brand.title}</h3>
-                  <span className="mt-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
+                  <span className="mt-2 inline-block rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 w-fit">
                     Onafhankelijk advies
                   </span>
                   <p className="mt-4 text-sm text-slate-600">{brand.description}</p>
@@ -268,7 +268,7 @@ export default function Klantenservice({ content, brandColor = 'blue' }: Klanten
                         href={brand.officialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-700"
+                        className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition"
                       >
                         Officiële {brand.name} →
                       </Link>
@@ -325,11 +325,11 @@ export default function Klantenservice({ content, brandColor = 'blue' }: Klanten
                 {faqItems.map((faq) => (
                   <div key={faq.question} className="rounded-2xl border border-white/20 bg-white/10 p-6">
                     <h3 className="text-base font-semibold text-white">{faq.question}</h3>
-                    <p className="mt-3 text-sm text-blue-100">{faq.answer}</p>
+                    <p className={`mt-3 text-sm ${colors.badgeText}`}>{faq.answer}</p>
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-xs text-blue-200">
+              <p className={`mt-6 text-xs ${colors.badgeText}`}>
                 Meer vragen? Bekijk de{' '}
                 <Link href="/veelgestelde-vragen" className="underline">
                   uitgebreide FAQ
@@ -375,22 +375,22 @@ export default function Klantenservice({ content, brandColor = 'blue' }: Klanten
                 </p>
                 <ul className={`mt-4 space-y-2 text-sm ${colors.primaryText}`}>
                   <li>
-                    <Link href="https://www.essent.nl/service/contact" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.essent.nl/service/contact" target="_blank" className={`${colors.primaryText}`}>
                       Essent klantenservice
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://www.eneco.nl/service-en-contact/" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.eneco.nl/service-en-contact/" target="_blank" className={`${colors.primaryText}`}>
                       Eneco service & contact
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://www.vattenfall.nl/klantenservice/" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.vattenfall.nl/klantenservice/" target="_blank" className={`${colors.primaryText}`}>
                       Vattenfall klantenservice
                     </Link>
                   </li>
                   <li>
-                    <Link href="/providers/overview" className="hover:text-blue-700">
+                    <Link href="/providers/overview" className={`${colors.primaryText}`}>
                       Overzicht overige leveranciers
                     </Link>
                   </li>

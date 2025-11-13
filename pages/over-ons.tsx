@@ -130,13 +130,13 @@ export default function OverOns({ brandColor = 'blue' }: OverOnsProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+              <span className={`inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 Over AdviesNeutraal
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
                 Onafhankelijk energieadvies sinds 2018
               </h1>
-              <p className="mt-4 text-base text-blue-100 sm:text-lg">
+              <p className={`mt-4 text-base ${colors.badgeText} sm:text-lg`}>
                 AdviesNeutraal is ontstaan vanuit de behoefte aan eerlijk en begrijpelijk energieadvies. We
                 staan naast consumenten, VvE's en mkb en helpen hen grip te krijgen op energiekosten en
                 verduurzaming.
@@ -250,7 +250,7 @@ export default function OverOns({ brandColor = 'blue' }: OverOnsProps) {
         <section className="bg-slate-900 text-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 Onze ontwikkeling
               </span>
               <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Hoogtepunten uit onze geschiedenis</h2>
@@ -259,10 +259,10 @@ export default function OverOns({ brandColor = 'blue' }: OverOnsProps) {
               {timeline.map((item) => (
                 <div key={item.year} className="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur">
                   <div className="flex items-center gap-3">
-                    <span className="text-lg font-semibold text-emerald-300">{item.year}</span>
+                    <span className={`text-lg font-semibold ${colors.badgeText}`}>{item.year}</span>
                     <h3 className="text-base font-semibold text-white">{item.title}</h3>
                   </div>
-                  <p className="mt-3 text-sm text-blue-100">{item.description}</p>
+                  <p className={`mt-3 text-sm ${colors.badgeText}`}>{item.description}</p>
                 </div>
               ))}
             </div>

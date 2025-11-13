@@ -153,13 +153,13 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+              <span className={`inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 Onze werkwijze
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
                 Gestructureerd energieadvies met onafhankelijk perspectief
               </h1>
-              <p className="mt-4 text-base text-blue-100 sm:text-lg">
+              <p className={`mt-4 text-base ${colors.badgeText} sm:text-lg`}>
                 Elk adviesgesprek volgt een vaste methodiek. Zo weet u precies wat u kunt verwachten en
                 welke informatie we gebruiken om tot een objectief advies te komen.
               </p>
@@ -221,13 +221,13 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                   Kwaliteitsbewaking
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
                   Transparant, zorgvuldig en altijd controleerbaar
                 </h2>
-                <p className="mt-4 text-base text-blue-100">
+                <p className={`mt-4 text-base ${colors.badgeText}`}>
                   AdviesNeutraal werkt volgens een intern kwaliteitsplan. Zo blijven we onafhankelijk,
                   actueel en compliant met de wet- en regelgeving.
                 </p>
@@ -236,12 +236,12 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
                 <div className="space-y-6">
                   {qualityPoints.map((quality) => (
                     <div key={quality.title} className="flex items-start gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-emerald-300">
+                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ${colors.badgeText}`}>
                         <quality.icon className="h-5 w-5" aria-hidden />
                       </div>
                       <div>
                         <h3 className="text-sm font-semibold text-white">{quality.title}</h3>
-                        <p className="mt-1 text-sm text-blue-100">{quality.description}</p>
+                        <p className={`mt-1 text-sm ${colors.badgeText}`}>{quality.description}</p>
                       </div>
                     </div>
                   ))}
@@ -254,7 +254,7 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
         <section className="bg-white">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="max-w-3xl">
-              <span className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Doorlooptijd
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -269,10 +269,10 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
               {timeline.map((item) => (
                 <div key={item.phase} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold uppercase tracking-wide text-indigo-600">
+                    <span className={`text-xs font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                       {item.phase}
                     </span>
-                    <CalendarClock className="h-5 w-5 text-indigo-600" aria-hidden />
+                    <CalendarClock className={`h-5 w-5 ${colors.primaryText}`} aria-hidden />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
                   <p className="mt-2 text-sm text-slate-600">{item.detail}</p>
@@ -286,9 +286,9 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-10 lg:grid-cols-[2fr,3fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
-                  Verduurzamingsprojecten
-                </span>
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
+                Verduurzamingsprojecten
+              </span>
                 <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
                   Extra stappen voor verduurzaming van woning of bedrijf
                 </h2>
@@ -324,7 +324,7 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
         <section className="bg-slate-50">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wide text-indigo-600">
+              <span className={`text-sm font-semibold uppercase tracking-wide ${colors.primaryText}`}>
                 Documentatie
               </span>
               <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
@@ -339,7 +339,7 @@ export default function Werkwijze({ brandColor = 'indigo' }: WerkwijzeProps) {
               {documentationItems.map((doc) => (
                 <div key={doc.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <FileCheck className="h-6 w-6 text-indigo-600" aria-hidden />
+                    <FileCheck className={`h-6 w-6 ${colors.primaryText}`} aria-hidden />
                     <h3 className="text-base font-semibold text-slate-900">{doc.title}</h3>
                   </div>
                   <p className="mt-3 text-sm text-slate-600">{doc.description}</p>

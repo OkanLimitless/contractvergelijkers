@@ -90,7 +90,7 @@ export default function Privacy({ brandColor = 'blue' }: PrivacyProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Privacyverklaring</h1>
-            <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
+            <p className={`mt-4 max-w-3xl text-base ${colors.badgeText} sm:text-lg`}>
               Uw vertrouwen staat centraal bij al onze adviesgesprekken. Op deze pagina leest u welke
               persoonsgegevens wij verwerken, voor welke doelen we dat doen en hoe u gebruik maakt van uw
               rechten volgens de Algemene Verordening Gegevensbescherming (AVG).

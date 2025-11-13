@@ -135,13 +135,13 @@ export default function VeelGevraagdeVragen({ brandColor = 'blue' }: FAQProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+              <span className={`inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 FAQ AdviesNeutraal
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
                 Antwoorden op uw energievragen
               </h1>
-              <p className="mt-4 text-base text-blue-100 sm:text-lg">
+              <p className={`mt-4 text-base ${colors.badgeText} sm:text-lg`}>
                 Heeft u een vraag over energiecontracten, leveranciers of verduurzaming? Hieronder vindt u
                 onze meest gestelde vragen. Staat uw vraag er niet tussen? Bel ons gerust.
               </p>
@@ -175,7 +175,7 @@ export default function VeelGevraagdeVragen({ brandColor = 'blue' }: FAQProps) {
                   contact? Bel ons servicenummer of plan een terugbelverzoek via de contactpagina.
                 </p>
                 <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
-                  <BookOpen className="mb-3 h-6 w-6 text-blue-600" aria-hidden />
+                  <BookOpen className={`mb-3 h-6 w-6 ${colors.primaryText}`} aria-hidden />
                   <p>
                     Tip: gebruik de zoekfunctie van uw browser (<kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +{' '}
                     <kbd>F</kbd>) om snel bepaalde trefwoorden te vinden, zoals &quot;dynamisch&quot;,
@@ -198,7 +198,7 @@ export default function VeelGevraagdeVragen({ brandColor = 'blue' }: FAQProps) {
                     <div className="space-y-4">
                       {category.entries.map((entry) => (
                         <details key={entry.question} className="group rounded-xl border border-slate-200 bg-white p-4">
-                          <summary className={`cursor-pointer text-sm font-semibold text-slate-900 transition group-open:${colors.primaryText.replace('text-','text-')}` }>
+                          <summary className={`cursor-pointer text-sm font-semibold text-slate-900 transition`}>
                             {entry.question}
                           </summary>
                           <p className="mt-3 text-sm text-slate-600">{entry.answer}</p>
@@ -243,22 +243,22 @@ export default function VeelGevraagdeVragen({ brandColor = 'blue' }: FAQProps) {
                 <h3 className="text-lg font-semibold text-slate-900">Handige pagina&apos;s</h3>
                 <ul className={`mt-4 space-y-3 text-sm ${colors.primaryText}`}>
                   <li>
-                    <Link href="/diensten" className="hover:text-blue-700">
+                    <Link href="/diensten" className={`${colors.primaryText}`}>
                       Onze diensten
                     </Link>
                   </li>
                   <li>
-                    <Link href="/werkwijze" className="hover:text-blue-700">
+                    <Link href="/werkwijze" className={`${colors.primaryText}`}>
                       Werkwijze
                     </Link>
                   </li>
                   <li>
-                    <Link href="/klantenservice" className="hover:text-blue-700">
+                    <Link href="/klantenservice" className={`${colors.primaryText}`}>
                       Klantenservice
                     </Link>
                   </li>
                   <li>
-                    <Link href="/privacy" className="hover:text-blue-700">
+                    <Link href="/privacy" className={`${colors.primaryText}`}>
                       Privacy & gegevensverwerking
                     </Link>
                   </li>

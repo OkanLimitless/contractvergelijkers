@@ -152,13 +152,13 @@ export default function Diensten({ brandColor = 'blue' }: DienstenProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-20">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-blue-100">
+              <span className={`inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                 Diensten AdviesNeutraal
               </span>
               <h1 className="mt-6 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
                 Onafhankelijke energieadviezen voor iedere situatie
               </h1>
-              <p className="mt-4 text-base text-blue-100 sm:text-lg">
+              <p className={`mt-4 text-base ${colors.badgeText} sm:text-lg`}>
                 Of u nu wilt weten of uw huidige contract nog passend is, wilt overstappen naar een andere
                 leverancier of uw woning wilt verduurzamen: onze adviseurs geven duidelijke antwoorden en
                 begeleiden het volledige traject.
@@ -178,7 +178,7 @@ export default function Diensten({ brandColor = 'blue' }: DienstenProps) {
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
               </div>
-              <p className="mt-4 text-xs text-blue-100">
+              <p className={`mt-4 text-xs ${colors.badgeText}`}>
                 Telefonisch advies is gratis voor consumenten. Voor complexe trajecten maken we vooraf een
                 vaste prijsafspraak.
               </p>
@@ -232,13 +232,13 @@ export default function Diensten({ brandColor = 'blue' }: DienstenProps) {
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
             <div className="grid gap-8 lg:grid-cols-[3fr,2fr]">
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wide text-emerald-300">
+                <span className={`text-sm font-semibold uppercase tracking-wide ${colors.badgeText}`}>
                   Onze belofte
                 </span>
                 <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
                   Persoonlijke begeleiding met oog voor kwaliteit
                 </h2>
-                <p className="mt-4 text-base text-blue-100">
+                <p className={`mt-4 text-base ${colors.badgeText}`}>
                   We werken met erkende energieadviseurs die een eigen kwaliteitsplan volgen. Zo bent u zeker
                   van eerlijk advies en correcte informatie.
                 </p>
@@ -248,12 +248,12 @@ export default function Diensten({ brandColor = 'blue' }: DienstenProps) {
                 <div className="mt-6 space-y-5">
                   {promisePoints.map((promise) => (
                     <div key={promise.title} className="flex items-start gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 text-emerald-300">
+                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/15 ${colors.badgeText}`}>
                         <promise.icon className="h-5 w-5" aria-hidden />
                       </div>
                       <div>
                         <h4 className="text-sm font-semibold text-white">{promise.title}</h4>
-                        <p className="mt-1 text-sm text-blue-100">{promise.description}</p>
+                        <p className={`mt-1 text-sm ${colors.badgeText}`}>{promise.description}</p>
                       </div>
                     </div>
                   ))}

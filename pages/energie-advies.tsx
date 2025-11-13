@@ -202,25 +202,25 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
                   📞 Bel Direct: {DISPLAY_PHONE_NUMBER}
                 </a>
               </div>
-              <p className="mt-4 text-sm text-blue-100">
+              <p className={`mt-4 text-sm ${colors.badgeText}`}>
                 Ma-vr 08:00 - 20:00, za-zo 10:00 - 16:00 | Gratis adviesgesprek
               </p>
-              <div className="mt-6 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs text-blue-100 backdrop-blur">
+              <div className={`mt-6 rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs ${colors.badgeText} backdrop-blur`}>
                 Onafhankelijk advies • Geen officiële leverancier
               </div>
             </div>
             <div className="lg:w-2/5">
               <div className="rounded-2xl bg-white/10 p-6 text-white shadow-xl backdrop-blur">
                 <h2 className="text-lg font-semibold">Waarmee wij dagelijks helpen</h2>
-                <ul className="mt-4 space-y-3 text-sm text-blue-100">
+                <ul className={`mt-4 space-y-3 text-sm ${colors.badgeText}`}>
                   {serviceItems.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <Sparkles className="mt-0.5 h-5 w-5 text-emerald-300" aria-hidden />
+                      <Sparkles className={`mt-0.5 h-5 w-5 ${colors.badgeText}`} aria-hidden />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6 rounded-xl bg-white/15 px-4 py-3 text-xs text-blue-100">
+                <div className={`mt-6 rounded-xl bg-white/15 px-4 py-3 text-xs ${colors.badgeText}`}>
                   <strong>Let op:</strong> wij zijn geen leverancier. We geven onafhankelijk advies en verwijzen door naar officiële contactpunten wanneer nodig.
                 </div>
               </div>
@@ -260,14 +260,14 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
               {brandSections.map((brand) => (
                 <div key={brand.id} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="text-xl font-bold text-slate-900">{brand.title}</h3>
-                  <span className="mt-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700 w-fit">
+                  <span className="mt-2 inline-block rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 w-fit">
                     Onafhankelijk advies
                   </span>
                   <p className="mt-4 text-sm text-slate-600">{brand.description}</p>
                   <ul className="mt-6 space-y-2 text-sm text-slate-600">
                     {brand.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <CheckCircle2 className="mt-1 h-4 w-4 text-blue-600" aria-hidden />
+                        <CheckCircle2 className={`${colors.primaryText} mt-1 h-4 w-4`} aria-hidden />
                         {bullet}
                       </li>
                     ))}
@@ -322,7 +322,7 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
               <div className="grid gap-6 md:grid-cols-2">
                 {howItWorksSteps.map((step, index) => (
                   <div key={step.title} className="rounded-2xl bg-slate-50 p-6 shadow-sm">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-base font-semibold text-white">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${colors.primaryBg} text-base font-semibold text-white`}>
                       {index + 1}
                     </div>
                     <h3 className="mt-4 text-base font-semibold text-slate-900">{step.title}</h3>
@@ -342,11 +342,11 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
                 {faqItems.map((faq) => (
                   <div key={faq.question} className="rounded-2xl border border-white/20 bg-white/10 p-6">
                     <h3 className="text-base font-semibold text-white">{faq.question}</h3>
-                    <p className="mt-3 text-sm text-blue-100">{faq.answer}</p>
+                    <p className={`mt-3 text-sm ${colors.badgeText}`}>{faq.answer}</p>
                   </div>
                 ))}
               </div>
-              <p className="mt-6 text-xs text-blue-200">
+              <p className={`mt-6 text-xs ${colors.badgeText}`}>
                 Meer vragen? Bekijk de{' '}
                 <Link href="/veelgestelde-vragen" className="underline">
                   uitgebreide FAQ
@@ -368,11 +368,11 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
                 <h3 className="text-lg font-semibold text-slate-900">Belangrijk om te weten</h3>
                 <ul className="mt-4 space-y-3 text-sm text-slate-600">
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Wij zijn geen energieleverancier. We geven onafhankelijk advies en verwijzen door naar officiële contactpunten.
                   </li>
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Uw gegevens gebruiken we alleen voor het adviesgesprek. Meer in onze{' '}
                     <Link href="/privacy" className="underline">
                       privacyverklaring
@@ -380,7 +380,7 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
                     .
                   </li>
                   <li className="flex items-start gap-2">
-                    <AlertCircle className="mt-0.5 h-5 w-5 text-blue-600" aria-hidden />
+                    <AlertCircle className={`mt-0.5 h-5 w-5 ${colors.primaryText}`} aria-hidden />
                     Bij een overstap ontvangen wij soms een vergoeding van de leverancier. Dit melden we altijd vooraf.
                   </li>
                 </ul>
@@ -390,24 +390,24 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
                 <p className="mt-3 text-sm text-slate-600">
                   Direct contact met uw leverancier? Gebruik onderstaande links:
                 </p>
-                <ul className="mt-4 space-y-2 text-sm text-blue-600">
+                <ul className={`mt-4 space-y-2 text-sm ${colors.primaryText}`}>
                   <li>
-                    <Link href="https://www.essent.nl/service/contact" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.essent.nl/service/contact" target="_blank" className={`${colors.primaryText}`}>
                       Essent officieel contact
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://www.eneco.nl/service-en-contact/" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.eneco.nl/service-en-contact/" target="_blank" className={`${colors.primaryText}`}>
                       Eneco officieel contact
                     </Link>
                   </li>
                   <li>
-                    <Link href="https://www.vattenfall.nl/klantenservice/" target="_blank" className="hover:text-blue-700">
+                    <Link href="https://www.vattenfall.nl/klantenservice/" target="_blank" className={`${colors.primaryText}`}>
                       Vattenfall officieel contact
                     </Link>
                   </li>
                   <li>
-                    <Link href="/providers/overview" className="hover:text-blue-700">
+                    <Link href="/providers/overview" className={`${colors.primaryText}`}>
                       Overzicht overige leveranciers
                     </Link>
                   </li>
@@ -432,7 +432,7 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
               <a
                 href={`tel:${PHONE_NUMBER_TEL}`}
                 onClick={trackConversion}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-6 py-3 text-base font-semibold text-white shadow-sm transition ${colors.primaryHover}`}
               >
                 📞 Bel voor advies
               </a>
@@ -454,7 +454,7 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
           <a
             href={`tel:${PHONE_NUMBER_TEL}`}
             onClick={trackConversion}
-            className="flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-blue-700"
+            className={`flex items-center justify-center gap-2 rounded-xl ${colors.primaryBg} px-4 py-3 text-base font-semibold text-white shadow-lg transition ${colors.primaryHover}`}
           >
             📞 Bel nu: {DISPLAY_PHONE_NUMBER}
           </a>

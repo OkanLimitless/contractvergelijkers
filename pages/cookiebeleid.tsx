@@ -43,7 +43,7 @@ export default function CookieBeleid({ brandColor = 'blue' }: CookieProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Cookiebeleid</h1>
-            <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
+            <p className={`mt-4 max-w-3xl text-base ${colors.badgeText} sm:text-lg`}>
               We vinden het belangrijk dat u weet hoe en waarom we cookies gebruiken. Op deze pagina leest u
               welke cookies we plaatsen, hoe lang we ze bewaren en hoe u uw voorkeuren kunt aanpassen.
             </p>

@@ -23,7 +23,7 @@ export default function Disclaimer({ brandColor = 'blue' }: DisclaimerProps) {
         <section className={`${colors.gradient} text-white`}>
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20">
             <h1 className="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Disclaimer</h1>
-            <p className="mt-4 max-w-3xl text-base text-blue-100 sm:text-lg">
+            <p className={`mt-4 max-w-3xl text-base ${colors.badgeText} sm:text-lg`}>
               Deze disclaimer is van toepassing op alle websites, documenten en communicatie van
               AdviesNeutraal. Door onze website te gebruiken of een adviesgesprek met ons te voeren, gaat u
               akkoord met onderstaande voorwaarden.
@@ -101,7 +101,7 @@ export default function Disclaimer({ brandColor = 'blue' }: DisclaimerProps) {
             <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">Contact</h2>
             <p className="mt-4 text-sm text-slate-600">
               Heeft u vragen over deze disclaimer? Neem dan contact op via{' '}
-              <a href="mailto:info@adviesneutraal.nl" className="text-blue-600 underline">
+              <a href="mailto:info@adviesneutraal.nl" className={`${colors.primaryText} underline`}>
                 info@adviesneutraal.nl
               </a>{' '}
               of bekijk onze{' '}
