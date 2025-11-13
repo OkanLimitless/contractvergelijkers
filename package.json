@@ -2,6 +2,10 @@
   "name": "simple-landing-page",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +14,12 @@
     "build:neutraal": "cp .env.advies-neutraal .env.local && npm run build",
     "build:bel": "cp .env.bel-adviesneutraal .env.local && npm run build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:bellen": "npm run dev --workspace advies-neutraal-bellen",
+    "dev:inbound": "npm run dev --workspace advies-neutraal-inbound",
+    "dev:neutraal": "npm run dev --workspace advies-neutraal",
+    "dev:bel": "npm run dev --workspace bel-adviesneutraal",
+    "build:monorepo": "npm run build --workspaces --if-present"
   },
   "dependencies": {
     "lucide-react": "^0.545.0",

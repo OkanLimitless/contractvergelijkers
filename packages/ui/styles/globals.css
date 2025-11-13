@@ -1,0 +1,7 @@
+/* Shared global styles for all apps */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next { height: 100%; }
+body { color: inherit; }

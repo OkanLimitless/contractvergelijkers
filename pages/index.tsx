@@ -128,11 +128,11 @@ const testimonials = [
 
 interface HomeProps {
   content: HomepageContent
+  brandColor?: string
 }
 
-export default function Home({ content }: HomeProps) {
+export default function Home({ content, brandColor = 'blue' }: HomeProps) {
   const homepageContent = content || getDefaultContent('homepage')
-  const brandColor = homepageContent.brandColor || getDomainConfig().brandColor || 'blue'
   const colors = getColorScheme(brandColor)
   
   return (
@@ -485,9 +485,11 @@ export default function Home({ content }: HomeProps) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const baseUrl = getBaseUrlFromReq(ctx.req)
   const content = await loadHomepageContent(baseUrl)
+  const brandColor = (content && (content as any).brandColor) || getDomainConfig().brandColor || 'blue'
   return {
     props: {
-      content: content || getDefaultContent('homepage')
+      content: content || getDefaultContent('homepage'),
+      brandColor
     }
   }
 }
