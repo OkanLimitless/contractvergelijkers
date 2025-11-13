@@ -58,9 +58,8 @@ export default function InboundGoogleAds() {
 
   return (
     <>
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`} />
-      <Script id="gtag-init" strategy="afterInteractive">{init}</Script>
+      <Script id="gtag-src" src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`} strategy="beforeInteractive" />
+      <Script id="gtag-init" strategy="beforeInteractive">{init}</Script>
     </>
   )
 }
-
