@@ -7,7 +7,7 @@ declare global {
 }
 
 const CONVERSION_ID = 'AW-17525009819'
-const CONVERSION_LABEL = 'TG9wCP7rqb8bEJWFgf9B' // Update this when you provide the CTA conversion snippet
+const CONVERSION_LABEL = 'emorCOeCkcIbEJvbyaRB' // CTA conversion label for phone calls
 
 function bindTelHandlers() {
   const anchors = Array.from(document.querySelectorAll('a[href^="tel:"]')) as HTMLAnchorElement[]
