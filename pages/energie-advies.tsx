@@ -143,32 +143,6 @@ export default function EnergieAdvies({ brandColor = 'blue' }: EnergieAdviesProp
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17714599796"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-17714599796');
-              function gtag_report_conversion(url) {
-                var callback = function () {
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                };
-                gtag('event', 'conversion', {
-                  'send_to': 'AW-17714599796/ZVMnCILcgr0bEPSu_f5B',
-                  'value': 1.0,
-                  'currency': 'USD',
-                  'event_callback': callback
-                });
-                return false;
-              }
-            `,
-          }}
-        />
       </Head>
 
       <div className="flex-1">
