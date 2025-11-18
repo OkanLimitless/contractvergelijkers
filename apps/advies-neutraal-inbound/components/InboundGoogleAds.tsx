@@ -6,8 +6,8 @@ declare global {
   interface Window { gtag_report_conversion?: (url?: string) => boolean }
 }
 
-const CONVERSION_ID = 'AW-17714659989'
-const CONVERSION_LABEL = 'TG9wCP7rqb8bEJWFgf9B'
+const CONVERSION_ID = 'AW-17525009819'
+const CONVERSION_LABEL = 'TG9wCP7rqb8bEJWFgf9B' // Update this when you provide the CTA conversion snippet
 
 function bindTelHandlers() {
   const anchors = Array.from(document.querySelectorAll('a[href^="tel:"]')) as HTMLAnchorElement[]
