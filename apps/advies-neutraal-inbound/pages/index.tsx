@@ -1,5 +1,5 @@
-import { Home } from '@cv/views'
+import VastelastendeskInboundLanding from '../components/VastelastendeskInboundLanding'
 
 export default function Page() {
-  return <Home brandColor="green" />
+  return <VastelastendeskInboundLanding />
 }

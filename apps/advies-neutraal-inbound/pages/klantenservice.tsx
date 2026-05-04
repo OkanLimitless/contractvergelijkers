@@ -1,2 +1,5 @@
-import { Klantenservice } from '@cv/views'
-export default function Page(){ return <Klantenservice brandColor="green"/> }
+import VastelastendeskInboundLanding from '../components/VastelastendeskInboundLanding'
+
+export default function Page() {
+  return <VastelastendeskInboundLanding />
+}
