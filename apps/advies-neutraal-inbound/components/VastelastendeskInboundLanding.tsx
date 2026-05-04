@@ -354,16 +354,16 @@ export default function VastelastendeskInboundLanding({ provider }: Vastelastend
               <h2 className="mt-2 text-3xl font-semibold text-slate-950">Zo voelt het gesprek</h2>
             </div>
             <div className="grid gap-3 sm:grid-cols-3">
-              {['U belt', 'We luisteren', 'U weet wat te doen'].map((step, index) => (
+              {['U legt uw vraag uit', 'We kijken met u mee', 'U krijgt een duidelijke route'].map((step, index) => (
                 <div key={step} className="rounded-lg bg-white p-5 shadow-sm">
                   <span className="text-sm font-semibold text-[#477565]">0{index + 1}</span>
                   <h3 className="mt-3 text-lg font-semibold text-slate-950">{step}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-600">
                     {index === 0
-                      ? 'U ziet direct het juiste nummer en kunt zonder formulier contact opnemen.'
+                      ? 'Vertel kort waar u tegenaan loopt: voorschot, jaarafrekening, contract of overstap.'
                       : index === 1
-                        ? `Een medewerker vraagt kort naar uw ${provider ? provider.name : 'contract'}, leverancier of factuurvraag.`
-                        : 'U krijgt uitleg, advies of de juiste officiele route voor uw situatie.'}
+                        ? `Een medewerker bespreekt uw ${provider ? provider.name : 'energie'} vraag en controleert wat logisch is in uw situatie.`
+                        : 'U krijgt uitleg, onafhankelijk advies of de juiste officiele route voor uw situatie.'}
                   </p>
                 </div>
               ))}
